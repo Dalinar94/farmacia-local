@@ -1,0 +1,55 @@
+.dashboard-contenedor {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+.dashboard-content{
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+.dashboard-estadisticas{
+    display: flex;
+    flex-direction: row;
+}
+.dashboard-estadistica-tarjeta{
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 10px;
+    width: calc(33% - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dashboard-header h1{
+    font-size: 24px;
+    color: #333;
+    padding: 10px;
+}
+
+.dashboard-subtitulo{
+    font-size: 18px;
+    color: #000000;
+    padding: 10px;
+}
+
+.dashboard-controles{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    }
+.dashboard-busqueda{
+    display: flex;
+    align-items: center;
+}
+.dashboard-busqueda input{
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-right: 10px;
+}

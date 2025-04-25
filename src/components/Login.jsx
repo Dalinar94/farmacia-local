@@ -1,0 +1,65 @@
+import React, { useState }   from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    //logica de autenticacion
+    const validarEmail = 'admin@farmastock.com';
+    const validarPassword = '1234';
+
+    if(email ===validarEmail && password === validarPassword){
+      setError('');
+      navigate('/dashboard');
+    }else{
+      setError('Email o contraseña incorrectos');
+    }
+  };
+
+  return ( 
+    <div className="login-container">
+      <div className='login-form'>
+        <div className='login-encabezado'>
+        <h2>FARMASTOCK</h2>
+        <p>Ingrese sus credenciales de acceso</p>
+      </div>
+        <form onSubmit={handleSubmit}>
+        <div className='login-empresa'>
+          <div className='login-email'>
+            <label>Email:</label>
+            <input placeholder='Introduce tu email...' 
+            type="email" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)}
+            required 
+            />
+          </div>
+          <div className='login-password'>
+            <label>Password:</label>
+            <input placeholder='Introduce la contraseña...' type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          </div>
+        </div>
+        {error && <p className='error-message'>{error}</p>}
+          <div className='login-links'>
+            <label>¿No tienes cuenta?</label>
+            <a href="/register">Registrate</a>
+          </div>
+          <div className='btn-login'>
+            <button type="submit">Acceder</button>
+          </div>
+          <div className='login-footer'>
+            <p>© 2023 FarmaStock. Todos los derechos reservados.</p>
+          </div>
+        </form>
+      </div> 
+    </div>
+  );
+};
+
+export default Login;

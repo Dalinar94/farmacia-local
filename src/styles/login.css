@@ -1,0 +1,107 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.login-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('../img/m1.jpg');
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: auto;
+  width: 400px;
+  height: 480px;
+  background-color: #ffffff;
+}
+
+.login-encabezado{
+  padding: 1.5rem;
+  border-bottom: 1px solid rgb(167, 164, 164);
+}
+.login-encabezado h2{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+.login-encabezado p{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.login-empresa{
+  padding: 1.5rem;
+}
+.login-empresa label{
+  display: block;
+  padding: 3px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 18px;
+}
+.login-empresa input{
+  padding: 5px;
+  width: 93%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.login-links{
+  padding: 0.6rem;
+  text-align: center;
+}
+.login-links a{
+  text-decoration: none;
+  color: #007BFF;
+  font-size: 16px;
+  margin: 0 10px;
+}
+.login-links a:hover{
+  text-decoration: underline;
+}
+.login-links a:active{
+  color: #0056b3;
+}
+.btn-login{
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid rgb(167, 164, 164);
+}
+.btn-login button{
+  padding: 10px;
+  background-color: #007BFF;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+.btn-login button:hover{
+  background-color: #0056b3;
+}
+
+.login-footer{
+  padding: 1.1rem;
+  text-align: center;
+  font-size: 15px;
+  color: #555;
+}
+.login-footer p{
+  margin: 0;
+}
+
