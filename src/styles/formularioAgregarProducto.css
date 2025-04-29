@@ -1,0 +1,75 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .modal-content h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: var(--color-primario);
+  }
+  
+  .modal-content label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid var(--color-borde);
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .formulario-botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .boton-enviar {
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .boton-enviar:hover {
+    background-color: var(--color-primario-hover);
+  }
+  
+  .boton-cancelar {
+    background-color: var(--color-peligro);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .boton-cancelar:hover {
+    background-color: var(--color-peligro-hover);
+  }

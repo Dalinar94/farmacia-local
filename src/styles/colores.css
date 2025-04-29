@@ -1,0 +1,15 @@
+/* Paleta de colores */
+:root {
+    --color-primario: #007bff; /* Azul primario */
+    --color-primario-hover: #0056b3; /* Azul oscuro para hover */
+    --color-secundario: #6c757d; /* Gris secundario */
+    --color-exito: #28a745; /* Verde para éxito */
+    --color-peligro: #dc3545; /* Rojo para peligro */
+    --color-peligro-hover: #a71d2a; /* Rojo oscuro para hover */
+    --color-fondo: #f8f9fa; /* Fondo claro */
+    --color-texto: #212529; /* Texto principal */
+    --color-borde: #dee2e6; /* Bordes */
+    --color-fondo-modal: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para modales */
+    --color-fondoMain: #f0f0f0;
+    --color-tarjetas: #fff;
+}

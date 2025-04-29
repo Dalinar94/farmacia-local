@@ -1,0 +1,34 @@
+.stock-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+
+  }
+  
+  .stock-table th,
+  .stock-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .stock-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .estado-bajo {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .estado-medio {
+    color: orange;
+    font-weight: bold;
+  }
+  
+  .estado-normal {
+    color: green;
+    font-weight: bold;
+  }

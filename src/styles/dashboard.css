@@ -1,20 +1,25 @@
-.dashboard-contenedor {
-    min-height: 100vh;
+@import './colores.css';
+
+.dashboard-container{ 
     display: flex;
     flex-direction: column;
-  }
+    height: 100vh;
+    background-color: var(--color-fondoMain);
+}
+ 
 .dashboard-content{
     flex-direction: column;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: var(--color-fondoMain);
     font-family: Arial, sans-serif;
+    padding: 20px;
 }
 .dashboard-estadisticas{
     display: flex;
     flex-direction: row;
 }
 .dashboard-estadistica-tarjeta{
-    background-color: #fff;
+    background-color: var(--color-tarjetas);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px;
@@ -26,13 +31,13 @@
 }
 .dashboard-header h1{
     font-size: 24px;
-    color: #333;
+    color: var( --color-texto);
     padding: 10px;
 }
 
 .dashboard-subtitulo{
     font-size: 18px;
-    color: #000000;
+    color: var(--color-texto);
     padding: 10px;
 }
 
@@ -52,4 +57,16 @@
     border: 1px solid #ccc;
     font-size: 16px;
     margin-right: 10px;
+}
+.boton-primario button{
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.boton-primario button:hover{
+    background-color: var(--color-primario-hover);
 }

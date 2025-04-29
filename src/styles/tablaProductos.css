@@ -1,0 +1,117 @@
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.products-table thead tr {
+    background-color: #f4f4f4;
+    border-bottom: 2px solid #ddd;
+}
+
+.products-table th,
+.products-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.products-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.products-table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Colores condicionales */
+.low-stock {
+    color: red;
+    font-weight: bold;
+}
+
+.normal-stock {
+    color: green;
+    font-weight: bold;
+}
+
+/* Botones de acción */
+.action-buttons {
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    gap: 10px; /* Espaciado entre botones */
+}
+
+.action-button {
+    padding: 8px 12px; /* Botones más compactos */
+    margin: 0;
+    border: none;
+    border-radius: 5px; /* Botones más redondeados */
+    cursor: pointer;
+    font-size: 14px; /* Tamaño del texto ajustado */
+}
+
+.edit-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #a71d2a;
+}
+
+/* Ajustar el ancho de la columna de acciones */
+.products-table th:nth-child(5),
+.products-table td:nth-child(5) {
+    width: 150px; /* Ancho fijo para la columna de acciones */
+    text-align: center; /* Centrar contenido */
+}
+
+/* Fondo oscuro para el modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+
+/* Contenedor del modal */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Botones dentro del modal */
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-buttons .action-button {
+  padding: 10px 20px;
+  font-size: 16px;
+}

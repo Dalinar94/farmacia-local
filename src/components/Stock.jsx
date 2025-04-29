@@ -1,15 +1,45 @@
-import React from 'react';
-import Navbar from './Navbar'; // Importar la barra de navegación
+import React, { useState } from 'react';
+import Navbar from './common/Navbar'; // Importar la barra de navegación
+import Footer from './common/Footer'; // Importar el componente de pie de página
+import TablaStock from './tables/TablaStock'; // Importar la tabla de stock
 import '../styles/navbar.css'; // Importar los estilos de la barra de navegación
-
 const Stock = () => {
-    return (
-      <div className="Stock-container">
-        <Navbar /> {/* Incluir la barra de navegación */}
-        <h2>Stock</h2>
-        <p>Bienvenido a stock!</p>
-      </div>
-    );
-  };
-  
-  export default Stock;
+  const [products] = useState([
+    { id: 1, name: 'Producto 1', description: 'Descripción del producto 1', stock: 5, price: 100 },
+    { id: 2, name: 'Producto 2', description: 'Descripción del producto 2', stock: 20, price: 50 },
+    { id: 3, name: 'Producto 3', description: 'Descripción del producto 3', stock: 60, price: 200 },
+    { id: 4, name: 'Producto 4', description: 'Descripción del producto 4', stock: 10, price: 150 },
+  ]);
+
+  return (
+    <div className="stock-container">
+      <Navbar /> {/* Incluir la barra de navegación */}
+      <main className="stock-content">
+        <div className="stock-header">
+          <h1>Estado del Stock</h1>
+          <div className="stock-estadisticas">
+            <div className="stock-estadistica-tarjeta">
+              <h3>Productos</h3>
+              <p>{products.length}</p> {/* Mostrar el número de productos */}
+            </div>
+            <div className="stock-estadistica-tarjeta">
+              <h3>Valor inventario</h3>
+              <p>
+                {products.reduce((total, product) => total + product.price * product.stock, 0).toFixed(2)} €
+              </p>
+            </div>
+            <div className="stock-estadistica-tarjeta">
+              <h3>Stock Agotado</h3>
+              <p>{products.filter((product) => product.stock < 10).length}</p>
+            </div>
+          </div>
+        </div>
+
+        <TablaStock products={products} /> {/* Mostrar la tabla de stock */}
+      </main>
+      <Footer /> 
+    </div>
+  );
+};
+
+export default Stock;

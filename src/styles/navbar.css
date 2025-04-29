@@ -1,8 +1,9 @@
+@import './colores.css';
 .navbar {
-    background-color: #007bff;
+    background-color:  var(--color-primario);
     display: flex;
     justify-content: center;
-    height: 60px;
+    height: 80px;
     align-items: center;
     font-family: Arial, sans-serif;
   }
@@ -17,7 +18,7 @@
   .navbar-links ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 70px;
     padding: 0;
     margin: 0;
   }
@@ -28,14 +29,14 @@
   
   .navbar-links a {
     text-decoration: none;
-    color: black;
-    font-size: 16px;
+    color: var(--color-texto);
+    font-size: 18px;
     padding: 5px 10px;
     border-radius: 4px;
   }
   
   .navbar-links a.active-link {
-    color: rgb(255, 255, 255);
+    color: var(--color-fondo);
     font-weight: bold;
     text-decoration: underline;
 
@@ -50,19 +51,20 @@
     margin-left: auto;
   }
   .btn-logout button{
-    background-color: #ffffff;
+    background-color: var(--color-fondo);
     border-radius: 10px;
-    color: rgb(0, 0, 0);
+    color: var(--color-texto);
     border: none;
     padding: 2px 25px;
     cursor: pointer;
     font-size: 14px;
   }
   .btn-logout button:hover{
-    background-color: #f0f0f0;
+    background-color: var( --color-fondoMain);
   }
 
   .logo{
+    
     margin-right: 20px;
     margin-left: 20px;
     display: flex;
@@ -70,6 +72,7 @@
     gap: 10px;
   }
   .logo img{
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
   }

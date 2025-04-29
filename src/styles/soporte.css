@@ -1,0 +1,124 @@
+.soporte-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+
+  }
+  
+  .soporte-content {
+    display: flex;
+    flex: 1;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+  }
+  
+  .soporte-menu {
+    width: 30%;
+    padding: 20px;
+    background-color: var(--color-fondoMain);
+    color: var(--color-texto);
+    border-right: 1px solid var(--color-borde);
+  }
+  
+  .soporte-menu h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--color-texto);
+  }
+  
+  .soporte-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .soporte-menu li {
+    margin-bottom: 15px;
+  }
+  
+  .soporte-menu a {
+    color: var(--color-primario);
+    text-decoration: none;
+  }
+  
+  .soporte-menu a:hover {
+    text-decoration: underline;
+  }
+  
+  .soporte-formulario {
+    flex: 1;
+    padding: 20px 40px;
+  }
+  
+  .soporte-formulario h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--color-primario);
+  }
+  
+  .formulario-incidencias label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .formulario-incidencias select,
+  .formulario-incidencias textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--color-borde);
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .formulario-incidencias textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .formulario-botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .boton-enviar {
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .boton-enviar:hover {
+    background-color: var(--color-primario-hover);
+  }
+  
+  .boton-cancelar {
+    background-color: var(--color-peligro);
+    color: var(--color-fondo);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .boton-cancelar:hover {
+    background-color: var(--color-peligro-hover);
+  }
+
+  .soporte-faq{
+    padding: 20px 40px;
+    border-bottom: black 1px solid;
+  }
+  .soporte-contacto{
+    padding: 20px 40px;
+    border-bottom: black 1px solid;
+  }
+
+  .soporte-enlaces{
+    padding: 20px 40px;
+    border-bottom: black 1px solid;
+  }
