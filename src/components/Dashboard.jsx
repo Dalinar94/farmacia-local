@@ -32,10 +32,12 @@ const Dashboard = () => {
     product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     product.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  const userName = 'Francisco'; 
 
+  
   return (
     <div className="dashboard-container">
-      <Navbar />
+      <Navbar userName={userName}/>
       <main className="dashboard-content">
         <div className="dashboard-header">
           <h1>{TITULOS.DASHBOARD_TITULO}</h1>

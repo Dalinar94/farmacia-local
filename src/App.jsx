@@ -7,6 +7,7 @@ import Register from './components/Register';
 import Productos from './components/Productos';
 import Stock from './components/Stock';
 import Soporte from './components/Soporte';
+import Politicas from './components/Politicas'; // Importar el componente de políticas
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/soporte" element={<Soporte />} />
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/politicas" element={<Politicas />} />
         </Routes>
       </Router>
     </ProductProvider>

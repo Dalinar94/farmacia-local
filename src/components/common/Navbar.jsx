@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const Navbar = () => {
+const Navbar = ({userName}) => {
  const navigate = useNavigate();
  const location = useLocation();
 
@@ -43,6 +43,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="btn-logout">
+        <span className="user-name">👤 {userName}</span> {/* Mostrar el nombre del usuario */}
         <button onClick={handleLogout}>Cerrar Sesión</button>
       </div>
     </nav>

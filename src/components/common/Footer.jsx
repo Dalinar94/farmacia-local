@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="dashboard-footer">
       <div className="footer-left">
-        <p>💊® 2025 {TITULOS.NOMBRE_EMPRESA}</p>
+        <p>💊 ©2025 - {TITULOS.NOMBRE_EMPRESA}® </p>
         <p>{LABELS.COPYRIGHT}</p>
       </div>
       <div className="footer-center">
@@ -23,6 +23,11 @@ const Footer = () => {
           Contacto:{' '}
           <a href="mailto:soporte@farmastock.com">soporte@farmastock.com</a>
         </p>
+      </div>
+      <div className='footer-center'>
+        <a href='/Politicas'><p>Política de privacidad</p></a>
+        <a href='/Terminos'><p>Términos y condiciones</p></a>
+        <a href='/Cookies'><p>Cookies</p></a>
       </div>
       <div className="footer-right">
         <p>Síguenos:</p>
