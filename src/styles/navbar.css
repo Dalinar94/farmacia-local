@@ -47,8 +47,17 @@
   }
 
   .btn-logout{
+    display: flex;
+    justify-content: center;
     margin-right: 20px;
     margin-left: auto;
+    gap: 15px;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--color-texto);
+    text-decoration: none;  
+
   }
   .btn-logout button{
     background-color: var(--color-fondo);
@@ -76,3 +85,4 @@
     height: 52px;
     border-radius: 10px;
   }
+
