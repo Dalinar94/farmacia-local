@@ -34,3 +34,6 @@
     font-weight: bold;
     color: var(--color-secundario);
   }
+  .panel-producto p{
+    text-align: justify;
+  }

@@ -1,13 +1,12 @@
 import React, { createContext, useState } from 'react';
 
 export const ProductContext = createContext();
-
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([
-    { id: 1, name: 'Producto 1', description: 'Descripción 1', stock: 50, price: 100 },
-    { id: 2, name: 'Producto 2', description: 'Descripción 2', stock: 20, price: 50 },
-    { id: 3, name: 'Producto 3', description: 'Descripción 3', stock: 60, price: 200 },
-    { id: 4, name: 'Producto 4', description: 'Descripción 4', stock: 10, price: 150 },
+    { id: 1, name: 'Paracetamol', description: 'El Paracetamol es un medicamento utilizado para aliviar el dolor y reducir la fiebre', stock: 50, price: 100 },
+    { id: 2, name: 'Ibuprofeno', description: 'El Ibuprofeno es un medicamento utilizado para aliviar el dolor, reducir la inflamación y bajar la fiebre.', stock: 0, price: 50 },
+    { id: 3, name: 'Omoxicilina', description: 'La amoxicilina es un antibiótico de amplio espectro utilizado para tratar diversas infecciones bacterianas.', stock: 60, price: 200 },
+    { id: 4, name: 'Gasas', description: 'Las gasas son compresas de tela o material sintético utilizadas para cubrir heridas y ayudar en su curación.', stock: 10, price: 150 },
   ]);
 
   return (

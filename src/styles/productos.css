@@ -4,6 +4,7 @@
     flex-direction: column;
     min-height: 100vh;
     font-family: Arial, sans-serif;
+    cursor: pointer;
   }
   
   /* Contenido principal */
@@ -17,9 +18,9 @@
   /* Título de la sección */
   .productos-content h2 {
     font-size: 28px; /* Aumentar el tamaño del título */
-    color: var(--color-primario);
+    color: var(--color-texto);
     margin-bottom: 30px;
-    text-align: center;
+    text-align: justify;
   }
   
   /* Contenedor de los paneles */

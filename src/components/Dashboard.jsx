@@ -5,6 +5,12 @@ import TablaProductos from './tables/TablaProductos';
 import { ProductContext } from '../context/ProductContext';
 import Footer from './common/Footer';
 import FormularioAgregarProducto from './forms/FormularioAgregarProducto';
+import { TITULOS } from '../lib/constantes';
+
+//EXPLICACION DE USESTATE y HOOK de react
+//El useState es un hook de React que permite añadir el estado a un componente funcional.
+//Que es un hook de React?
+//Un hook es una función que permite a los desarrolladores de React utilizar el estado y otras características de React sin escribir una clase.
 
 const Dashboard = () => {
   const { products, setProducts } = useContext(ProductContext); // Usar el contexto
@@ -32,7 +38,7 @@ const Dashboard = () => {
       <Navbar />
       <main className="dashboard-content">
         <div className="dashboard-header">
-          <h1>Dashboard</h1>
+          <h1>{TITULOS.DASHBOARD_TITULO}</h1>
           <div className="dashboard-estadisticas">
             <div className="dashboard-estadistica-tarjeta">
               <h3>Productos</h3>

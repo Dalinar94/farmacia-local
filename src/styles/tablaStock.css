@@ -1,34 +1,51 @@
 .stock-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-family: Arial, sans-serif;
+  width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
+  margin: 20px auto; /* Centra la tabla horizontalmente */
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 16px; /* Aumenta el tamaño de la fuente */
+  cursor: pointer;
+}
 
-  }
-  
-  .stock-table th,
-  .stock-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .stock-table th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-  }
-  
-  .estado-bajo {
-    color: red;
-    font-weight: bold;
-  }
-  
-  .estado-medio {
-    color: orange;
-    font-weight: bold;
-  }
-  
-  .estado-normal {
-    color: green;
-    font-weight: bold;
-  }
+.stock-table th,
+.stock-table td {
+  border: 1px solid #ddd;
+  padding: 12px; /* Aumenta el espaciado interno */
+  text-align: left;
+}
+
+.stock-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  font-size: 18px; /* Aumenta el tamaño de la fuente en los encabezados */
+}
+
+/* Alternar colores en las filas */
+.stock-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9; /* Color claro para las filas impares */
+}
+
+.stock-table tbody tr:nth-child(even) {
+  background-color: #ffffff; /* Color blanco para las filas pares */
+}
+
+/* Efecto hover para las filas */
+.stock-table tbody tr:hover {
+  background-color: #f0f8ff; /* Cambia el color de fondo al pasar el cursor */
+  transition: background-color 0.3s ease; /* Suaviza la transición */
+}
+
+.estado-bajo {
+  color: red;
+  font-weight: bold;
+}
+
+.estado-medio {
+  color: orange;
+  font-weight: bold;
+}
+
+.estado-normal {
+  color: green;
+  font-weight: bold;
+}

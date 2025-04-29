@@ -12,7 +12,7 @@ const Productos = () => {
     <div className="productos-container">
       <Navbar /> {/* Incluir la barra de navegación */}
       <main className="productos-content">
-        <h2>Productos</h2>
+        <h2>Panel de Productos</h2>
         <div className="productos-paneles">
           {products.map((product) => (
             <PanelProducto key={product.id} product={product} />

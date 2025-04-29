@@ -25,7 +25,11 @@ const TablaProductos = ({ products, setProducts }) => {
   const handleCancelEdit = () => {
     setEditingProduct(null); // Cierra el modal de edición sin guardar cambios
   };
-
+  const getStockClass = (stock) => {
+    if (stock <= 10) return 'low-stock';
+    if (stock <= 50) return 'medium-stock';
+    return 'high-stock';
+  };
   return (
     <div>
       <table className="products-table">
@@ -43,7 +47,9 @@ const TablaProductos = ({ products, setProducts }) => {
             <tr key={product.id}>
               <td>{product.name}</td>
               <td>{product.description}</td>
-              <td>{product.stock}</td>
+              <td className={getStockClass(product.stock)}>
+                {product.stock}
+              </td>
               <td>{product.price.toFixed(2)} €</td>
               <td>
                 <div className="action-buttons">
@@ -61,9 +67,10 @@ const TablaProductos = ({ products, setProducts }) => {
                   </button>
                 </div>
               </td>
-            </tr>
+            </tr> 
           ))}
         </tbody>
+        
       </table>
 
       {/* Modal de edición */}

@@ -6,13 +6,15 @@ const TablaStock = () => {
   const { products } = useContext(ProductContext);
 
   const getEstado = (stock) => {
-    if (stock < 10) return 'Bajo';
+    if(stock===0) return 'AGOTADO!';
+    if (stock <= 10) return 'Bajo';
     if (stock >= 10 && stock <= 50) return 'Medio';
+    
     return 'Normal';
   };
 
   const getEstadoClase = (stock) => {
-    if (stock < 10) return 'estado-bajo';
+    if (stock <= 10) return 'estado-bajo';
     if (stock >= 10 && stock <= 50) return 'estado-medio';
     return 'estado-normal';
   };

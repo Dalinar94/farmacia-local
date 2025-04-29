@@ -80,6 +80,19 @@
     text-align: center; /* Centrar contenido */
 }
 
+.low-stock {
+    color: red;
+    font-weight: bold;
+}
+.medium-stock {
+    color: orange;
+    font-weight: bold;
+}
+  
+.high-stock {
+    color: green;
+    font-weight: bold;
+}
 /* Fondo oscuro para el modal */
 .modal-overlay {
   position: fixed;
