@@ -1,7 +1,10 @@
-import React from 'react';
-import '../../styles/tablaStock.css'; // Importar los estilos específicos para la tabla de stock
+import React, { useContext } from 'react';
+import { ProductContext } from '../../context/ProductContext';
+import '../../styles/tablaStock.css';
 
-const TablaStock = ({ products }) => {
+const TablaStock = () => {
+  const { products } = useContext(ProductContext);
+
   const getEstado = (stock) => {
     if (stock < 10) return 'Bajo';
     if (stock >= 10 && stock <= 50) return 'Medio';

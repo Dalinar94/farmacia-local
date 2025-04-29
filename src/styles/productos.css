@@ -1,0 +1,32 @@
+/* Contenedor principal */
+.productos-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Contenido principal */
+  .productos-content {
+    flex: 1;
+    padding: 20px 40px;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+  }
+  
+  /* Título de la sección */
+  .productos-content h2 {
+    font-size: 28px; /* Aumentar el tamaño del título */
+    color: var(--color-primario);
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  /* Contenedor de los paneles */
+  .productos-paneles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Paneles más grandes */
+    gap: 80px; /* Más espacio entre los paneles */
+    margin-top: 30px;
+    justify-items: center; /* Centrar los paneles horizontalmente */
+  }

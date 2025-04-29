@@ -1,0 +1,36 @@
+/* Panel de producto */
+.panel-producto {
+    width: 100%; /* Asegura que el panel ocupe todo el espacio disponible en su celda */
+    max-width: 400px; /* Limita el ancho máximo del panel */
+    border: 2px solid #ddd; /* Bordes más gruesos */
+    border-radius: 12px; /* Bordes más redondeados */
+    padding: 20px; /* Más espacio interno */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación al pasar el mouse */
+  }
+  
+  .panel-producto:hover {
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el mouse */
+  }
+  
+  .panel-producto-nombre {
+    font-size: 22px; /* Aumentar el tamaño del nombre */
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--color-primario);
+  }
+  
+  .panel-producto-descripcion {
+    font-size: 16px; /* Aumentar el tamaño de la descripción */
+    margin-bottom: 15px;
+    color: #555;
+  }
+  
+  .panel-producto-valor {
+    font-size: 18px; /* Aumentar el tamaño del valor */
+    font-weight: bold;
+    color: var(--color-secundario);
+  }

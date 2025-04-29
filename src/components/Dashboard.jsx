@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import Navbar from './common/Navbar'; // Importar la barra de navegación
-import '../styles/navbar.css'; // Importar los estilos de la barra de navegación
-import TablaProductos from './tables/tablaProductos'; // Importar el componente de tabla de productos
-import { TITULOS, LABELS, BOTONES } from '../lib/constantes'; // Importar las constantes
-import Footer from './common/Footer'; // Importar el componente de pie de página
-import FormularioAgregarProducto from './forms/FormularioAgregarProducto'; // Importar el formulario emergente
+import React, { useContext, useState } from 'react';
+import Navbar from './common/Navbar';
+import '../styles/navbar.css';
+import TablaProductos from './tables/TablaProductos';
+import TablaStock from './tables/TablaStock';
+import { ProductContext } from '../context/ProductContext';
+import Footer from './common/Footer';
+import FormularioAgregarProducto from './forms/FormularioAgregarProducto';
 
 const Dashboard = () => {
-  const [showAddProductForm, setShowAddProductForm] = useState(false); // Estado para mostrar el formulario
-  const [products, setProducts] = useState([]); // Estado para almacenar la lista de productos
-  const [searchTerm, setSearchTerm] = useState(''); // Estado para almacenar el término de búsqueda
+  const { products, setProducts } = useContext(ProductContext); // Usar el contexto
+  const [showAddProductForm, setShowAddProductForm] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleAddProduct = (product) => {
-    const newProduct = { ...product, id: products.length + 1 }; // Asignar un ID único al nuevo producto
-    setProducts([...products, newProduct]); // Agregar el nuevo producto a la lista
-    setShowAddProductForm(false); // Cierra el formulario después de agregar el producto
+    const newProduct = { ...product, id: products.length + 1 };
+    setProducts([...products, newProduct]);
+    setShowAddProductForm(false);
   };
 
-  // Filtrar los productos según el término de búsqueda
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     product.description.toLowerCase().includes(searchTerm.toLowerCase())
@@ -28,11 +28,11 @@ const Dashboard = () => {
       <Navbar />
       <main className="dashboard-content">
         <div className="dashboard-header">
-          <h1>{LABELS.DASHBOARD}</h1>
+          <h1>Dashboard</h1>
           <div className="dashboard-estadisticas">
             <div className="dashboard-estadistica-tarjeta">
               <h3>Productos</h3>
-              <p>{products.length}</p> {/* Mostrar el número de productos */}
+              <p>{products.length}</p>
             </div>
             <div className="dashboard-estadistica-tarjeta">
               <h3>Valor inventario</h3>
@@ -55,18 +55,17 @@ const Dashboard = () => {
               placeholder="Buscar productos..."
               className="login-input"
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)} // Actualizar el término de búsqueda
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
           <div className="boton-primario">
-            <button onClick={() => setShowAddProductForm(true)}>{BOTONES.AGREGAR_PRODUCTO}</button>
+            <button onClick={() => setShowAddProductForm(true)}>Agregar Producto</button>
           </div>
         </div>
         <div>
-          <TablaProductos products={filteredProducts} setProducts={setProducts} /> {/* Pasar los productos filtrados */}
+          <TablaProductos products={filteredProducts} setProducts={setProducts} />
         </div>
 
-        {/* Mostrar el formulario emergente si está activado */}
         {showAddProductForm && (
           <FormularioAgregarProducto
             onAddProduct={handleAddProduct}

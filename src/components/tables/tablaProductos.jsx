@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import '../../styles/tablaProductos.css'; // Importar el archivo CSS
-import TablaEditarProductos from './tablaEditarProductos'; // Cambiar el nombre del componente importado
+import '../../styles/tablaProductos.css'; // Importar los estilos
 
 const TablaProductos = ({ products, setProducts }) => {
-  const [editingProduct, setEditingProduct] = useState(null); // Producto que se está editando
+  const [editingProduct, setEditingProduct] = useState(null);
 
   const handleEdit = (product) => {
-    setEditingProduct(product); // Establece el producto que se va a editar
+    setEditingProduct(product);
   };
 
   const handleDelete = (productId) => {
-    setProducts(products.filter((product) => product.id !== productId)); // Elimina el producto
+    setProducts(products.filter((product) => product.id !== productId));
   };
 
   const handleConfirmEdit = (updatedProduct) => {
@@ -19,7 +18,7 @@ const TablaProductos = ({ products, setProducts }) => {
         product.id === updatedProduct.id ? updatedProduct : product
       )
     );
-    setEditingProduct(null); // Cierra la tabla de edición
+    setEditingProduct(null);
   };
 
   return (
@@ -39,10 +38,8 @@ const TablaProductos = ({ products, setProducts }) => {
             <tr key={product.id}>
               <td>{product.name}</td>
               <td>{product.description}</td>
-              <td className={product.stock < 30 ? 'low-stock' : 'normal-stock'}>
-                {product.stock}
-              </td>
-              <td>{product.price} €</td>
+              <td>{product.stock}</td>
+              <td>{product.price.toFixed(2)} €</td>
               <td>
                 <div className="action-buttons">
                   <button
@@ -63,15 +60,6 @@ const TablaProductos = ({ products, setProducts }) => {
           ))}
         </tbody>
       </table>
-
-      {/* Llamar al componente de edición */}
-      {editingProduct && (
-        <TablaEditarProductos
-          product={editingProduct}
-          onConfirm={handleConfirmEdit}
-          onCancel={() => setEditingProduct(null)}
-        />
-      )}
     </div>
   );
 };
