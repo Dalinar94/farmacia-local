@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import '../../styles/tablaProductos.css'; // Importar los estilos
+import TablaEditarProductos from './tablaEditarProductos'; // Importar el componente de edición
 
 const TablaProductos = ({ products, setProducts }) => {
-  const [editingProduct, setEditingProduct] = useState(null);
+  const [editingProduct, setEditingProduct] = useState(null); // Producto que se está editando
 
   const handleEdit = (product) => {
-    setEditingProduct(product);
+    setEditingProduct(product); // Establece el producto que se va a editar
   };
 
   const handleDelete = (productId) => {
-    setProducts(products.filter((product) => product.id !== productId));
+    setProducts(products.filter((product) => product.id !== productId)); // Elimina el producto
   };
 
   const handleConfirmEdit = (updatedProduct) => {
@@ -18,7 +19,11 @@ const TablaProductos = ({ products, setProducts }) => {
         product.id === updatedProduct.id ? updatedProduct : product
       )
     );
-    setEditingProduct(null);
+    setEditingProduct(null); // Cierra el modal de edición
+  };
+
+  const handleCancelEdit = () => {
+    setEditingProduct(null); // Cierra el modal de edición sin guardar cambios
   };
 
   return (
@@ -60,6 +65,15 @@ const TablaProductos = ({ products, setProducts }) => {
           ))}
         </tbody>
       </table>
+
+      {/* Modal de edición */}
+      {editingProduct && (
+        <TablaEditarProductos
+          product={editingProduct}
+          onConfirm={handleConfirmEdit}
+          onCancel={handleCancelEdit}
+        />
+      )}
     </div>
   );
 };

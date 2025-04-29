@@ -2,20 +2,24 @@ import React, { useContext, useState } from 'react';
 import Navbar from './common/Navbar';
 import '../styles/navbar.css';
 import TablaProductos from './tables/TablaProductos';
-import TablaStock from './tables/TablaStock';
 import { ProductContext } from '../context/ProductContext';
 import Footer from './common/Footer';
 import FormularioAgregarProducto from './forms/FormularioAgregarProducto';
 
 const Dashboard = () => {
   const { products, setProducts } = useContext(ProductContext); // Usar el contexto
-  const [showAddProductForm, setShowAddProductForm] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [showAddProductForm, setShowAddProductForm] = useState(false); // Estado para mostrar el formulario
+  const [searchTerm, setSearchTerm] = useState(''); // Estado para el término de búsqueda
 
   const handleAddProduct = (product) => {
-    const newProduct = { ...product, id: products.length + 1 };
-    setProducts([...products, newProduct]);
-    setShowAddProductForm(false);
+    const newProduct = {
+      ...product,
+      id: products.length + 1, // Generar un ID único
+      stock: parseInt(product.stock, 10), // Asegurar que el stock sea un número
+      price: parseFloat(product.price), // Asegurar que el precio sea un número con decimales
+    };
+    setProducts([...products, newProduct]); // Agregar el nuevo producto al estado
+    setShowAddProductForm(false); // Cerrar el formulario
   };
 
   const filteredProducts = products.filter((product) =>
