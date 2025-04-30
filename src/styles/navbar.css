@@ -86,3 +86,75 @@
     border-radius: 10px;
   }
 
+  
+/* --- Responsive Design --- */
+
+/* Smartphones (pantallas pequeñas) */
+@media (max-width: 600px) {
+  .navbar {
+      flex-direction: column;
+      height: auto;
+      padding: 10px;
+  }
+
+  .navbar-links {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .navbar-links ul {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .btn-logout {
+      margin-top: 10px;
+      justify-content: center;
+  }
+
+  .logo img {
+      width: 40px;
+      height: 40px;
+  }
+}
+
+/* Tablets (pantallas medianas) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .navbar {
+      justify-content: space-between;
+      padding: 0 20px;
+  }
+
+  .navbar-links ul {
+      gap: 40px;
+  }
+
+  .btn-logout {
+      font-size: 14px;
+  }
+
+  .logo img {
+      width: 48px;
+      height: 48px;
+  }
+}
+
+/* Portátiles (pantallas grandes) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .navbar {
+      justify-content: space-between;
+      padding: 0 30px;
+  }
+
+  .navbar-links ul {
+      gap: 50px;
+  }
+
+  .btn-logout {
+      font-size: 15px;
+  }
+  .logo img {
+      width: 54px;
+      height: 52px;
+  }
+}

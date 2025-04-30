@@ -10,14 +10,17 @@
   /* Contenido principal */
   .productos-content {
     flex: 1;
-    padding: 20px 40px;
     background-color: var(--color-fondo);
     color: var(--color-texto);
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 40px;
   }
   
   /* Título de la sección */
   .productos-content h2 {
-    font-size: 28px; /* Aumentar el tamaño del título */
+    font-size: 24px; /* Aumentar el tamaño del título */
     color: var(--color-texto);
     margin-bottom: 30px;
     text-align: justify;

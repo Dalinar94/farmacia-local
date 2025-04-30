@@ -1,0 +1,17 @@
+.footer-redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5px;
+  }
+  
+  .footer-redes-sociales .social-icon {
+    font-size: 30px; /* Tamaño del ícono */
+    color: #f1ecec; /* Color inicial */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-redes-sociales .social-icon:hover {
+    color: var(--color-primario); /* Cambia el color al pasar el mouse */
+  }

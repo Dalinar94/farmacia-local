@@ -47,6 +47,25 @@ export const MENSAJES = {
   COPYRIGHT: "© 2025 FarmaStock. Todos los derechos reservados.",
 };
 
+export const FOOTER ={
+  DESARROLLADO_POR: "Desarrollado por",
+  DESARROLLADOR: "Francisco Israel Davó Cabrera",
+  FOOTER_TITULO: "💊 ©2025 - FarmaStock®",
+  CONTACTO: "Contacto",
+  POLITICAS: "Política de privacidad",
+  TERMINOS: "Términos y condiciones",
+  COOKIES: "Cookies",
+  SIGUENOS: "Síguenos",
+  EMAIL:"soporte@farmastock.com",
+  // Redes sociales
+  FACEBOOK: { name: "Facebook", icon: "fab fa-facebook-f" },
+  TWITTER: { name: "Twitter", icon: "fab fa-twitter" },
+  INSTAGRAM: { name: "Instagram", icon: "fab fa-instagram" },
+  WHATSAPP: { name: "WhatsApp", icon: "fab fa-whatsapp" },
+  GITHUB: { name: "GitHub", icon: "fab fa-github" },
+}
+
+
 /**
  * Función para formatear moneda (Euro)
  * @param {number} valor - Valor a formatear
