@@ -1,9 +1,12 @@
 import { Link,useLocation} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 
-const Navbar = ({userName}) => {
+const Navbar = () => {
  const navigate = useNavigate();
  const location = useLocation();
+ const { userName } = useContext(UserContext);
 
   const handleLogout = () => {
     // Aquí iría la lógica de cierre de sesión, como limpiar el estado de autenticación
@@ -41,7 +44,7 @@ const Navbar = ({userName}) => {
         </ul>
       </div>
       <div className="btn-logout">
-       <p>Hola, <span>{userName}</span></p> 
+        <span>{userName}</span> 
         <button onClick={handleLogout}>Cerrar Sesión</button>
       </div>
     </nav>

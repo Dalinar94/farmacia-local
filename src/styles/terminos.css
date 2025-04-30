@@ -1,0 +1,40 @@
+.terminos-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .terminos-content {
+    flex: 1;
+    padding: 20px 40px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  .terminos-content h1 {
+    font-size: 28px;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .terminos-content h2 {
+    font-size: 22px;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .terminos-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .terminos-content a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .terminos-content a:hover {
+    text-decoration: underline;
+  }

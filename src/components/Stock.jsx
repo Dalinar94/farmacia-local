@@ -13,7 +13,7 @@ const Stock = () => {
 
   return (
     <div className="stock-container">
-      <Navbar /> {/* Incluir la barra de navegación */}
+      <Navbar/> {/* Incluir la barra de navegación */}
       <main className="stock-content">
         <div className="stock-header">
           <h1>Estado del Stock</h1>

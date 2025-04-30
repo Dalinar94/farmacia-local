@@ -27,7 +27,7 @@ const Soporte = () => {
 
   return (
     <div className="soporte-container">
-      <Navbar /> {/* Incluir la barra de navegación */}
+      <Navbar/> {/* Incluir la barra de navegación */}
       <main className="soporte-content">
         <aside className="soporte-menu">
           <section className="soporte-faq">
