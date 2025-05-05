@@ -8,7 +8,6 @@
     font-family: Arial, sans-serif;
   }
   .navbar-links{
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,9 +70,16 @@
   .btn-logout button:hover{
     background-color: var( --color-fondoMain);
   }
+  .btn-logout span{
+    color: var(--color-texto);
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .btn-logout span:hover{
+    color: var(--color-fondo);
+  }
 
   .logo{
-    
     margin-right: 20px;
     margin-left: 20px;
     display: flex;

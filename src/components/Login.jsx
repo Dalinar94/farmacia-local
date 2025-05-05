@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
 
     // Datos de autenticación provisionales
-    const validarEmail = 'admin@farmastock.com';
+    const validarEmail = 'Admin@farmastock.com';
     const validarPassword = '1234';
 
     if (email === validarEmail && password === validarPassword) {
@@ -31,14 +31,16 @@ const Login = () => {
   };
 
   return (
+    
     <div className="login-container">
+      <span className="admin">Usuario: Admin@farmastock.com</span>
+      <br/>
+      <span className="admin">Contraseña: 1234</span>
       <div className="login-form">
         <div className="login-encabezado">
           <h2>FARMASTOCK</h2>
           <p>Ingrese sus credenciales de acceso</p>
-          <span className="admin">Usuario: admin@farmastock.com</span>
-          <br />
-          <span className="admin">Contraseña: 1234</span>
+          
         </div>
         <form onSubmit={handleSubmit}>
           <div className="login-empresa">

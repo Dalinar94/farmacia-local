@@ -3,9 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
 
+/*
+APUNTES MIOS PARA EXPLICAR
+Que es un Hook?
+
+Un Hook es una función especial de React que permite a los desarrolladores "engancharse" a las características de React, 
+como el estado y el ciclo de vida, en componentes funcionales. 
+
+Los Hooks permiten usar el estado y otras características de React sin 
+escribir una clase. Algunos ejemplos de Hooks son useState, useEffect, useContext, entre otros.
+*/ 
 const Navbar = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const navigate = useNavigate();// Hook para la navegación
+  const location = useLocation();// Hook para obtener la ubicación actual
   const { user } = useContext(UserContext); // Obtener el usuario desde el contexto
 
   const handleLogout = () => {
@@ -52,13 +62,14 @@ const Navbar = () => {
             >
               Soporte
             </Link>
+            
           </li>
         </ul>
       </div>
       <div className="btn-logout">
         {user ? (
           <>
-            <Link to="/Usuario">
+            <Link to="/Usuario" >
               <span>{user.nombre}</span> {/* Mostrar el nombre del usuario */}
             </Link>
             <button onClick={handleLogout}>Cerrar Sesión</button>

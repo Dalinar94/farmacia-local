@@ -10,7 +10,6 @@ import Productos from './components/Productos';
 import Stock from './components/Stock';
 import Soporte from './components/Soporte';
 import Usuario from './components/Usuario'; // Importar el componente de usuario
-
 //Componentes legales
 import Cookies from './components/legal/Cookies'; 
 import Politicas from './components/legal/Politicas';
@@ -28,6 +27,7 @@ const routes = [
   { path: '/terminos', element: <Terminos /> },
   { path: '/cookies', element: <Cookies /> },
   { path: '/usuario', element: <Usuario /> },
+
 
 ];
 
