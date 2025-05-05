@@ -1,4 +1,4 @@
-import React, { useState,useContext }   from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
 
@@ -6,20 +6,24 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const { setUserName } = useContext(UserContext); // Obtener la función para actualizar el nombre del usuario
+  const { setUser } = useContext(UserContext); // Obtener la función para actualizar el usuario completo
   const navigate = useNavigate();
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    //logica de autenticacion
+    // Datos de autenticación provisionales
     const validarEmail = 'admin@farmastock.com';
     const validarPassword = '1234';
 
     if (email === validarEmail && password === validarPassword) {
       setError('');
-      setUserName('Admin'); // Establecer el nombre del usuario en el contexto
+      setUser({
+        nombre: 'Admin',
+        email: validarEmail,
+        telefono: '123456789',
+        direccion: 'Calle Ejemplo, 123',
+      }); // Establecer los datos completos del usuario en el contexto
       navigate('/dashboard'); // Redirigir al dashboard
     } else {
       setError('Email o contraseña incorrectos');
@@ -32,8 +36,9 @@ const Login = () => {
         <div className="login-encabezado">
           <h2>FARMASTOCK</h2>
           <p>Ingrese sus credenciales de acceso</p>
-          <span className='admin'>Usuario: admin@farmastock.com</span><br/>
-          <span className='admin'>Contraseña: 1234</span>
+          <span className="admin">Usuario: admin@farmastock.com</span>
+          <br />
+          <span className="admin">Contraseña: 1234</span>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="login-empresa">
