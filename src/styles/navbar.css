@@ -55,15 +55,13 @@
     font-size: 15px;
     font-weight: bold;
     color: var(--color-texto);
-    text-decoration: none;  
-
   }
   .btn-logout button{
     background-color: var(--color-fondo);
     border-radius: 10px;
     color: var(--color-texto);
     border: none;
-    padding: 2px 25px;
+    padding: 10px 25px;
     cursor: pointer;
     font-size: 14px;
   }

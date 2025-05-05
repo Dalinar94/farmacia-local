@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
+import {TITULOS,LABELS,BOTONES} from '../../lib/constantes'; // Importar las constantes
 
 /*
 APUNTES MIOS PARA EXPLICAR
@@ -27,7 +28,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="logo">
         <img src="/img/logo.png" alt="Logo" />
-        <h2>FarmaStock</h2>
+        <h2>{TITULOS.NOMBRE_EMPRESA}</h2>
       </div>
       <div className="navbar-links">
         <ul>
@@ -36,7 +37,7 @@ const Navbar = () => {
               to="/Dashboard"
               className={location.pathname === '/Dashboard' ? 'active-link' : ''}
             >
-              Dashboard
+              {LABELS.DASHBOARD}
             </Link>
           </li>
           <li>
@@ -44,7 +45,7 @@ const Navbar = () => {
               to="/Productos"
               className={location.pathname === '/Productos' ? 'active-link' : ''}
             >
-              Productos
+              {LABELS.PRODUCTOS}
             </Link>
           </li>
           <li>
@@ -52,7 +53,7 @@ const Navbar = () => {
               to="/Stock"
               className={location.pathname === '/Stock' ? 'active-link' : ''}
             >
-              Stock
+              {LABELS.STOCK}
             </Link>
           </li>
           <li>
@@ -60,7 +61,7 @@ const Navbar = () => {
               to="/Soporte"
               className={location.pathname === '/Soporte' ? 'active-link' : ''}
             >
-              Soporte
+              {LABELS.SOPORTE}
             </Link>
             
           </li>
@@ -72,7 +73,7 @@ const Navbar = () => {
             <Link to="/Usuario" >
               <span>{user.nombre}</span> {/* Mostrar el nombre del usuario */}
             </Link>
-            <button onClick={handleLogout}>Cerrar Sesión</button>
+            <button onClick={handleLogout}>{BOTONES.CERRAR_SESION}</button>
           </>
         ) : (
           <Link to="/">Iniciar Sesión</Link> // Mostrar enlace al login si no hay usuario

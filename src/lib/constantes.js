@@ -27,6 +27,7 @@ export const LABELS = {
   VENTAS_HOY: "Ventas Hoy",
   STOCK_BAJO: "Stock Bajo",
   STOCK_NORMAL: "Stock Normal",
+  SOPORTE: "Soporte",
 };
 
 // Botones
@@ -38,6 +39,7 @@ export const BOTONES = {
   AGREGAR: "Agregar",
   AGREGAR_PRODUCTO: "Agregar Producto",
   BUSCAR: "Buscar",
+  CERRAR_SESION: "Logout",
 };
 
 // Mensajes

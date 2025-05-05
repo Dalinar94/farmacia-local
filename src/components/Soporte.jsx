@@ -60,7 +60,6 @@ const Soporte = () => {
             <ul>
               <li><a href="/dashboard">Ir al Panel de Control</a></li>
               <li><a href="/productos">Gestión de Productos</a></li>
-              <li><a href="/faq">Más Preguntas Frecuentes</a></li>
             </ul>
           </section>
         </aside>
