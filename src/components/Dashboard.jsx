@@ -5,7 +5,7 @@ import TablaProductos from './tables/tablaProductos'; // Importar el componente 
 import { ProductContext } from '../context/ProductContext';
 import Footer from './common/Footer';
 import FormularioAgregarProducto from './forms/FormularioAgregarProducto';
-import { TITULOS,LABELS, BOTONES } from '../lib/constantes';
+import { TITULOS, BOTONES } from '../lib/constantes';
 
 //EXPLICACION DE USESTATE y HOOK de react
 //El useState es un hook de React que permite añadir el estado a un componente funcional.
