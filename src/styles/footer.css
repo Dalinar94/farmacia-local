@@ -8,7 +8,9 @@
     font-weight: bold;
     color: var(--color-texto);
     margin-top: auto;
-    height: 100px;
+    height: 100px; /* Altura del footer */
+    position: relative; /* Para el posicionamiento del footer */
+    bottom: 0; /* Asegura que esté al final de la página */
     font-family: Arial, sans-serif;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra superior */
 }

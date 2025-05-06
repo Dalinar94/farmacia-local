@@ -19,6 +19,7 @@ const TablaStock = () => {
   };
 
   return (
+    <div className="tabla-con-scroll">
     <table className="stock-table">
       <thead>
         <tr>
@@ -39,6 +40,7 @@ const TablaStock = () => {
         ))}
       </tbody>
     </table>
+    </div>
   );
 };
 

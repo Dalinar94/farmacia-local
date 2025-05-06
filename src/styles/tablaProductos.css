@@ -5,6 +5,10 @@
     font-size: 16px;
     text-align: left;
 }
+.tabla-con-scroll {
+    max-height: 520px; /* Ajusta la altura según tus necesidades */
+    overflow-y: scroll;
+}
 
 .products-table thead tr {
     background-color: #f4f4f4;

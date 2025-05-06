@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TablaEditarProductos from './tablaEditarProductos'; // Importar el componente de edición
-import { BOTONES,LABELS } from '../../lib/constantes'; // Importar las constantes
+import { BOTONES, LABELS } from '../../lib/constantes'; // Importar las constantes
+
 const TablaProductos = ({ products, setProducts }) => {
   const [editingProduct, setEditingProduct] = useState(null); // Producto que se está editando
 
@@ -24,13 +25,15 @@ const TablaProductos = ({ products, setProducts }) => {
   const handleCancelEdit = () => {
     setEditingProduct(null); // Cierra el modal de edición sin guardar cambios
   };
+
   const getStockClass = (stock) => {
     if (stock <= 10) return 'low-stock';
     if (stock <= 50) return 'medium-stock';
     return 'high-stock';
   };
+
   return (
-    <div>
+    <div className="tabla-con-scroll">
       <table className="products-table">
         <thead>
           <tr>
@@ -66,10 +69,9 @@ const TablaProductos = ({ products, setProducts }) => {
                   </button>
                 </div>
               </td>
-            </tr> 
+            </tr>
           ))}
         </tbody>
-        
       </table>
 
       {/* Modal de edición */}

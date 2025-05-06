@@ -33,7 +33,7 @@
   }
   
   .stock-estadistica-tarjeta {
-    background-color: var(--color-fondo);
+    background-color: var(--color-tarjetas);
     color: var(--color-texto);
     padding: 15px;
     border-radius: 8px;
