@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/formularioAgregarProducto.css'; // Importar los estilos específicos del formulario
+import {TITULOS,LABELS,BOTONES} from '../../lib/constantes'; // Importar las constantes
 
 const FormularioAgregarProducto = ({ onAddProduct, onCancel }) => {
   const [newProduct, setNewProduct] = useState({
@@ -23,10 +24,10 @@ const FormularioAgregarProducto = ({ onAddProduct, onCancel }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h3>Agregar Producto</h3>
+        <h3>{BOTONES.AGREGAR_PRODUCTO}</h3>
         <form onSubmit={handleSubmit}>
           <label>
-            Nombre:
+            {LABELS.NOMBRE}:
             <input
               type="text"
               name="name"
@@ -36,7 +37,7 @@ const FormularioAgregarProducto = ({ onAddProduct, onCancel }) => {
             />
           </label>
           <label>
-            Descripción:
+            {LABELS.DESCRIPCION}:
             <input
               type="text"
               name="description"
@@ -46,7 +47,7 @@ const FormularioAgregarProducto = ({ onAddProduct, onCancel }) => {
             />
           </label>
           <label>
-            Cantidad:
+            {LABELS.CANTIDAD}:
             <input
               type="number"
               name="stock"
@@ -56,7 +57,7 @@ const FormularioAgregarProducto = ({ onAddProduct, onCancel }) => {
             />
           </label>
           <label>
-            Precio:
+            {LABELS.PRECIO}:
             <input
               type="number"
               step="0.01"
@@ -67,8 +68,8 @@ const FormularioAgregarProducto = ({ onAddProduct, onCancel }) => {
             />
           </label>
           <div className="formulario-botones">
-            <button type="submit" className="boton-enviar">Agregar</button>
-            <button type="button" className="boton-cancelar" onClick={onCancel}>Cancelar</button>
+            <button type="submit" className="boton-enviar">{BOTONES.AGREGAR}</button>
+            <button type="button" className="boton-cancelar" onClick={onCancel}>{BOTONES.CANCELAR}</button>
           </div>
         </form>
       </div>

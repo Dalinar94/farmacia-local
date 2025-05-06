@@ -1,8 +1,15 @@
-*{
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-.login-container{
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,76 +17,85 @@
   height: 100vh;
   background-image: url('../img/m1.jpg');
   background-size: cover;
-  font-family: Arial, sans-serif;
+  background-position: center;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   width: 400px;
-  height: 540px;
   background-color: #ffffff;
+  padding: 20px;
 }
 
-.login-encabezado{
+.login-encabezado {
   padding: 1.5rem;
-  border-bottom: 1px solid rgb(167, 164, 164);
+  border-bottom: 1px solid #ddd;
 }
-.login-encabezado h2{
+
+.login-encabezado h2 {
   text-align: center;
   margin-bottom: 10px;
-  font-size: 30px;
-}
-.login-encabezado p{
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 15px;
+  font-size: 24px;
+  color: #333;
 }
 
-.login-empresa{
+.login-encabezado p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #666;
+}
+
+.login-empresa {
   padding: 1.5rem;
 }
-.login-empresa label{
+
+.login-empresa label {
   display: block;
-  padding: 3px;
   margin-bottom: 5px;
-  margin-top: 5px;
-  font-size: 18px;
+  font-size: 16px;
+  color: #333;
 }
-.login-empresa input{
-  padding: 5px;
-  width: 93%;
+
+.login-empresa input {
+  padding: 10px;
+  width: 100%;
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 16px;
+  margin-bottom: 15px;
 }
 
-.login-links{
+.login-links {
   padding: 0.6rem;
   text-align: center;
 }
-.login-links a{
+
+.login-links a {
   text-decoration: none;
   color: #007BFF;
   font-size: 16px;
   margin: 0 10px;
 }
-.login-links a:hover{
+
+.login-links a:hover {
   text-decoration: underline;
 }
-.login-links a:active{
+
+.login-links a:active {
   color: #0056b3;
 }
-.btn-login{
-  padding: 20px 20px;
-  cursor: pointer;
-  border-bottom: 1px solid rgb(167, 164, 164);
+
+.btn-login {
+  padding: 20px;
+  text-align: center;
 }
-.btn-login button{
+
+.btn-login button {
   padding: 10px;
   background-color: #007BFF;
   border-radius: 5px;
@@ -87,24 +103,25 @@
   border: none;
   cursor: pointer;
   font-size: 18px;
-  width: 50%;
-  margin: 0 auto;
-  display: block;
+  width: 100%;
 }
-.btn-login button:hover{
+
+.btn-login button:hover {
   background-color: #0056b3;
 }
 
-.login-footer{
+.login-footer {
   padding: 1.5rem;
   text-align: center;
   font-size: 15px;
   color: #555;
 }
-.login-footer p{
+
+.login-footer p {
   margin: 0;
 }
-.error-message{
+
+.error-message {
   color: red;
   font-size: 14px;
   text-align: center;

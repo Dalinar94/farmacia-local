@@ -2,14 +2,14 @@ import React from 'react';
 import Navbar from '../common/Navbar'; // Importar la barra de navegación
 import Footer from '../common/Footer'; // Importar el pie de página
 import '../../styles/terminos.css'; // Importar los estilos específicos para términos y condiciones
-import { TITULOS } from '../../lib/constantes';
+import { TITULOS,FOOTER } from '../../lib/constantes';
 
 const Terminos = () => {
   return (
     <div className="terminos-container">
       <Navbar /> {/* Barra de navegación */}
       <main className="terminos-content">
-        <h1>Términos y Condiciones</h1>
+        <h1>{FOOTER.TERMINOS}</h1>
         <p>
           Bienvenido a <strong>{TITULOS.NOMBRE_EMPRESA}</strong>. Al utilizar nuestros servicios, aceptas los siguientes términos y condiciones. Por favor, léelos detenidamente, ya que están diseñados para garantizar el cumplimiento de las normativas del sector farmacéutico.
         </p>

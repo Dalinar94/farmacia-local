@@ -2,14 +2,14 @@ import React from 'react';
 import Navbar from '../common/Navbar'; // Importar la barra de navegación
 import Footer from '../common/Footer'; // Importar el pie de página
 import '../../styles/politicas.css'; // Importar los estilos específicos para políticas
-import { TITULOS } from '../../lib/constantes';
+import { TITULOS,FOOTER} from '../../lib/constantes';
 
 const Politicas = () => {
   return (
     <div className="politicas-container">
       <Navbar /> {/* Barra de navegación */}
       <main className="politicas-content">
-        <h1>Política de Privacidad</h1>
+        <h1>{FOOTER.POLITICAS}</h1>
         <p>
           En <strong>{TITULOS.NOMBRE_EMPRESA}</strong>, nos comprometemos a proteger la privacidad y la seguridad de los datos personales de nuestros usuarios, especialmente aquellos relacionados con la salud. Esta política describe cómo recopilamos, usamos y protegemos su información personal en cumplimiento con las normativas aplicables, como el Reglamento General de Protección de Datos (RGPD).
         </p>

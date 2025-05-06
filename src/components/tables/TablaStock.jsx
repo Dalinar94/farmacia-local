@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ProductContext } from '../../context/ProductContext';
 import '../../styles/tablaStock.css';
-
+import {LABELS } from '../../lib/constantes'; // Importar las constantes
 const TablaStock = () => {
   const { products } = useContext(ProductContext);
 
@@ -23,10 +23,10 @@ const TablaStock = () => {
     <table className="stock-table">
       <thead>
         <tr>
-          <th>Nombre</th>
-          <th>Descripción</th>
-          <th>Cantidad</th>
-          <th>Estado</th>
+          <th>{LABELS.NOMBRE}</th>
+          <th>{LABELS.DESCRIPCION}</th>
+          <th>{LABELS.CANTIDAD}</th>
+          <th>{LABELS.ESTADO}</th>
         </tr>
       </thead>
       <tbody>

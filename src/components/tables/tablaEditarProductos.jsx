@@ -1,5 +1,7 @@
 import React from 'react';
 import '../../styles/tablaEditarProductos.css'; // Importar el archivo CSS correcto
+import { BOTONES,TITULOS,LABELS } from '../../lib/constantes'; // Importar las constantes
+
 
 const TablaEditarProductos = ({ product, onConfirm, onCancel }) => {
   const handleSubmit = (e) => {
@@ -17,30 +19,30 @@ const TablaEditarProductos = ({ product, onConfirm, onCancel }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h3>Editar Producto</h3>
+        <h3>{TITULOS.EDITAR_PRODUCTO}</h3>
         <form onSubmit={handleSubmit}>
           <label>
-            Nombre:
+            {LABELS.NOMBRE}:
             <input type="text" name="name" defaultValue={product.name} />
           </label>
           <label>
-            Descripción:
+            {LABELS.DESCRIPCION}:
             <input type="text" name="description" defaultValue={product.description} />
           </label>
           <label>
-            Cantidad:
+            {LABELS.CANTIDAD}:
             <input type="number" name="stock" defaultValue={product.stock} />
           </label>
           <label>
-            Precio:
+            {LABELS.PRECIO}:
             <input type="number" step="0.01" name="price" defaultValue={product.price} />
           </label>
           <div className="modal-buttons">
             <button type="submit" className="action-button edit-button">
-              Confirmar
+              {BOTONES.CONFIRMAR}
             </button>
             <button type="button" className="action-button delete-button" onClick={onCancel}>
-              Cancelar
+              {BOTONES.CANCELAR}
             </button>
           </div>
         </form>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../styles/tablaProductos.css'; // Importar los estilos
 import TablaEditarProductos from './tablaEditarProductos'; // Importar el componente de edición
-
+import { BOTONES,LABELS } from '../../lib/constantes'; // Importar las constantes
 const TablaProductos = ({ products, setProducts }) => {
   const [editingProduct, setEditingProduct] = useState(null); // Producto que se está editando
 
@@ -35,11 +35,11 @@ const TablaProductos = ({ products, setProducts }) => {
       <table className="products-table">
         <thead>
           <tr>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Cantidad</th>
-            <th>Precio</th>
-            <th>Acciones</th>
+            <th>{LABELS.NOMBRE}</th>
+            <th>{LABELS.DESCRIPCION}</th>
+            <th>{LABELS.CANTIDAD}</th>
+            <th>{LABELS.PRECIO}</th>
+            <th>{LABELS.ACCIONES}</th>
           </tr>
         </thead>
         <tbody>
@@ -57,13 +57,13 @@ const TablaProductos = ({ products, setProducts }) => {
                     className="action-button edit-button"
                     onClick={() => handleEdit(product)}
                   >
-                    Editar
+                    {BOTONES.EDITAR}
                   </button>
                   <button
                     className="action-button delete-button"
                     onClick={() => handleDelete(product.id)}
                   >
-                    Eliminar
+                    {BOTONES.ELIMINAR}
                   </button>
                 </div>
               </td>

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
+import { TITULOS,MENSAJES, LABELS,ENLACES, BOTONES } from '../lib/constantes';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -38,16 +39,16 @@ const Login = () => {
       <span className="admin">Contraseña: 1234</span>
       <div className="login-form">
         <div className="login-encabezado">
-          <h2>FARMASTOCK</h2>
-          <p>Ingrese sus credenciales de acceso</p>
+          <h2>{TITULOS.NOMBRE_EMPRESA}</h2>
+          <p>{MENSAJES.INGRESE_CREDENCIAL}</p>
           
         </div>
         <form onSubmit={handleSubmit}>
           <div className="login-empresa">
             <div className="login-email">
-              <label>Email:</label>
+              <label>{LABELS.EMAIL}:</label>
               <input
-                placeholder="Introduce tu email..."
+                placeholder="Introduzca su email..."
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -55,9 +56,9 @@ const Login = () => {
               />
             </div>
             <div className="login-password">
-              <label>Password:</label>
+              <label>{LABELS.CONTRASENA}:</label>
               <input
-                placeholder="Introduce la contraseña..."
+                placeholder="Introduzca su contraseña..."
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -67,14 +68,14 @@ const Login = () => {
           </div>
           {error && <p className="error-message">{error}</p>}
           <div className="login-links">
-            <label>¿No tienes cuenta?</label>
-            <a href="/register">Regístrate</a>
+            <label>{LABELS.NO_CUENTA}</label>
+            <a href="/register">{ENLACES.REGISTRATE}</a>
           </div>
           <div className="btn-login">
-            <button type="submit">Acceder</button>
+            <button type="submit">{BOTONES.ACCEDER}</button>
           </div>
           <div className="login-footer">
-            <p>© 2023 FarmaStock. Todos los derechos reservados.</p>
+            <p>{MENSAJES.COPYRIGHT}</p>
           </div>
         </form>
       </div>

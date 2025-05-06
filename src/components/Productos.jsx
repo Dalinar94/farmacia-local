@@ -4,7 +4,7 @@ import Footer from './common/Footer'; // Importar el componente de pie de págin
 import PanelProducto from './panels/PanelProducto'; // Importar el componente de panel de producto
 import { ProductContext } from '../context/ProductContext'; // Importar el contexto
 import '../styles/productos.css'; // Importar los estilos específicos para productos
-
+import { TITULOS } from '../lib/constantes'; // Importar las constantes
 const Productos = () => {
   const { products } = useContext(ProductContext); // Usar el contexto para acceder a los productos
 
@@ -12,7 +12,7 @@ const Productos = () => {
     <div className="productos-container">
       <Navbar /> {/* Incluir la barra de navegación */}
       <main className="productos-content">
-        <h1>Panel de Productos</h1>
+        <h1>{TITULOS.PANEL_PRODUCTOS}</h1>
         <div className="productos-paneles">
           {products.map((product) => (
             <PanelProducto key={product.id} product={product} />

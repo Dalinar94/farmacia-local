@@ -76,7 +76,7 @@ const Navbar = () => {
             <button onClick={handleLogout}>{BOTONES.CERRAR_SESION}</button>
           </>
         ) : (
-          <Link to="/">Iniciar Sesión</Link> // Mostrar enlace al login si no hay usuario
+          <Link to="/">{BOTONES.INICIAR_SESION}</Link> // Mostrar enlace al login si no hay usuario
         )}
       </div>
     </nav>

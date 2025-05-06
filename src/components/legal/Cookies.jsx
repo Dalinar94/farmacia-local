@@ -2,14 +2,14 @@ import React from 'react';
 import Navbar from '../common/Navbar'; // Importar la barra de navegación
 import Footer from '../common/Footer'; // Importar el pie de página
 import '../../styles/cookies.css'; // Importar los estilos específicos para cookies
-import { TITULOS } from '../../lib/constantes';
+import { TITULOS,FOOTER } from '../../lib/constantes';
 
 const Cookies = () => {
   return (
     <div className="cookies-container">
       <Navbar /> {/* Barra de navegación */}
       <main className="cookies-content">
-        <h1>Política de Cookies</h1>
+        <h1>{FOOTER.COOKIES}</h1>
         <p>
           En <strong>{TITULOS.NOMBRE_EMPRESA}</strong>, utilizamos cookies para mejorar la experiencia del usuario en nuestro sitio web y garantizar el cumplimiento de las normativas aplicables al sector farmacéutico. Esta política explica qué son las cookies, cómo las utilizamos y cómo puedes gestionarlas.
         </p>

@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
 import Navbar from './common/Navbar';
 import '../styles/navbar.css';
-import TablaProductos from './tables/TablaProductos';
+import TablaProductos from './tables/tablaProductos'; // Importar el componente de tabla de productos
 import { ProductContext } from '../context/ProductContext';
 import Footer from './common/Footer';
 import FormularioAgregarProducto from './forms/FormularioAgregarProducto';
-import { TITULOS } from '../lib/constantes';
+import { TITULOS,LABELS, BOTONES } from '../lib/constantes';
 
 //EXPLICACION DE USESTATE y HOOK de react
 //El useState es un hook de React que permite añadir el estado a un componente funcional.
@@ -42,23 +42,23 @@ const Dashboard = () => {
           <h1>{TITULOS.DASHBOARD_TITULO}</h1>
           <div className="dashboard-estadisticas">
             <div className="dashboard-estadistica-tarjeta">
-              <h3>Productos</h3>
+              <h3>{TITULOS.PRODUCTOS}</h3>
               <p>{products.length}</p>
             </div>
             <div className="dashboard-estadistica-tarjeta">
-              <h3>Valor inventario</h3>
+              <h3>{TITULOS.VALOR_INVENTARIO}</h3>
               <p>
                 {products.reduce((total, product) => total + product.price * product.stock, 0).toFixed(2)} €
               </p>
             </div>
             <div className="dashboard-estadistica-tarjeta">
-              <h3>Stock Agotado</h3>
+              <h3>{TITULOS.STOCK_AGOTADO}</h3>
               <p>{products.filter((product) => product.stock < 10).length}</p>
             </div>
           </div>
         </div>
 
-        <h2 className="dashboard-subtitulo">Productos</h2>
+        <h2 className="dashboard-subtitulo">{TITULOS.PRODUCTOS}</h2>
         <div className="dashboard-controles">
           <div className="dashboard-busqueda">
             <input
@@ -70,7 +70,7 @@ const Dashboard = () => {
             />
           </div>
           <div className="boton-primario">
-            <button onClick={() => setShowAddProductForm(true)}>Agregar Producto</button>
+            <button onClick={() => setShowAddProductForm(true)}>{BOTONES.AGREGAR_PRODUCTO}</button>
           </div>
         </div>
         <div>

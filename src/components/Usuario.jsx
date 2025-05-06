@@ -3,7 +3,7 @@ import { UserContext } from '../context/UserContext';
 import '../styles/usuario.css';
 import NavBar from './common/Navbar';
 import Footer from './common/Footer';
-
+import { TITULOS,MENSAJES, LABELS, BOTONES } from '../lib/constantes'; // Importar las constantes
 const Usuario = () => {
   const { user, setUser } = useContext(UserContext); // Obtener y actualizar los datos del usuario desde el contexto
   const [isEditing, setIsEditing] = useState(false); // Estado para controlar si se está editando
@@ -13,7 +13,7 @@ const Usuario = () => {
     return (
       <div className="usuario-container">
         <NavBar />
-        <p>No hay datos de usuario disponibles. Por favor, inicia sesión.</p>
+        <p>{MENSAJES.NO_USUARIO}</p>
         <Footer />
       </div>
     );
@@ -37,12 +37,12 @@ const Usuario = () => {
   return (
     <main className="usuario-container">
       <NavBar />
-      <h1>Perfil de Usuario</h1>
+      <h1>{TITULOS.PERFIL_USUARIO}</h1>
       <div className="usuario-datos">
         <table>
           <tbody>
             <tr>
-              <td>Nombre:</td>
+              <td>{LABELS.NOMBRE}:</td>
               <td>
                 {isEditing ? (
                   <input
@@ -57,7 +57,7 @@ const Usuario = () => {
               </td>
             </tr>
             <tr>
-              <td>Email:</td>
+              <td>{LABELS.EMAIL}:</td>
               <td>
                 {isEditing ? (
                   <input
@@ -72,7 +72,7 @@ const Usuario = () => {
               </td>
             </tr>
             <tr>
-              <td>Teléfono:</td>
+              <td>{LABELS.TELEFONO}:</td>
               <td>
                 {isEditing ? (
                   <input
@@ -87,7 +87,7 @@ const Usuario = () => {
               </td>
             </tr>
             <tr>
-              <td>Dirección:</td>
+              <td>{LABELS.DIRECCION}:</td>
               <td>
                 {isEditing ? (
                   <input
@@ -108,15 +108,15 @@ const Usuario = () => {
         {isEditing ? (
           <>
             <button className="guardar-btn" onClick={handleSave}>
-              Guardar
+              {BOTONES.GUARDAR}
             </button>
             <button className="cancelar-btn" onClick={handleCancel}>
-              Cancelar
+              {BOTONES.CANCELAR}
             </button>
           </>
         ) : (
           <button className="editar-btn" onClick={() => setIsEditing(true)}>
-            Editar
+            {BOTONES.EDITAR}
           </button>
         )}
       </div>

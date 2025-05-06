@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './common/Navbar'; // Importar la barra de navegación
 import Footer from './common/Footer'; // Importar el componente de pie de página
 import '../styles/soporte.css'; // Importar los estilos específicos de soporte
-import { TITULOS } from '../lib/constantes';
+import { TITULOS,MENSAJES,BOTONES,LABELS,ENLACES,OPTIONS,INFORMACION } from '../lib/constantes';
 
 const Soporte = () => {
   const [formData, setFormData] = useState({
@@ -35,7 +35,7 @@ const Soporte = () => {
             <ul>
               <li>
                 <strong>¿Cómo puedo agregar un producto?</strong>
-                <p>Para agregar un producto, dirígete al panel de productos y haz clic en "Agregar producto".</p>
+                <p>Para agregar un producto, dirígete al panel de productos y haz clic en "{BOTONES.AGREGAR_PRODUCTO}".</p>
               </li>
               <li>
                 <strong>¿Cómo puedo contactar con soporte técnico?</strong>
@@ -43,45 +43,45 @@ const Soporte = () => {
               </li>
               <li>
                 <strong>¿Cómo puedo ver el inventario actual?</strong>
-                <p>El inventario está disponible en el panel de control, en la sección "Valor inventario".</p>
+                <p>El inventario está disponible en el panel de control, en la sección "{LABELS.VALOR_INVENTARIO}".</p>
               </li>
             </ul>
           </section>
           <section className="soporte-contacto">
-            <h3>Contacto</h3>
+            <h3>{TITULOS.CONTACTO}</h3>
             <ul>
-              <li>Correo: <a href="mailto:soporte@farmastock.com">soporte@farmastock.com</a></li>
-              <li>Teléfono: +34 123 456 789</li>
-              <li>Horario: Lunes a Viernes, 9:00 AM - 6:00 PM</li>
+              <li>{LABELS.CORREO}: <a href="mailto:soporte@farmastock.com">soporte@farmastock.com</a></li>
+              <li>{LABELS.TELEFONO}: {INFORMACION.TELEFONO_NUMERO}</li>
+              <li>{LABELS.HORARIO}: {INFORMACION.HORARIO_DIAS}</li>
             </ul>
           </section>
           <section className="soporte-enlaces">
-            <h3>Enlaces Útiles</h3>
+            <h3>{TITULOS.ENLACES_UTILES}</h3>
             <ul>
-              <li><a href="/dashboard">Ir al Panel de Control</a></li>
-              <li><a href="/productos">Gestión de Productos</a></li>
+              <li><a href="/dashboard">{ENLACES.IR_PANEL}</a></li>
+              <li><a href="/productos">{ENLACES.GESTION_PRODUCTOS}</a></li>
             </ul>
           </section>
         </aside>
         <section className="soporte-formulario">
-          <h3>Reportar una Incidencia</h3>
+          <h3>{TITULOS.REPORTAR_INCIDENCIA}</h3>
           <form onSubmit={handleSubmit} className="formulario-incidencias">
             <label>
-              Tipo de Incidencia:
+              {LABELS.TIPO_INCIDENCIA}:
               <select
                 name="tipoIncidencia"
                 value={formData.tipoIncidencia}
                 onChange={handleInputChange}
                 required
               >
-                <option value="">Selecciona una opción</option>
-                <option value="Error técnico">Error técnico</option>
-                <option value="Problema con el inventario">Problema con el inventario</option>
-                <option value="Consulta general">Consulta general</option>
+                <option value="">{OPTIONS.ESTANDAR}</option>
+                <option value="Error técnico">{OPTIONS.ERROR_TECNICO}</option>
+                <option value="Problema con el inventario">{OPTIONS.PROBLEMA_INVENTARIO}</option>
+                <option value="Consulta general">{OPTIONS.CONSULTA_GENERAL}</option>
               </select>
             </label>
             <label>
-              Descripción:
+              {LABELS.DESCRIPCION}:
               <textarea
                 name="descripcion"
                 value={formData.descripcion}
@@ -91,8 +91,8 @@ const Soporte = () => {
               />
             </label>
             <div className="formulario-botones">
-              <button type="submit" className="boton-enviar">Enviar</button>
-              <button type="button" className="boton-cancelar" onClick={handleCancel}>Restablecer</button>
+              <button type="submit" className="boton-enviar">{BOTONES.ENVIAR}</button>
+              <button type="button" className="boton-cancelar" onClick={handleCancel}>{BOTONES.RESTABLECER}</button>
             </div>
           </form>
         </section>

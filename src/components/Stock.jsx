@@ -3,6 +3,7 @@ import Navbar from './common/Navbar'; // Importar la barra de navegación
 import Footer from './common/Footer'; // Importar el componente de pie de página
 import TablaStock from './tables/TablaStock'; // Importar la tabla de stock
 import '../styles/navbar.css'; // Importar los estilos de la barra de navegación
+import { TITULOS } from '../lib/constantes'; // Importar las constantes
 const Stock = () => {
   const [products] = useState([
     { id: 1, name: 'Producto 1', description: 'Descripción del producto 1', stock: 5, price: 100 },
@@ -16,20 +17,20 @@ const Stock = () => {
       <Navbar/> {/* Incluir la barra de navegación */}
       <main className="stock-content">
         <div className="stock-header">
-          <h1>Estado del Stock</h1>
+          <h1>{TITULOS.ESTADO_STOCK}</h1>
           <div className="stock-estadisticas">
             <div className="stock-estadistica-tarjeta">
-              <h3>Productos</h3>
+              <h3>{TITULOS.PRODUCTOS}</h3>
               <p>{products.length}</p> {/* Mostrar el número de productos */}
             </div>
             <div className="stock-estadistica-tarjeta">
-              <h3>Valor inventario</h3>
+              <h3>{TITULOS.VALOR_INVENTARIO}</h3>
               <p>
                 {products.reduce((total, product) => total + product.price * product.stock, 0).toFixed(2)} €
               </p>
             </div>
             <div className="stock-estadistica-tarjeta">
-              <h3>Stock Agotado</h3>
+              <h3>{TITULOS.STOCK_AGOTADO}</h3>
               <p>{products.filter((product) => product.stock < 10).length}</p>
             </div>
           </div>
