@@ -1,5 +1,14 @@
 import React, { createContext, useState, useEffect } from 'react';
 
+/*Explicacion UserContext:
+  1. Se importa React y los hooks necesarios (createContext, useState, useEffect).
+  2. Se crea un contexto llamado UserContext utilizando createContext().
+  3. Se define un componente UserProvider que utiliza el hook useState para manejar el estado del usuario.
+  4. Al cargar la aplicación, se intenta recuperar el usuario desde localStorage. 
+  Si no hay usuario guardado, se inicializa como null.
+  5. Se utiliza useEffect para guardar el usuario en localStorage cada vez que cambia el estado del usuario.
+ */
+
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
