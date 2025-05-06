@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../common/Navbar'; // Importar la barra de navegación
 import Footer from '../common/Footer'; // Importar el pie de página
-import '../../styles/politicas.css'; // Importar los estilos específicos para políticas
 import { TITULOS,FOOTER} from '../../lib/constantes';
 
 const Politicas = () => {

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../../styles/formularioAgregarProducto.css'; // Importar los estilos específicos del formulario
 import {LABELS,BOTONES} from '../../lib/constantes'; // Importar las constantes
 
 const FormularioAgregarProducto = ({ onAddProduct, onCancel }) => {

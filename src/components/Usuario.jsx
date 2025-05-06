@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../context/UserContext';
-import '../styles/usuario.css';
 import NavBar from './common/Navbar';
 import Footer from './common/Footer';
 import { TITULOS,MENSAJES, LABELS, BOTONES } from '../lib/constantes'; // Importar las constantes

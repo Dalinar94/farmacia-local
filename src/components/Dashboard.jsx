@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import Navbar from './common/Navbar';
-import '../styles/navbar.css';
 import TablaProductos from './tables/tablaProductos'; // Importar el componente de tabla de productos
 import { ProductContext } from '../context/ProductContext';
 import Footer from './common/Footer';

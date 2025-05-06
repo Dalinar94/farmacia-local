@@ -5,3 +5,13 @@
 @import './styles/footer.css';
 @import './styles/soporte.css';
 @import './styles/stock.css';
+@import './styles/usuario.css';
+@import './styles/terminos.css';
+@import './styles/politicas.css';
+@import './styles/cookies.css';
+@import './styles/formularioAgregarProducto.css';
+@import './styles/panelProducto.css';
+@import './styles/tablaEditarProductos.css';
+@import './styles/tablaStock.css';
+@import './styles/productos.css';
+@import './styles/navbar.css';

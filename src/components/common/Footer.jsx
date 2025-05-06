@@ -1,7 +1,6 @@
 import React from 'react';
 import {FOOTER} from '../../lib/constantes'; // Importar las constantes
 import FooterRedesSociales from "../../context/Iconos"; // Importar el componente de redes sociales
-import '../../styles/footer.css'; // Importar los estilos del pie de página
 
 const Footer = () => {
   return (

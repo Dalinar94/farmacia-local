@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Navbar from './common/Navbar'; // Importar la barra de navegación
 import Footer from './common/Footer'; // Importar el componente de pie de página
 import TablaStock from './tables/TablaStock'; // Importar la tabla de stock
-import '../styles/navbar.css'; // Importar los estilos de la barra de navegación
 import { TITULOS } from '../lib/constantes'; // Importar las constantes
 const Stock = () => {
   const [products] = useState([

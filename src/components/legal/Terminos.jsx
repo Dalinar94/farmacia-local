@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../common/Navbar'; // Importar la barra de navegación
 import Footer from '../common/Footer'; // Importar el pie de página
-import '../../styles/terminos.css'; // Importar los estilos específicos para términos y condiciones
 import { TITULOS,FOOTER } from '../../lib/constantes';
 
 const Terminos = () => {

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../../styles/tablaProductos.css'; // Importar los estilos
 import TablaEditarProductos from './tablaEditarProductos'; // Importar el componente de edición
 import { BOTONES,LABELS } from '../../lib/constantes'; // Importar las constantes
 const TablaProductos = ({ products, setProducts }) => {

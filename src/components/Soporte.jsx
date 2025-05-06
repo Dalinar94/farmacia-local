@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './common/Navbar'; // Importar la barra de navegación
 import Footer from './common/Footer'; // Importar el componente de pie de página
-import '../styles/soporte.css'; // Importar los estilos específicos de soporte
 import { TITULOS,BOTONES,LABELS,ENLACES,OPTIONS,INFORMACION } from '../lib/constantes';
 
 const Soporte = () => {

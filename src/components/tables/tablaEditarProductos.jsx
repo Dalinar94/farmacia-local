@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/tablaEditarProductos.css'; // Importar el archivo CSS correcto
 import { BOTONES,TITULOS,LABELS } from '../../lib/constantes'; // Importar las constantes
 
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/panelProducto.css'; // Importar los estilos específicos para los paneles
 import { LABELS } from '../../lib/constantes'; // Importar las constantes
 const PanelProducto = ({ product }) => {
   return (

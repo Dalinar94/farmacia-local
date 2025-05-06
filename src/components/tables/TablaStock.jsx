@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { ProductContext } from '../../context/ProductContext';
-import '../../styles/tablaStock.css';
 import {LABELS } from '../../lib/constantes'; // Importar las constantes
 const TablaStock = () => {
   const { products } = useContext(ProductContext);
