@@ -43,7 +43,7 @@ const Cookies = () => {
         <h2>5. Contacto</h2>
         <p>
           Si tienes preguntas sobre nuestra política de cookies, puedes contactarnos en{' '}
-          <a href="mailto:soporte@farmastock.com">soporte@farmastock.com</a>.
+          <a href="mailto:frandavowork@gmail.com">frandavowork@gmail.com</a>.
         </p>
       </main>
       <Footer /> {/* Pie de página */}

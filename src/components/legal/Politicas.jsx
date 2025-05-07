@@ -52,7 +52,7 @@ const Politicas = () => {
             <li>Retirar su consentimiento para el uso de sus datos en cualquier momento.</li>
           </ul>
           Para ejercer estos derechos, puede contactarnos en{' '}
-          <a href="mailto:soporte@farmastock.com">soporte@farmastock.com</a>.
+          <a href="mailto:frandavowork@gmail.com">frandavowork@gmail.com</a>.
         </p>
         <h2>6. Cambios en la política</h2>
         <p>
@@ -61,7 +61,7 @@ const Politicas = () => {
         <h2>7. Contacto</h2>
         <p>
           Si tiene preguntas sobre esta política de privacidad, puede contactarnos en{' '}
-          <a href="mailto:soporte@farmastock.com">soporte@farmastock.com</a>.
+          <a href="mailto:frandavowork@gmail.com">frandavowork@gmail.com</a>.
         </p>
       </main>
       <Footer /> {/* Pie de página */}

@@ -39,7 +39,7 @@ const Terminos = () => {
         <h2>7. Contacto</h2>
         <p>
           Si tienes preguntas sobre estos términos y condiciones, puedes contactarnos en{' '}
-          <a href="mailto:soporte@farmastock.com">soporte@farmastock.com</a>.
+          <a href="mailto:frandavowork@gmail.com">frandavowork@gmail.com</a>.
         </p>
       </main>
       <Footer /> {/* Pie de página */}
