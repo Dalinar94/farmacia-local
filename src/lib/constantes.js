@@ -46,6 +46,7 @@ export const LABELS = {
   STOCK_AGOTADO: "Stock Agotado",
   SOPORTE: "Soporte",
   VALOR: "Valor",
+  VALOR_UNIDAD: "Valor por unidad",
   ACCIONES: "Acciones",
   ESTADO: "Estado",
   EMAIL: "Email",

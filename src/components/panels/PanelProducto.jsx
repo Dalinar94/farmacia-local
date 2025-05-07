@@ -6,7 +6,7 @@ const PanelProducto = ({ product }) => {
       <h3 className="panel-producto-nombre">{product.name}</h3>
       <p className="panel-producto-descripcion">{product.description}</p>
       <p className="panel-producto-valor">
-        {LABELS.VALOR}: {(product.price * product.stock).toFixed(2)} €
+        {LABELS.VALOR_UNIDAD} : {(product.price).toFixed(2)} €
       </p>
     </div>
   );
