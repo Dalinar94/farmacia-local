@@ -21,7 +21,7 @@ const Footer = () => {
         </p>
         <p>
           {FOOTER.CONTACTO}:{' '}
-          <a href="mailto:soporte@farmastock.com">{FOOTER.EMAIL}</a>
+          <a href="mailto:frandavowork@gmail.com">{FOOTER.EMAIL}</a>
         </p>
       </div>
       <div className='footer-center'>
