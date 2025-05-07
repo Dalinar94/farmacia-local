@@ -33,7 +33,7 @@ const TablaProductos = ({ products, setProducts }) => {
   };
 
   return (
-    <div className="tabla-con-scroll">
+    <div className="tabla-con-scroll-productos">
       <table className="products-table">
         <thead>
           <tr>

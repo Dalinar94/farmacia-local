@@ -1,12 +1,11 @@
 @import './colores.css';
 
 .dashboard-container{ 
-    display: flex;
     flex-direction: column;
     background-color: var(--color-fondoMain);
-    height: 110vh;
+    height: 100%;
+    display: flex;
 }
- 
 .dashboard-content{
     flex-direction: column;
     align-items: center;
