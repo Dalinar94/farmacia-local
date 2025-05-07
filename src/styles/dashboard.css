@@ -87,12 +87,14 @@
     }
     .dashboard-header h1{
         font-size: 24px;
+        text-align: center;
     }
     .dashboard-subtitulo{
         font-size: 16px;
+        text-align: center;
     }
     .dashboard-busqueda input{
-        width: 100%;
+        width: 80%;
         margin-right: 0;
         margin-bottom: 10px;
     }
