@@ -191,6 +191,39 @@
         width: auto; /* Ancho automático para la columna de acciones */
         text-align: center; /* Centrar contenido */
     }
-    
-    
 }
+
+    /* Tablets (pantallas medianos) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .products-table {
+        font-size: 12px; /* Tamaño de fuente reducido */
+        margin: 20px 0;
+    }
+    .tabla-con-scroll-productos {
+        max-height: none; /* Ajusta la altura según tus necesidades */
+    }
+
+    .products-table th,
+    .products-table td {
+        padding: 10px 12px;
+
+    }
+
+    .products-table tbody tr:hover {
+        background-color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .action-buttons {
+        gap: 8px; /* Espaciado entre botones */
+    }
+
+    .modal-content {
+        width: 80%; /* Ajustar el ancho del modal */
+    }
+    .products-table th:nth-child(5), .products-table td:nth-child(5) {
+        width: auto; 
+        text-align: center; /* Centrar contenido */
+    }
+}
+

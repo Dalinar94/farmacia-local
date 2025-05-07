@@ -109,5 +109,38 @@
     }
 }
 
+@media (min-width: 601px) and (max-width: 1024px) {
+    .dashboard-container{
+        flex-direction: column;
+        background-color: var(--color-fondoMain);
+        height: 100%;
+        display: flex;
+    }
+   
+    .dashboard-estadisticas{
+        align-items: center;
+        gap: 10px;
+        flex-direction: flex;
+
+    }
+    .dashboard-estadistica-tarjeta{
+        width: calc(28% - 20px);
+    }
+    .dashboard-header h1{
+        font-size: 28px;
+    }
+    .dashboard-subtitulo{
+        font-size: 18px;
+        text-align: center;
+    }
+    .dashboard-busqueda input{
+        width: 80%;
+    }
+    .dashboard-busqueda{
+        width: 80%;
+        justify-content: center;
+    }
+    
+}
 
 
