@@ -44,3 +44,14 @@
 .dashboard-footer a:hover {
     text-decoration: underline;
 }
+/*RESPONSIVE*/
+@media (max-width: 600px) {
+    .dashboard-footer {
+        flex-direction: column-reverse; /* Cambia a columna en pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
+        text-align: center; /* Centra el texto */
+        height: auto; /* Permite que el footer ajuste su altura automáticamente */
+        font-size: 13px;
+    }
+
+}

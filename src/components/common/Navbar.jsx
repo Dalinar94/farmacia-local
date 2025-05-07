@@ -1,27 +1,24 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { UserContext } from '../../context/UserContext';
-import {TITULOS,LABELS,BOTONES} from '../../lib/constantes'; // Importar las constantes
+import { TITULOS, LABELS, BOTONES } from '../../lib/constantes'; // Importar las constantes
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons'; // Importar el icono de hamburguesa
 
-/*
-APUNTES MIOS PARA EXPLICAR
-Que es un Hook?
-
-Un Hook es una función especial de React que permite a los desarrolladores "engancharse" a las características de React, 
-como el estado y el ciclo de vida, en componentes funcionales. 
-
-Los Hooks permiten usar el estado y otras características de React sin 
-escribir una clase. Algunos ejemplos de Hooks son useState, useEffect, useContext, entre otros.
-*/ 
 const Navbar = () => {
-  const navigate = useNavigate();// Hook para la navegación
-  const location = useLocation();// Hook para obtener la ubicación actual
+  const navigate = useNavigate(); // Hook para la navegación
+  const location = useLocation(); // Hook para obtener la ubicación actual
   const { user } = useContext(UserContext); // Obtener el usuario desde el contexto
+  const [isActive, setIsActive] = useState(false); // Estado para el icono de hamburguesa
 
   const handleLogout = () => {
     // Limpiar el estado de autenticación y redirigir al login
     navigate('/');
+  };
+
+  const toggleHamburger = () => {
+    setIsActive(!isActive);
   };
 
   return (
@@ -30,7 +27,12 @@ const Navbar = () => {
         <img src="/img/logo.png" alt="Logo" />
         <h2>{TITULOS.NOMBRE_EMPRESA}</h2>
       </div>
-      <div className="navbar-links">
+    
+      <div className={`hamburger ${isActive ? 'active' : ''}`} onClick={toggleHamburger}>
+        <FontAwesomeIcon icon={faBars}  />
+      </div>
+
+      <div className={`navbar-links ${isActive ? 'active' : ''}`}>
         <ul>
           <li>
             <Link
@@ -63,14 +65,13 @@ const Navbar = () => {
             >
               {LABELS.SOPORTE}
             </Link>
-            
           </li>
         </ul>
       </div>
       <div className="btn-logout">
         {user ? (
           <>
-            <Link to="/Usuario" >
+            <Link to="/Usuario">
               <span>{user.nombre}</span> {/* Mostrar el nombre del usuario */}
             </Link>
             <button onClick={handleLogout}>{BOTONES.CERRAR_SESION}</button>
@@ -79,6 +80,7 @@ const Navbar = () => {
           <Link to="/">{BOTONES.INICIAR_SESION}</Link> // Mostrar enlace al login si no hay usuario
         )}
       </div>
+     
     </nav>
   );
 };
