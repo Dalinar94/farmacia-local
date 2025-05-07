@@ -54,4 +54,15 @@
     font-weight: bold;
   }
   
+  /*RESPONSIVE*/
+  @media (max-width: 600px) {
+    .stock-estadisticas {
+      flex-direction: column;
+      gap: 10px;
+    }
   
+    .stock-estadistica-tarjeta {
+      flex: none;
+      width: 100%;
+    }
+  }

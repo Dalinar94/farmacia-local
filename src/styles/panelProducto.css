@@ -37,3 +37,23 @@
   .panel-producto p{
     text-align: justify;
   }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .panel-producto {
+      max-width: 100%; 
+      padding: 15px; 
+    }
+  
+    .panel-producto-nombre {
+      font-size: 20px; 
+    }
+  
+    .panel-producto-descripcion {
+      font-size: 14px; 
+    }
+  
+    .panel-producto-valor {
+      font-size: 16px;
+    }
+  }

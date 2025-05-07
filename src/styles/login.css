@@ -128,3 +128,34 @@ body, html {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+@media (max-width: 600px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  .login-form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .login-encabezado h2 {
+    font-size: 20px;
+  }
+
+  .login-encabezado p {
+    font-size: 14px;
+  }
+
+  .login-empresa label {
+    font-size: 14px;
+  }
+
+  .login-empresa input {
+    font-size: 14px;
+  }
+
+  .btn-login button {
+    font-size: 16px;
+  }
+}

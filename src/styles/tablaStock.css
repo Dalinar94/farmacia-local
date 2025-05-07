@@ -52,3 +52,31 @@
   color: green;
   font-weight: bold;
 }
+
+/*RESPONSIVE*/
+@media (max-width: 600px) {
+  .tabla-con-scroll{
+    max-height: none; 
+    overflow-y: none; 
+  }
+ 
+  .stock-table, .stock-table thead, .stock-table tbody, .stock-table th, .stock-table td, .stock-table tr {
+     display: block; /* Hace que cada elemento sea un bloque */
+  }
+  
+ .stock-table thead tr {
+   display: none; 
+   }
+  
+  .stock-table tr {/*MARGIN ENTRE TABLA*/
+   margin: 0 0 1rem 0;
+  }
+  
+  .stock-table td {
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  text-align: center; 
+  }
+  
+ 
+}

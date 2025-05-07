@@ -122,3 +122,18 @@
     padding: 20px 40px;
     border-bottom: black 1px solid;
   }
+
+  /*RESPONSIVE*/
+  @media (max-width: 600px) {
+    .soporte-content{
+      flex-direction: column-reverse;
+    }
+    .soporte-menu{
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid var(--color-borde);
+    }
+    .soporte-formulario{
+      padding: 20px;
+    }
+  }

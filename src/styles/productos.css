@@ -30,7 +30,14 @@
   .productos-paneles {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Paneles más grandes */
-    gap: 80px; /* Más espacio entre los paneles */
+    gap: 60px; /* Más espacio entre los paneles */
     margin-top: 30px;
     justify-items: center; /* Centrar los paneles horizontalmente */
+  }
+
+  @media (max-width: 600px) {
+    .productos-paneles {
+      grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+      gap: 20px; /* Menos espacio entre los paneles */
+    }
   }

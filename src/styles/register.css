@@ -113,3 +113,28 @@ body, html {
 .btn-registro button:hover {
   background-color: #0056b3;
 }
+@media (max-width: 600px) {
+  .register-container {
+    padding: 20px;
+  }
+
+  .register-form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .register-encabezado h2 {
+    font-size: 20px;
+  }
+
+  .register-encabezado p {
+    font-size: 14px;
+  }
+
+  .register-empresa label,
+  .register-empresa input,
+  .register-links a,
+  .btn-registro button {
+    font-size: 14px;
+  }
+}
