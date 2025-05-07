@@ -74,3 +74,40 @@
     background-color: var(--color-primario-hover);
 }
 
+/*RESPONSIVE DESIGN*/
+@media (max-width: 600px) {
+    .dashboard-estadisticas{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .dashboard-estadistica-tarjeta{
+        width: 100%;
+        margin: 10px 0;
+    }
+    .dashboard-header h1{
+        font-size: 24px;
+    }
+    .dashboard-subtitulo{
+        font-size: 16px;
+    }
+    .dashboard-busqueda input{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .dashboard-busqueda{
+        width: 100%;
+        justify-content: center;
+    }
+    .dashboard-busqueda button{
+        width: 100%;
+    }
+    .dashboard-controles{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+

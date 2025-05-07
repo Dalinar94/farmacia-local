@@ -1,7 +1,6 @@
 import React from "react";
 import { FOOTER } from "../lib/constantes"; // Importar las constantes
 import '../styles/iconos.css'; // Importar los estilos del pie de página
-
 const FooterRedesSociales = () => {
   const redes = [
     { name: FOOTER.FACEBOOK.name, icon: FOOTER.FACEBOOK.icon, link: "https://facebook.com" },
@@ -26,5 +25,6 @@ const FooterRedesSociales = () => {
     </div>
   );
 };
+
 
 export default FooterRedesSociales;

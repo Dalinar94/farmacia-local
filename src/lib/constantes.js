@@ -115,7 +115,7 @@ export const FOOTER ={
   EMAIL:"soporte@farmastock.com",
   // Redes sociales
   FACEBOOK: { name: "Facebook", icon: "fab fa-facebook-f" },
-  TWITTER: { name: "Twitter", icon: "fab fa-twitter" },
+  TWITTER: { name: "Twitter", icon: "fab fa-x-twitter" },
   INSTAGRAM: { name: "Instagram", icon: "fab fa-instagram" },
   WHATSAPP: { name: "WhatsApp", icon: "fab fa-whatsapp" },
   GITHUB: { name: "GitHub", icon: "fab fa-github" },

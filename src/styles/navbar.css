@@ -99,11 +99,24 @@
       flex-direction: column;
       height: auto;
       padding: 10px;
+      gap: 10px;
   }
 
   .navbar-links {
       flex-direction: column;
       align-items: center;
+
+  }
+  .navbar-links ul {
+      flex-direction: column;
+      gap: 20px;
+  }
+  .navbar-links li {
+      display: block;
+  }
+  .navbar-links a {
+      font-size: 16px;
+      padding: 10px 15px;
   }
 
   .navbar-links ul {
@@ -114,8 +127,16 @@
   .btn-logout {
       margin-top: 10px;
       justify-content: center;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+      padding: 10px 0;
   }
-
+  .logo{
+      margin: 0;
+      justify-content: center;
+      width: 100%;
+  }
   .logo img {
       width: 40px;
       height: 40px;

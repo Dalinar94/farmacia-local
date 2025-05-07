@@ -31,7 +31,7 @@ const Footer = () => {
       </div>
       <div className="footer-right">
         <p>{FOOTER.SIGUENOS}:</p>
-        <FooterRedesSociales />
+      <FooterRedesSociales />
       </div>
     </footer>
   );

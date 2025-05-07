@@ -15,3 +15,6 @@
 @import './styles/tablaStock.css';
 @import './styles/productos.css';
 @import './styles/navbar.css';
+
+/*IMPORTACION DE FONTAWESOME*/
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
