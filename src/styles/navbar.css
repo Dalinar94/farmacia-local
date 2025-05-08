@@ -1,10 +1,13 @@
 @import './colores.css';
 
 .navbar {
-    background-color: var(--color-primario);
+    background-image: url('../img/m1.jpg');
+    background-size: cover;
+    background-position: 50% 56%;
+    border-bottom: #212529 1px solid;
     display: flex;
     justify-content: center;
-    height: 80px;
+    height: fit-content;
     align-items: center;
     font-family: Arial, sans-serif;
 }
@@ -91,6 +94,7 @@
 }
 
 .logo img {
+    margin: 10px;
     width: 52px;
     height: 52px;
     border-radius: 10px;
