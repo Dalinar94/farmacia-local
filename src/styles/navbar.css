@@ -1,6 +1,6 @@
 @import './colores.css';
 
-.navbar {
+.navbar-custom {
     background-image: url('../img/m1.jpg');
     background-size: cover;
     background-position: 50% 56%;

@@ -36,7 +36,7 @@ const routes = [
 
 const App = () => {
   return (
-    <UserProvider> 
+    <UserProvider>
     <ProductProvider>
       <SupplierProvider>
       <Router>
@@ -49,6 +49,7 @@ const App = () => {
       </SupplierProvider>
     </ProductProvider>
   </UserProvider>
+
   );
 };
 

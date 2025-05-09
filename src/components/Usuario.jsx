@@ -2,7 +2,9 @@ import React, { useContext, useState } from 'react';
 import { UserContext } from '../context/UserContext';
 import NavBar from './common/Navbar';
 import Footer from './common/Footer';
-import { TITULOS,MENSAJES, LABELS, BOTONES } from '../lib/constantes'; // Importar las constantes
+import { TITULOS,MENSAJES, LABELS, BOTONES } from '../lib/constantes';
+
+
 const Usuario = () => {
   const { user, setUser } = useContext(UserContext); // Obtener y actualizar los datos del usuario desde el contexto
   const [isEditing, setIsEditing] = useState(false); // Estado para controlar si se está editando
@@ -103,6 +105,7 @@ const Usuario = () => {
           </tbody>
         </table>
       </div>
+
       <div className="usuario-acciones">
         {isEditing ? (
           <>
@@ -119,6 +122,7 @@ const Usuario = () => {
           </button>
         )}
       </div>
+
       <Footer />
     </main>
   );

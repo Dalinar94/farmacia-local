@@ -9,10 +9,8 @@
 .tabla-con-scroll-productos {
     max-height: 520px; /* Ajusta la altura según tus necesidades */
     overflow-y: scroll;
-    
 
 }
-
 .products-table thead tr {
     background-color: #f4f4f4;
     border-bottom: 2px solid #ddd;

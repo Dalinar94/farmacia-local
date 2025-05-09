@@ -1,4 +1,3 @@
-/* Panel de producto */
 .panel-proveedores {
     width: 100%;
     max-width: 400px;
@@ -7,39 +6,28 @@
     padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    text-align: justify;
+    text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .panel-proveedores:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-
-.panel-proveedores-nombre{
-    text-align: center;
-    font-size: 1.5em;
+.panel-proveedores-nombre {
+    font-size: 22px;
     font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #ddd;
+    margin-bottom: 15px;
+    color: var(--color-primario);
 }
-.panel-proveedores-descripcion{
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 10px;
+
+.panel-proveedores-descripcion,.panel-proveedores-telefono,.panel-proveedores-email,.panel-proveedores-direccion {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #555;
+
 }
-.panel-proveedores-telefono{
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 10px;
-}
-.panel-proveedores-email{
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 10px;
-}
-.panel-proveedores-direccion{
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 10px;
+
+
+.panel-proveedores p{
+    text-align: justify;
 }

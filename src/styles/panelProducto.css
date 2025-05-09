@@ -1,41 +1,45 @@
 /* Panel de producto */
 .panel-producto {
-    width: 100%; /* Asegura que el panel ocupe todo el espacio disponible en su celda */
-    max-width: 400px; /* Limita el ancho máximo del panel */
-    border: 2px solid #ddd; /* Bordes más gruesos */
-    border-radius: 12px; /* Bordes más redondeados */
-    padding: 20px; /* Más espacio interno */
-    background-color: #ffffff; /* Fondo blanco */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación al pasar el mouse */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   
   .panel-producto:hover {
-    transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el mouse */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el mouse */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
   
   .panel-producto-nombre {
-    font-size: 22px; /* Aumentar el tamaño del nombre */
+    font-size: 22px;
     font-weight: bold;
     margin-bottom: 15px;
     color: var(--color-primario);
   }
   
   .panel-producto-descripcion {
-    font-size: 16px; /* Aumentar el tamaño de la descripción */
+    font-size: 16px;
     margin-bottom: 15px;
     color: #555;
   }
   
   .panel-producto-valor {
-    font-size: 18px; /* Aumentar el tamaño del valor */
+    font-size: 18px;
     font-weight: bold;
     color: var(--color-secundario);
   }
   .panel-producto p{
     text-align: justify;
+  }
+  .panel-imagen{
+    width: 100%;
+    border-bottom: 1px solid #ddd;
   }
 
   /* RESPONSIVE */
