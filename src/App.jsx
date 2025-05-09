@@ -9,11 +9,13 @@ import Register from './components/Register';
 import Productos from './components/Productos';
 import Stock from './components/Stock';
 import Soporte from './components/Soporte';
-import Usuario from './components/Usuario'; // Importar el componente de usuario
+import Usuario from './components/Usuario';
+import Proveedores from './components/Proveedores';
 //Componentes legales
 import Cookies from './components/legal/Cookies'; 
 import Politicas from './components/legal/Politicas';
-import Terminos from './components/legal/Terminos'; 
+import Terminos from './components/legal/Terminos';
+import {SupplierProvider} from "./context/ProveedoresContext";
 
 // Importar los componentes de las páginas legales
 const routes = [
@@ -22,6 +24,7 @@ const routes = [
   { path: '/register', element: <Register /> },
   { path: '/productos', element: <Productos /> },
   { path: '/stock', element: <Stock /> },
+  {path: '/proveedores', element: <Proveedores/>},
   { path: '/soporte', element: <Soporte /> },
   { path: '/politicas', element: <Politicas /> },
   { path: '/terminos', element: <Terminos /> },
@@ -34,7 +37,8 @@ const routes = [
 const App = () => {
   return (
     <UserProvider> 
-    <ProductProvider> 
+    <ProductProvider>
+      <SupplierProvider>
       <Router>
         <Routes>
           {routes.map((route, index) => ( //mapear las rutas
@@ -42,6 +46,7 @@ const App = () => {
           ))}
         </Routes>
       </Router>
+      </SupplierProvider>
     </ProductProvider>
   </UserProvider>
   );

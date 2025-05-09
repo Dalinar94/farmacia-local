@@ -22,6 +22,7 @@ export const TITULOS = {
   REPORTAR_INCIDENCIA: "Reportar una Incidencia",
   ESTADO_STOCK: "Estado del Stock",
   PERFIL_USUARIO: "Perfil de Usuario",
+  PANEL_DE_PROVEEDORES: "Panel de Proveedores",
 };
 
 // Labels
@@ -38,6 +39,7 @@ export const LABELS = {
   PRECIO: "Precio",
   DASHBOARD: "Dashboard",
   PRODUCTOS: "Productos",
+  PROVEEDORES: "Proveedores",
   STOCK: "Stock", 
   VALOR_INVENTARIO: "Valor Inventario",
   VENTAS_HOY: "Ventas Hoy",

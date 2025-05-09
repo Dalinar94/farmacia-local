@@ -22,7 +22,7 @@
 .products-table td {
     padding: 12px 15px;
     border: 1px solid #ddd;
-    text-align: center;
+    text-align: justify;
 }
 
 .products-table tbody tr:nth-child(even) {

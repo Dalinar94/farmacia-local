@@ -58,6 +58,16 @@ const Navbar = () => {
               {LABELS.STOCK}
             </Link>
           </li>
+
+          <li>
+            <Link
+                to="/Proveedores"
+                className={location.pathname === '/Proveedores' ? 'active-link' : ''}
+            >
+              {LABELS.PROVEEDORES}
+            </Link>
+          </li>
+
           <li>
             <Link
               to="/Soporte"
