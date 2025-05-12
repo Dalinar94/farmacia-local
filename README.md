@@ -1,6 +1,8 @@
 1. Components mas css
 
-npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
-npm install bcryptjs //Encriptacion de password
-npm install react-bootstrap bootstrap
+npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons <br>
+npm install bcryptjs //Encriptacion de password<br>
+npm install react-bootstrap bootstrap<br>
+npm install react-flip-toolkit
+
 
