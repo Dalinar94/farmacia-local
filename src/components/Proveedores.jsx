@@ -15,7 +15,7 @@ const Proveedores = () => {
                 <h1>{TITULOS.PANEL_DE_PROVEEDORES}</h1>
                     <div className="proveedores-paneles">
                         {suppliers.map((supplier) => (
-                        <PanelProveedores key={supplier.id} supplier={supplier} />
+                        <PanelProveedores key={supplier.id} supplier={supplier}/>
                     ))}
                     </div>
             </main>

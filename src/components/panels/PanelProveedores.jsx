@@ -1,5 +1,7 @@
-import React from 'react';
-import { LABELS } from '../../lib/constantes'; // Importar las constantes
+import React, {useContext} from 'react';
+import { LABELS } from '../../lib/constantes';
+import {ProductProvider} from "../../context/ProductContext";
+import productos from "../Productos"; // Importar las constantes
 
 const PanelProveedores = ({ supplier }) => {
     return (
@@ -10,6 +12,7 @@ const PanelProveedores = ({ supplier }) => {
                 <p className="panel-proveedores-email">{LABELS.EMAIL}: {supplier.email}</p>
                 <p className="panel-proveedores-direccion">{LABELS.DIRECCION}: {supplier.direccion}</p>
             </div>
+
     );
 };
 export default PanelProveedores;

@@ -110,6 +110,7 @@ const Register = () => {
                 {ENLACES.ACCEDE}
               </a>
             </div>
+
             <div className="btn-registro mt-3">
               <button type="submit" className="btn btn-primary btn-lg">
                 {BOTONES.REGISTRAR}
