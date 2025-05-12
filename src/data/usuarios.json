@@ -1,0 +1,23 @@
+[
+  {
+    "nombre": "Fran Davó",
+    "email": "frandavo@example.com",
+    "telefono": "123456789",
+    "direccion": "Calle Falsa 123, Ciudad A",
+    "password": "$2a$10$abcdefg1234567hijklmnopqrstu"
+  },
+  {
+    "nombre": "Ricardo Pardo",
+    "email": "ricardopardo@example.com",
+    "telefono": "987654321",
+    "direccion": "Avenida Siempreviva 456, Ciudad B",
+    "password": "$2a$10$pqrstuvwx5678yzabcdefghijklm"
+  },
+  {
+    "nombre": "Miguel Bort",
+    "email": "miguelbort@example.com",
+    "telefono": "564738291",
+    "direccion": "Carrera 12 #34-56, Ciudad C",
+    "password": "$2a$10$lmnopqrs9876543tuabcdefghijk"
+  }
+]
