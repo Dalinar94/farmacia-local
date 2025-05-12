@@ -18,11 +18,16 @@
   /* Encabezado */
   .stock-header {
     margin-bottom: 20px;
+
   }
   
   .stock-header h1 {
-    font-size: 28px;
+    font-size: 31px; /* Aumentar el tamaño del título */
     color: var(--color-texto);
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
   }
   
   /* Estadísticas */
@@ -43,14 +48,16 @@
 
   }
 
-  
   .stock-estadistica-tarjeta h3 {
+    color: var(--color-primario);
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 24px;
+    font-weight: 600;
+
   }
   
   .stock-estadistica-tarjeta p {
-    font-size: 16px;
+    font-size: 21px;
     font-weight: bold;
   }
   

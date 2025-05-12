@@ -21,8 +21,8 @@ const FormularioAgregarProducto = ({ onAddProduct, onCancel }) => {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
+    <div className="modal-overlay-agregar">
+      <div className="modal-content-agregar">
         <h3>{BOTONES.AGREGAR_PRODUCTO}</h3>
         <form onSubmit={handleSubmit}>
           <label>

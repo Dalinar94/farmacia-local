@@ -3,7 +3,7 @@ import TablaEditarProductos from './tablaEditarProductos'; // Importar el compon
 import { BOTONES, LABELS } from '../../lib/constantes'; // Importar las constantes
 
 const TablaProductos = ({ products, setProducts }) => {
-  const [editingProduct, setEditingProduct] = useState(null); // Producto que se está editando
+  const [editingProduct, setEditingProduct] = useState(null); // Producto en el que se esta editando el modal
 
   const handleEdit = (product) => {
     setEditingProduct(product); // Establece el producto que se va a editar
@@ -15,9 +15,9 @@ const TablaProductos = ({ products, setProducts }) => {
 
   const handleConfirmEdit = (updatedProduct) => {
     setProducts(
-      products.map((product) =>
-        product.id === updatedProduct.id ? updatedProduct : product
-      )
+        products.map((product) =>
+            product.id === updatedProduct.id ? updatedProduct : product
+        )
     );
     setEditingProduct(null); // Cierra el modal de edición
   };
@@ -33,9 +33,9 @@ const TablaProductos = ({ products, setProducts }) => {
   };
 
   return (
-    <div className="tabla-con-scroll-productos">
-      <table className="products-table">
-        <thead>
+      <div className="tabla-con-scroll-productos">
+        <table className="products-table">
+          <thead>
           <tr>
             <th>{LABELS.NOMBRE}</th>
             <th>{LABELS.DESCRIPCION}</th>
@@ -43,46 +43,46 @@ const TablaProductos = ({ products, setProducts }) => {
             <th>{LABELS.PRECIO}</th>
             <th>{LABELS.ACCIONES}</th>
           </tr>
-        </thead>
-        <tbody>
+          </thead>
+          <tbody>
           {products.map((product) => (
-            <tr key={product.id}>
-              <td>{product.name}</td>
-              <td>{product.description}</td>
-              <td className={getStockClass(product.stock)}>
-                {product.stock}
-              </td>
-              <td>{product.price.toFixed(2)} €</td>
-              <td>
-                <div className="action-buttons">
-                  <button
-                    className="action-button edit-button"
-                    onClick={() => handleEdit(product)}
-                  >
-                    {BOTONES.EDITAR}
-                  </button>
-                  <button
-                    className="action-button delete-button"
-                    onClick={() => handleDelete(product.id)}
-                  >
-                    {BOTONES.ELIMINAR}
-                  </button>
-                </div>
-              </td>
-            </tr>
+              <tr key={product.id}>
+                <td>{product.name}</td>
+                <td>{product.description}</td>
+                <td className={getStockClass(product.stock)}>
+                  {product.stock}
+                </td>
+                <td>{product.price.toFixed(2)} €</td>
+                <td>
+                  <div className="action-buttons">
+                    <button
+                        className="action-button edit-button"
+                        onClick={() => handleEdit(product)}
+                    >
+                      {BOTONES.EDITAR}
+                    </button>
+                    <button
+                        className="action-button delete-button"
+                        onClick={() => handleDelete(product.id)}
+                    >
+                      {BOTONES.ELIMINAR}
+                    </button>
+                  </div>
+                </td>
+              </tr>
           ))}
-        </tbody>
-      </table>
+          </tbody>
+        </table>
 
-      {/* Modal de edición */}
-      {editingProduct && (
-        <TablaEditarProductos
-          product={editingProduct}
-          onConfirm={handleConfirmEdit}
-          onCancel={handleCancelEdit}
-        />
-      )}
-    </div>
+        {/* Modal de la edición del campo Acciones, el boton editar */}
+        {editingProduct && (
+            <TablaEditarProductos
+                product={editingProduct}
+                onConfirm={handleConfirmEdit}
+                onCancel={handleCancelEdit}
+            />
+        )}
+      </div>
   );
 };
 

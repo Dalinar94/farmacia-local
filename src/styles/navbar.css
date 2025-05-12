@@ -40,13 +40,13 @@
 }
 
 .navbar-links a.active-link {
-    color: var(--color-fondo);
+    color: var(--color-primario);
     font-weight: bold;
     text-decoration: underline;
 }
 
 .navbar-links a:hover {
-    color: white;
+    color: var(--color-primario);
 }
 
 .btn-logout {
@@ -92,7 +92,13 @@
     align-items: center;
     gap: 10px;
 }
-
+.logo h2{
+    font-size: 31px; /* Aumentar el tamaño del título */
+    color: var(--color-texto);
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+}
 .logo img {
     margin: 10px;
     width: 52px;

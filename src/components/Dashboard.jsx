@@ -32,7 +32,6 @@ const Dashboard = () => {
     product.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  
   return (
     <div className="dashboard-container">
       <Navbar />

@@ -4,12 +4,13 @@ import Footer from './common/Footer'; // Importar el componente de pie de págin
 import PanelProducto from './panels/PanelProducto'; // Importar el componente de panel de producto
 import { ProductContext } from '../context/ProductContext'; // Importar el contexto
 import { TITULOS } from '../lib/constantes'; // Importar las constantes
+
 const Productos = () => {
   const { products } = useContext(ProductContext); // Usar el contexto para acceder a los productos
 
   return (
     <div className="productos-container">
-      <Navbar /> {/* Incluir la barra de navegación */}
+      <Navbar />
       <main className="productos-content">
         <h1>{TITULOS.PANEL_PRODUCTOS}</h1>
         <div className="productos-paneles">
@@ -18,7 +19,7 @@ const Productos = () => {
           ))}
         </div>
       </main>
-      <Footer /> {/* Incluir el pie de página */}
+      <Footer />
     </div>
   );
 };

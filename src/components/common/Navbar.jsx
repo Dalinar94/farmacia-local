@@ -7,6 +7,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import {deepOrange, deepPurple} from '@mui/material/colors';
+
 
 const Navbar = () => {
   const navigate = useNavigate(); // Hook para la navegación
@@ -24,13 +28,12 @@ const Navbar = () => {
 
   return (
     <nav className="navbar-custom">
-      <div className="logo">
-        <img src="/img/logo.png" alt="Logo" />
-        <h2>{TITULOS.NOMBRE_EMPRESA}</h2>
-      </div>
-    
       <div className={`hamburger ${isActive ? 'active' : ''}`} onClick={toggleHamburger}>
         <FontAwesomeIcon icon={faBars}  />
+      </div>
+      <div className="logo">
+        <a href={"/Dashboard"}><img src="/img/logo.png" alt="Logo" /></a>
+        <h2>{TITULOS.NOMBRE_EMPRESA}</h2>
       </div>
 
       <div className={`navbar-links ${isActive ? 'active' : ''}`}>
@@ -79,8 +82,11 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="dropdown-custom">
-          <DropdownButton  id="dropdown-basic-button" title="Perfil de Usuario">
+  <Stack direction="row" spacing={1}>
+    <Avatar sx={{ bgcolor: deepPurple[500] }}>{user.nombre.charAt(0)+user.nombre.charAt(1).toUpperCase()}</Avatar>
+  </Stack>
+  <div className="dropdown-custom">
+          <DropdownButton  id="dropdown-basic-button" title={"Hola, " + user.nombre}>
             <Dropdown.Item href="/Usuario">{user.nombre}</Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>

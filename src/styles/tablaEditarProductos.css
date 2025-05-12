@@ -1,5 +1,5 @@
 /* Fondo oscuro para el modal */
-.modal-overlay {
+.modal-overlay-editar {
     position: fixed;
     top: 0;
     left: 0;
@@ -13,7 +13,7 @@
   }
   
   /* Contenedor del modal */
-  .modal-content {
+  .modal-content-editar {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
@@ -24,14 +24,14 @@
   }
   
   /* Título del modal */
-  .modal-content h3 {
+  .modal-content-editar h3 {
     margin-bottom: 20px;
     font-size: 20px;
     color: #333;
   }
   
   /* Estilos para los labels */
-  .modal-content label {
+  .modal-content-editar label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
@@ -39,7 +39,7 @@
   }
   
   /* Estilos para los inputs */
-  .modal-content input {
+  .modal-content-editar input {
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;

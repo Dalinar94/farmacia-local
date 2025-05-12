@@ -16,8 +16,8 @@ const TablaEditarProductos = ({ product, onConfirm, onCancel }) => {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
+    <div className="modal-overlay-editar">
+      <div className="modal-content-editar">
         <h3>{TITULOS.EDITAR_PRODUCTO}</h3>
         <form onSubmit={handleSubmit}>
           <label>

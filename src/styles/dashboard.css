@@ -11,8 +11,7 @@
     align-items: center;
     background-color: var(--color-fondoMain);
     font-family: Arial, sans-serif;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 20px;
 }
 .dashboard-estadisticas{
     display: flex;
@@ -32,17 +31,25 @@
     flex-direction: column;
     align-items: center;
 }
+.dashboard-estadistica-tarjeta p{
+    font-size: 21px;
+    font-weight: 600;
+
+}
 .dashboard-estadistica-tarjeta h3{
     font-size: 24px;
     color: var(--color-primario);
     margin-bottom: 10px;
+    font-weight: 600;
+
 }
 .dashboard-header h1{
-    font-size: 31px;
-    color: var( --color-texto);
+    font-size: 31px; /* Aumentar el tamaño del título */
+    color: var(--color-texto);
     margin: 0;
     padding: 10px;
     text-align: center;
+    font-weight: 600;
 }
 
 .dashboard-subtitulo{
@@ -80,6 +87,7 @@
 .boton-primario button:hover{
     background-color: var(--color-primario-hover);
 }
+
 
 /*RESPONSIVE DESIGN*/
 @media (max-width: 600px) {

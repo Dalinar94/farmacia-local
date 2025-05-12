@@ -10,11 +10,13 @@
     color: var(--color-texto);
     padding: 20px;
 }
-.proveedores-content h2 {
-    font-size: 24px;
+.proveedores-content h1 {
+    font-size: 31px; /* Aumentar el tamaño del título */
     color: var(--color-texto);
-    margin-bottom: 0px;
-    text-align: justify;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
 }
 .proveedores-paneles {
     display: grid;
