@@ -6,7 +6,8 @@ import { TITULOS,FOOTER } from '../../lib/constantes';
 const Cookies = () => {
   return (
     <div className="cookies-container">
-      <Navbar /> {/* Barra de navegación */}
+
+      <Navbar />
       <main className="cookies-content">
         <h1>{FOOTER.COOKIES}</h1>
         <p>

@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ProductProvider } from './context/ProductContext'; // Importar el proveedor de contexto de productos
 import { UserProvider } from './context/UserContext'; // Importar el proveedor de contexto de usuario
 //Componentes
-import Login from './components/Login';
+import Login from './components/auth/Login';
 import Dashboard from './components/Dashboard';
-import Register from './components/Register';
+import Register from './components/auth/Register';
 import Productos from './components/Productos';
 import Stock from './components/Stock';
 import Soporte from './components/Soporte';

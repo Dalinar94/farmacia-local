@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body, html {
   height: 100%;
   font-family: Arial, sans-serif;
@@ -28,19 +22,19 @@ body, html {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   width: 400px;
   background-color: #ffffff;
-  padding: 20px;
+  padding: 1.5rem;
 }
 
 .register-encabezado {
-  padding: 1.5rem;
+  padding: 1.0rem;
   border-bottom: 1px solid #ddd;
 }
 
 .register-encabezado h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 24px;
-  color: #333;
+  color: var(--color-primario);
 }
 
 .register-encabezado p {
@@ -51,7 +45,7 @@ body, html {
 }
 
 .register-empresa {
-  padding: 1.5rem;
+  padding: 1.0rem;
   border-bottom: 1px solid #ddd;
 }
 
@@ -72,7 +66,7 @@ body, html {
 }
 
 .register-links {
-  padding: 1.2rem;
+  padding: 1.0rem;
   text-align: center;
 }
 
@@ -94,7 +88,7 @@ body, html {
 }
 
 .btn-registro {
-  padding: 20px;
+  padding: 1.0rem;
   text-align: center;
 }
 

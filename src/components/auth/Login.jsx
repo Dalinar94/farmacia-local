@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../context/UserContext';
-import { TITULOS,MENSAJES, LABELS,ENLACES, BOTONES } from '../lib/constantes';
+import { UserContext } from '../../context/UserContext';
+import { TITULOS,MENSAJES, LABELS,ENLACES, BOTONES,FOOTER} from '../../lib/constantes';
 import bcrypt from 'bcryptjs';
 
 const Login = () => {
@@ -46,13 +46,12 @@ const Login = () => {
   return (
 
       <div className="login-container">
-
+        <span className="admin">Usuario: Admin@farmastock.com</span>
+        <span className="admin">Contraseña: 1234</span>
         <div className="login-form ">
           <div className="login-encabezado">
             <h2 className="text-primary">{TITULOS.NOMBRE_EMPRESA}</h2>
             <p className="text-muted">{MENSAJES.INGRESE_CREDENCIAL}</p>
-            <span className="admin">Usuario: Admin@farmastock.com</span>
-            <span className="admin">Contraseña: 1234</span>
           </div>
           <form onSubmit={handleSubmit}>
             <div className="login-empresa">
@@ -88,7 +87,7 @@ const Login = () => {
                 {ENLACES.REGISTRATE}
               </a>
             </div>
-            <div className="btn-login mt-4 d-grid">
+            <div className="btn-login">
               <button type="submit" className="btn btn-primary btn-lg">
                 {BOTONES.ACCEDER}
               </button>
@@ -98,9 +97,11 @@ const Login = () => {
             </div>
           </form>
         </div>
+        <div className="logo-login">
+          <img src="/img/logo.png" alt="Logo" />
+        </div>
       </div>
   );
-
 };
 
 export default Login;

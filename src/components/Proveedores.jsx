@@ -10,7 +10,7 @@ const Proveedores = () => {
 
     return (
         <div className="proveedores-container">
-            <Navbar /> {/* Incluir la barra de navegación */}
+            <Navbar />
             <main className="proveedores-content">
                 <h1>{TITULOS.PANEL_DE_PROVEEDORES}</h1>
                     <div className="proveedores-paneles">
@@ -19,7 +19,7 @@ const Proveedores = () => {
                     ))}
                     </div>
             </main>
-            <Footer /> {/* Incluir el pie de página */}
+            <Footer />
         </div>
     );
 };

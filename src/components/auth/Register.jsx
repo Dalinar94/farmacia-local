@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TITULOS, MENSAJES, LABELS, ENLACES, BOTONES } from '../lib/constantes';
+import { TITULOS, MENSAJES, LABELS, ENLACES, BOTONES } from '../../lib/constantes';
 
 const Register = () => {
   const [nombre, setNombre] = useState('');
@@ -106,17 +106,20 @@ const Register = () => {
             </div>
             <div className="register-links">
               <label>{LABELS.YA_CUENTA}</label>
-              <a href="/" className="text-decoration-none">
+              <a href="/public" className="text-decoration-none">
                 {ENLACES.ACCEDE}
               </a>
             </div>
 
-            <div className="btn-registro mt-3">
+            <div className="btn-registro">
               <button type="submit" className="btn btn-primary btn-lg">
                 {BOTONES.REGISTRAR}
               </button>
             </div>
           </form>
+        </div>
+        <div className="logo-login">
+          <img src="/img/logo.png" alt="Logo" />
         </div>
       </div>
   );

@@ -1,46 +1,78 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { ProductContext } from '../../context/ProductContext';
-import {LABELS } from '../../lib/constantes'; // Importar las constantes
+import { LABELS } from '../../lib/constantes'; // Importa constantes
+import Pagination from 'react-bootstrap/Pagination';
+
 const TablaStock = () => {
   const { products } = useContext(ProductContext);
 
+  // --- Estados para la paginación ---
+  const [currentPage, setcurrentPage] = useState(1); // Página activa
+  const filasPorPagina = 8; // Cantidad de filas por página
+
+  // --- Calcular las filas visibles para la página actual ---
+  const indexOfUltimaFila = currentPage * filasPorPagina;
+  const indexOfPrimeraFila = indexOfUltimaFila - filasPorPagina;
+  const FilasActuales = products.slice(indexOfPrimeraFila, indexOfUltimaFila); // Filas para la página
+
+  const totalPages = Math.ceil(products.length / filasPorPagina); // Número total de páginas
+
+  // --- Generar la paginación dinámica ---
+  const handlePageChange = (pageNumber) => {
+    setcurrentPage(pageNumber); // Cambiar a una nueva página
+  };
+
+  const paginationItems = [];
+  for (let number = 1; number <= totalPages; number++) {
+    paginationItems.push(
+        <Pagination.Item
+            key={number}
+            active={number === currentPage}
+            onClick={() => handlePageChange(number)} // Cambiar página al hacer clic
+        >
+          {number}
+        </Pagination.Item>
+    );
+  }
+
+  // --- Determinar el estado del producto según el stock ---
   const getEstado = (stock) => {
-    if(stock===0) return 'AGOTADO!';
+    if (stock === 0) return 'AGOTADO!';
     if (stock <= 10) return 'Bajo';
-    if (stock >= 10 && stock <= 50) return 'Medio';
-    
+    if (stock > 10 && stock <= 50) return 'Medio';
     return 'Normal';
   };
 
   const getEstadoClase = (stock) => {
     if (stock <= 10) return 'estado-bajo';
-    if (stock >= 10 && stock <= 50) return 'estado-medio';
+    if (stock > 10 && stock <= 50) return 'estado-medio';
     return 'estado-normal';
   };
 
   return (
-    <div className="tabla-con-scroll">
-    <table className="stock-table">
-      <thead>
-        <tr>
-          <th>{LABELS.NOMBRE}</th>
-          <th>{LABELS.DESCRIPCION}</th>
-          <th>{LABELS.CANTIDAD}</th>
-          <th>{LABELS.ESTADO}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {products.map((product) => (
-          <tr key={product.id}>
-            <td>{product.name}</td>
-            <td>{product.description}</td>
-            <td>{product.stock}</td>
-            <td className={getEstadoClase(product.stock)}>{getEstado(product.stock)}</td>
+      <div className="tabla">
+        <table className="stock-table">
+          <thead>
+          <tr>
+            <th>{LABELS.NOMBRE}</th>
+            <th>{LABELS.DESCRIPCION}</th>
+            <th>{LABELS.CANTIDAD}</th>
+            <th>{LABELS.ESTADO}</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
-    </div>
+          </thead>
+          <tbody>
+          {FilasActuales.map((product) => (
+              <tr key={product.id}>
+                <td>{product.name}</td>
+                <td>{product.description}</td>
+                <td>{product.stock}</td>
+                <td className={getEstadoClase(product.stock)}>{getEstado(product.stock)}</td>
+              </tr>
+          ))}
+          </tbody>
+        </table>
+        <Pagination>{paginationItems}</Pagination>
+      </div>
   );
 };
 

@@ -14,14 +14,8 @@
     background-color: var(--color-fondoMain);
     color: var(--color-texto);
   }
-  
-  /* Encabezado */
-  .stock-header {
-    margin-bottom: 20px;
 
-  }
-  
-  .stock-header h1 {
+  .stock-content h1{
     font-size: 31px; /* Aumentar el tamaño del título */
     color: var(--color-texto);
     margin: 0;
@@ -29,37 +23,7 @@
     text-align: center;
     font-weight: 600;
   }
-  
-  /* Estadísticas */
-  .stock-estadisticas {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .stock-estadistica-tarjeta {
-    background-color: var(--color-tarjetas);
-    color: var(--color-texto);
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    flex: 1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-  }
-
-  .stock-estadistica-tarjeta h3 {
-    color: var(--color-primario);
-    margin-bottom: 10px;
-    font-size: 24px;
-    font-weight: 600;
-
-  }
-  
-  .stock-estadistica-tarjeta p {
-    font-size: 21px;
-    font-weight: bold;
-  }
   
   /*RESPONSIVE*/
   @media (max-width: 600px) {

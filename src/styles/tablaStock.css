@@ -6,10 +6,7 @@
   font-size: 16px; /* Aumenta el tamaño de la fuente */
   cursor: pointer;
 }
-.tabla-con-scroll {
-  max-height: 500px; /* Ajusta la altura según tus necesidades */
-  overflow-y: scroll;
-}
+
 .stock-table th,
 .stock-table td {
   border: 1px solid #ddd;
