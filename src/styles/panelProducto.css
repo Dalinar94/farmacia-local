@@ -1,47 +1,44 @@
 /* Panel de producto */
-.panel-producto {
-    width: 100%;
-    max-width: 400px;
+
+ .panel-producto {
     border: 2px solid #ddd;
     border-radius: 12px;
-    padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-bottom: 1px solid #ddd;
   }
-  
+
   .panel-producto:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
-  
-  .panel-producto-nombre {
-    border-top: 1px solid #ddd;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: var(--color-primario);
-    padding: 5px;
+
+  .panel-imagen{
+    width: 100%;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+
+
   }
-  
   .panel-producto-descripcion {
     font-size: 16px;
     margin-bottom: 15px;
     color: #555;
+    padding: 10px;
   }
   
   .panel-producto-valor {
     font-size: 18px;
     font-weight: bold;
     color: var(--color-secundario);
+    padding: 10px;
   }
   .panel-producto p{
     text-align: justify;
   }
-  .panel-imagen{
-    width: 100%;
-  }
+
 
   /* RESPONSIVE */
   @media (max-width: 600px) {

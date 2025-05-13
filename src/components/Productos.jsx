@@ -4,7 +4,8 @@ import Footer from './common/Footer'; // Importar el componente de pie de págin
 import PanelProducto from './panels/PanelProducto'; // Importar el componente de panel de producto
 import { ProductContext } from '../context/ProductContext'; // Importar el contexto
 import { TITULOS } from '../lib/constantes'; // Importar las constantes
-import Pagination from 'react-bootstrap/Pagination'; // Importar la paginación de Bootstrap
+import Pagination from 'react-bootstrap/Pagination';
+import {getFixedT} from "i18next"; // Importar la paginación de Bootstrap
 
 const Productos = () => {
     const { products } = useContext(ProductContext); // Usar el contexto para acceder a los productos
