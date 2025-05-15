@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TITULOS, MENSAJES, LABELS, ENLACES, BOTONES } from '../../lib/constantes';
+import {TITULOS, MENSAJES, LABELS, ENLACES, BOTONES, FOOTER} from '../../lib/constantes';
 
 const Register = () => {
   const [nombre, setNombre] = useState('');
@@ -66,7 +66,6 @@ const Register = () => {
                     placeholder="Ingrese su nombre..."
                     value={nombre}
                     onChange={(e) => setNombre(e.target.value)}
-                    required
                 />
                 {errores.nombre && <p className="text-danger small">{errores.nombre}</p>}
               </div>
@@ -77,7 +76,6 @@ const Register = () => {
                     placeholder="Ingrese su apellido..."
                     value={apellido}
                     onChange={(e) => setApellido(e.target.value)}
-                    required
                 />
                 {errores.apellido && <p className="text-danger small">{errores.apellido}</p>}
               </div>
@@ -88,7 +86,6 @@ const Register = () => {
                     placeholder="Ingrese su email..."
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    required
                 />
                 {errores.email && <p className="text-danger small">{errores.email}</p>}
               </div>
@@ -99,14 +96,13 @@ const Register = () => {
                     placeholder="Ingrese su contraseña..."
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    required
                 />
                 {errores.password && <p className="text-danger small">{errores.password}</p>}
               </div>
             </div>
             <div className="register-links">
               <label>{LABELS.YA_CUENTA}</label>
-              <a href="/public" className="text-decoration-none">
+              <a href="/" className="text-decoration-none">
                 {ENLACES.ACCEDE}
               </a>
             </div>
@@ -117,7 +113,12 @@ const Register = () => {
               </button>
             </div>
           </form>
+          <div className="login-footer">
+            <p className="text-muted small">{MENSAJES.COPYRIGHT}</p>
+            <p className="text-muted small">{FOOTER.DESARROLLADO_POR}: {FOOTER.DESARROLLADOR}</p>
+          </div>
         </div>
+
         <div className="logo-login">
           <img src="/img/logo.png" alt="Logo" />
         </div>

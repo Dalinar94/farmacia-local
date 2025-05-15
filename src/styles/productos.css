@@ -12,20 +12,19 @@
     flex: 1;
     background-color: var(--color-fondo);
     color: var(--color-texto);
-    padding: 20px;
+    padding: 1.2rem;
   }
   .productos-content h1{
-    font-size: 31px; /* Aumentar el tamaño del título */
+    font-size: 31px;
     color: var(--color-texto);
-    margin: 0;
-    padding: 10px;
+    padding: 1rem;
     text-align: center;
     font-weight: 600;
   }
   
   /* Título de la sección */
   .productos-content h2 {
-    font-size: 24px; /* Aumentar el tamaño del título */
+    font-size: 24px;
     color: var(--color-texto);
     margin-bottom: 30px;
     text-align: justify;
@@ -34,10 +33,10 @@
   /* Contenedor de los paneles */
   .productos-paneles {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Paneles más grandes */
-    gap: 50px; /* Más espacio entre los paneles */
-    margin-top: 30px;
-    justify-items: center; /* Centrar los paneles horizontalmente */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50px;
+    justify-items: center;
+    margin: 10px 0 0 0;
   }
 
   @media (max-width: 600px) {

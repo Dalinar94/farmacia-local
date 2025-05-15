@@ -8,19 +8,26 @@
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border-bottom: 1px solid #ddd;
-  }
+    overflow: hidden;
+ }
 
   .panel-producto:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
 
+  .panel-info{
+      height: 50%;
+  }
+
+  .panel-info h3{
+      padding: 10px;
+  }
+
   .panel-imagen{
     width: 100%;
-    border-top-right-radius: 12px;
-    border-top-left-radius: 12px;
-
-
+    height: 50%;
+    object-fit: cover;
   }
   .panel-producto-descripcion {
     font-size: 16px;

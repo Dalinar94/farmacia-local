@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
 import { TITULOS,MENSAJES, LABELS,ENLACES, BOTONES,FOOTER} from '../../lib/constantes';
 import bcrypt from 'bcryptjs';
+import footer from "../common/Footer";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -46,8 +47,6 @@ const Login = () => {
   return (
 
       <div className="login-container">
-        <span className="admin">Usuario: Admin@farmastock.com</span>
-        <span className="admin">Contraseña: 1234</span>
         <div className="login-form ">
           <div className="login-encabezado">
             <h2 className="text-primary">{TITULOS.NOMBRE_EMPRESA}</h2>
@@ -63,7 +62,6 @@ const Login = () => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    required
                     className="form-control"
                 />
               </div>
@@ -75,7 +73,6 @@ const Login = () => {
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    required
                     className="form-control"
                 />
               </div>
@@ -94,6 +91,7 @@ const Login = () => {
             </div>
             <div className="login-footer">
               <p className="text-muted small">{MENSAJES.COPYRIGHT}</p>
+              <p className="text-muted small">{FOOTER.DESARROLLADO_POR}: {FOOTER.DESARROLLADOR}</p>
             </div>
           </form>
         </div>
