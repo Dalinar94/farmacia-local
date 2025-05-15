@@ -66,6 +66,7 @@ export const BOTONES = {
   EDITAR: "Editar",
   AGREGAR: "Agregar",
   AGREGAR_PRODUCTO: "Agregar Producto",
+  AGREGAR_PROVEEDOR: "Agregar Proveedor",
   BUSCAR: "Buscar",
   CERRAR_SESION: "Logout",
   INICIAR_SESION: "Iniciar Sesión",
