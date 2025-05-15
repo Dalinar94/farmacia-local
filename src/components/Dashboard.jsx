@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 import Navbar from './common/Navbar';
-import TablaProductos from './tables/tablaProductos'; // Importar el componente de tabla de productos
+import TablaProductos from './tables/TablaProductos'; // Importar el componente de tabla de productos
 import { ProductContext } from '../context/ProductContext';
 import Footer from './common/Footer';
-import FormularioAgregarProducto from './forms/FormularioAgregarProducto';
+import ModalAgregarProducto from './modals/modalAgregarProducto';
 import { TITULOS, BOTONES } from '../lib/constantes';
 
 //EXPLICACION DE USESTATE y HOOK de react
@@ -28,8 +28,7 @@ const Dashboard = () => {
   };
 
   const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    product.description.toLowerCase().includes(searchTerm.toLowerCase())
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -76,7 +75,7 @@ const Dashboard = () => {
         </div>
 
         {showAddProductForm && (
-          <FormularioAgregarProducto
+          <ModalAgregarProducto
             onAddProduct={handleAddProduct}
             onCancel={() => setShowAddProductForm(false)}
           />

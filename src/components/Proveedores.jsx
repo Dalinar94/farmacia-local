@@ -4,7 +4,7 @@ import Footer from './common/Footer'; // Importar el componente de pie de págin
 import PanelProveedores from './panels/PanelProveedores'; // Importar el componente de panel de producto
 import { SupplierContext } from "../context/ProveedoresContext"; // Importar las constantes
 import {BOTONES, TITULOS} from '../lib/constantes';
-import FormularioAgregarProveedor from "./forms/FormularioAgregarProveedor";
+import ModalAgregarProveedor from "./modals/modalAgregarProveedor";
 
 const Proveedores = () => {
     const { suppliers,setSuppliers } = useContext(SupplierContext); // Usar el contexto para acceder a los productos
@@ -19,7 +19,10 @@ const Proveedores = () => {
         setSuppliers([...suppliers, newProveedor]); // Agregar el nuevo producto al estado
         setShowAddProveedorForm(false); // Cerrar el formulario
     };
-
+    //metodo que filtra proveedor por nombre o descripcion
+    const filtroProveedor = suppliers.filter((proveedor) =>
+        proveedor.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
         <div className="proveedores-container">
@@ -32,24 +35,26 @@ const Proveedores = () => {
                     <div className="dashboard-busqueda">
                         <input
                             type="text"
-                            placeholder="Buscar productos..."
+                            placeholder="Buscar proveedores..."
                             className="login-input"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
                     </div>
                     <div className="boton-primario">
-                        <button onClick={() => setShowAddProveedorForm(true)}>{BOTONES.AGREGAR_PRODUCTO}</button>
+                        <button onClick={() => setShowAddProveedorForm(true)}>{BOTONES.AGREGAR_PROVEEDOR}</button>
                     </div>
                 </div>
 
-                    <div className="proveedores-paneles">
-                        {suppliers.map((supplier) => (
-                        <PanelProveedores key={supplier.id} supplier={supplier}/>
-                    ))}
-                    </div>
+                <div className="proveedores-paneles">
+                    {
+                        filtroProveedor.map((supplier) => (
+                            <PanelProveedores key={supplier.id} supplier={supplier} />
+                        ))}
+                </div>
+
                 {showAddProveedorForm && (
-                    <FormularioAgregarProveedor
+                    <ModalAgregarProveedor
                         onAddProveedor={handleAddProveedor}
                         onCancel={() => setShowAddProveedorForm(false)}
                     />

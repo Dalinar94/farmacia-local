@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {LABELS,BOTONES} from '../../lib/constantes';
 
-const FormularioAgregarProveedor = ({ onAddProveedor, onCancel }) => {
+const ModalAgregarProveedor = ({ onAddProveedor, onCancel }) => {
     const [newProveedor, setNewProveedor] = useState({
         name: '',
         description: '',
@@ -84,4 +84,4 @@ const FormularioAgregarProveedor = ({ onAddProveedor, onCancel }) => {
         </div>
     );
 };
-export default FormularioAgregarProveedor;
+export default ModalAgregarProveedor;

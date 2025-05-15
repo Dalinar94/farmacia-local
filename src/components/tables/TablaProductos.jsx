@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TablaEditarProductos from './tablaEditarProductos'; // Importar el componente de edición
+import ModalEditarProductos from '../modals/modalEditarProductos.jsx'; // Importar el componente de edición
 import { BOTONES, LABELS } from '../../lib/constantes'; // Importar las constantes
 
 const TablaProductos = ({ products, setProducts }) => {
@@ -76,7 +76,7 @@ const TablaProductos = ({ products, setProducts }) => {
 
         {/* Modal de la edición del campo Acciones, el boton editar */}
         {editingProduct && (
-            <TablaEditarProductos
+            <ModalEditarProductos
                 product={editingProduct}
                 onConfirm={handleConfirmEdit}
                 onCancel={handleCancelEdit}

@@ -2,7 +2,7 @@ import React from 'react';
 import { BOTONES,TITULOS,LABELS } from '../../lib/constantes'; // Importar las constantes
 
 
-const TablaEditarProductos = ({ product, onConfirm, onCancel }) => {
+const ModalEditarProductos = ({ product, onConfirm, onCancel }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const updatedProduct = {
@@ -50,4 +50,4 @@ const TablaEditarProductos = ({ product, onConfirm, onCancel }) => {
   );
 };
 
-export default TablaEditarProductos;
+export default ModalEditarProductos;

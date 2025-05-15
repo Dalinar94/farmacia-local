@@ -9,6 +9,7 @@ export const TITULOS = {
   DASHBOARD_TITULO: "Panel de Control",
   PRODUCTOS_TITULO: "Gestión de Productos",
   EDITAR_PRODUCTO: "Editar Producto",
+  EDITAR_PROVEEDOR: "Editar Proveedor",
   AGREGAR_PRODUCTO: "Agregar Producto",
   PREGUNTAS_FRECUENTES: "Preguntas Frecuentes",
   STOCK_AGOTADO:" Stock Agotado",

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {LABELS,BOTONES} from '../../lib/constantes'; // Importar las constantes
 
-const FormularioAgregarProducto = ({ onAddProduct, onCancel }) => {
+const ModalAgregarProducto = ({ onAddProduct, onCancel }) => {
   const [newProduct, setNewProduct] = useState({
     name: '',
     description: '',
@@ -76,4 +76,4 @@ const FormularioAgregarProducto = ({ onAddProduct, onCancel }) => {
   );
 };
 
-export default FormularioAgregarProducto;
+export default ModalAgregarProducto;
