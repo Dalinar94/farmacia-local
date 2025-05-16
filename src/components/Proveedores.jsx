@@ -29,9 +29,8 @@ const Proveedores = () => {
             <Navbar />
             <main className="proveedores-content">
                 <h1>{TITULOS.PANEL_DE_PROVEEDORES}</h1>
-
-                <h2 className="dashboard-subtitulo">{TITULOS.PRODUCTOS}</h2>
                 <div className="dashboard-controles">
+                    <i className="fa-solid fa-magnifying-glass"/>
                     <div className="dashboard-busqueda">
                         <input
                             type="text"

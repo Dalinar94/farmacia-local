@@ -18,6 +18,7 @@
     flex-direction: row;
     gap: 25px;
     justify-content: center;
+    padding: 10px;
 }
 
 .dashboard-estadistica-tarjeta{
@@ -61,8 +62,7 @@
 .dashboard-controles{
     display: flex;
     flex-direction: row;
-    margin-left: 10px;
-    margin-bottom: 10px;
+    padding: 10px;
     }
 .dashboard-busqueda{
     display: flex;

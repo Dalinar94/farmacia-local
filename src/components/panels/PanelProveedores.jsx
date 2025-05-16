@@ -1,27 +1,28 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {BOTONES, LABELS} from '../../lib/constantes';
 import ModalEditarProveedores from "../modals/modalEditarProveedores";
 
 
 const PanelProveedores = ({ supplier, setSupplier }) => {
-    const [editingSupplier, setEditingSupplier] = useState(null); // Producto en el que se esta editando el modal
+    const [editingSupplier, setEditingSupplier] = useState(null); // Proveedor en el que se esta editando el modal
 
     const handleEdit = (supplier) => {
-        setEditingSupplier(supplier); // Establece el producto que se va a editar
+        setEditingSupplier(supplier); // Establece el proveedor que se va a editar
     };
 
     const handleDelete = (supplierID) => {
-        setSupplier(supplier.filter((supplier) => supplier.id !== supplierID)); // Elimina el producto
+        setSupplier(supplier.filter((supplier) => supplier.id !== supplierID)); // Elimina el proveedor
     };
 
     const handleConfirmEdit = (updatedProveedor) => {
         setSupplier(
-            supplier.map((supplier) =>
-                supplier.id === updatedProveedor.id ? updatedProveedor : supplier
+            supplier.map((proveedor) =>
+                proveedor.id === updatedProveedor.id ? updatedProveedor : proveedor
             )
         );
         setEditingSupplier(null); // Cierra el modal de edición
     };
+
 
     const handleCancelEdit = () => {
         setEditingSupplier(null); // Cierra el modal de edición sin guardar cambios
@@ -49,7 +50,7 @@ const PanelProveedores = ({ supplier, setSupplier }) => {
                     </button>
                 </div>
 
-                {/* Modal de la edición del campo Acciones, el boton editar */}
+                {/* Modal de la edición del campo de Acciones, el boton editar */}
                 {editingSupplier && (
                     <ModalEditarProveedores
                         supplier={editingSupplier}
