@@ -6,13 +6,7 @@ import ModalEditarProveedores from "../modals/modalEditarProveedores";
 const PanelProveedores = ({ supplier, setSupplier }) => {
     const [editingSupplier, setEditingSupplier] = useState(null); // Proveedor en el que se esta editando el modal
 
-    const handleEdit = (supplier) => {
-        setEditingSupplier(supplier); // Establece el proveedor que se va a editar
-    };
 
-    const handleDelete = (supplierID) => {
-        setSupplier(supplier.filter((supplier) => supplier.id !== supplierID)); // Elimina el proveedor
-    };
 
     const handleConfirmEdit = (updatedProveedor) => {
         setSupplier(
@@ -34,21 +28,6 @@ const PanelProveedores = ({ supplier, setSupplier }) => {
                     <p className="panel-proveedores-telefono">{LABELS.TELEFONO}: {supplier.telefono}</p>
                     <p className="panel-proveedores-email">{LABELS.EMAIL}: {supplier.email}</p>
                     <p className="panel-proveedores-direccion">{LABELS.DIRECCION}: {supplier.direccion}</p>
-
-                <div className="action-buttons">
-                    <button
-                        className="action-button edit-button"
-                        onClick={() => handleEdit(supplier)}
-                    >
-                        {BOTONES.EDITAR}
-                    </button>
-                    <button
-                        className="action-button delete-button"
-                        onClick={() => handleDelete(supplier.id)}
-                    >
-                        {BOTONES.ELIMINAR}
-                    </button>
-                </div>
 
                 {/* Modal de la edición del campo de Acciones, el boton editar */}
                 {editingSupplier && (

@@ -17,6 +17,7 @@ import Politicas from './components/legal/Politicas';
 import Terminos from './components/legal/Terminos';
 import {SupplierProvider} from "./context/ProveedoresContext";
 
+
 // Importar los componentes de las páginas legales
 const routes = [
   { path: '/', element: <Login /> },

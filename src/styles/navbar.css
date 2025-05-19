@@ -105,9 +105,7 @@
     height: 52px;
     border-radius: 10px;
 }
-.hamburger {
-    display: none;
-}
+
 
 /* Smartphones (pantallas pequeñas) */
 @media (max-width: 600px) {
@@ -122,6 +120,7 @@
       display: none;
       flex-direction: column;
       align-items: center;
+      width: 100%;
   }
 
   .navbar-links.active {
@@ -131,16 +130,30 @@
   .navbar-links ul {
       flex-direction: column;
       gap: 20px;
+      padding: 0;
+      margin: 0;
   }
 
   .navbar-links li {
       display: block;
+      width: 100%;
+      text-align: center;
   }
 
   .navbar-links a {
       font-size: 16px;
       padding: 10px 15px;
+      display: block;
+      width: 100%;
+      color: #333;
+      text-decoration: none;
+
   }
+
+    .navbar-links a.active-link {
+        background-color: #f0f0f0;
+        font-weight: bold;
+    }
 
   .btn-logout {
       margin-top: 10px;
@@ -155,33 +168,51 @@
       margin: 0;
       justify-content: center;
       width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
   }
 
   .logo img {
       width: 40px;
       height: 40px;
   }
-
-  /*ICONO HAMBURGUESA*/
-  .hamburger {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 24px;
-      cursor: pointer;
+  .logo h2{
+      font-size: 20px; /* Aumentar el tamaño del título */
+      margin: 0;
+      text-align: center;
+      font-weight: 600;
   }
 
-  .hamburger .fa-bars {
-      font-size: 38px;
-      color: #333;
-  }
+    /* Estilo para los enlaces dentro del Offcanvas */
+    .list-offcanvas-enlaces ul,
+    .list-offcanvas-enlaces li{
+         list-style: none;
+         padding: 1rem;
+         font-size: 1.5rem;
+         text-align: left;
+         margin: 0;
 
-  .hamburger.active .fa-bars {
-      color: #fff;
-  }
+    }
+
+   /* Encabezado del Offcanvas */
+   .offcanvas-header-estilo {
+         border-bottom: 1px solid #ddd;
+         background-image: url('../img/m1.jpg');
+         background-size: cover;
+         background-position: center;
+   }
+
+     .offcanvas-title-estilo {
+         color: var(--color-texto);
+         text-align: center;
+         font-weight: 600;
+         width: 100%;
+     }
+    .custom{
+        background-color: var(--color-fondoMain);
+    }
 }
-
 
 
 /* Tablets (pantallas medianas) */
@@ -226,5 +257,30 @@
         justify-content: center;
         width: auto;
         margin: 0;
+    }
+    /* Estilo para los enlaces dentro del Offcanvas */
+    .list-offcanvas-enlaces ul,
+    .list-offcanvas-enlaces li {
+        list-style: none;
+        padding: 1rem;
+        font-size: 1.5rem;
+        text-align: left;
+        margin: 0;
+    }
+
+    /* Encabezado del Offcanvas */
+    .offcanvas-header-estilo {
+        border-bottom: 1px solid #ddd;
+        background-image: url('../img/m1.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .offcanvas-title-estilo {
+        font-size: 30px;
+        color: var(--color-texto);
+        text-align: center;
+        font-weight: 600;
+        width: 100%;
     }
 }
