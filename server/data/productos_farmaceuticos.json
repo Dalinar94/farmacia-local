@@ -1,0 +1,205 @@
+[
+    {
+        "nombre": "Paracetamol",
+        "descripcion": "El paracetamol es un medicamento utilizado para tratar el dolor y la fiebre. Se utiliza comúnmente para dolores de cabeza, dolores musculares, artritis, dolores de espalda, dolores de muelas, resfriados y fiebre. Es un analgésico y antipirético que actúa inhibiendo la síntesis de prostaglandinas en el sistema nervioso central.",
+        "cantidad": 100,
+        "precio": 5.99,
+        "img": "http://localhost:5000/img/paracetamol.jpg"
+    },
+    {
+        "nombre": "Ibuprofeno",
+        "descripcion": "El ibuprofeno es un medicamento antiinflamatorio no esteroideo (AINE) que se utiliza para reducir la fiebre y tratar el dolor o la inflamación causados por muchas afecciones como dolores de cabeza, dolores dentales, dolores menstruales, artritis, dolores musculares o lesiones leves.",
+        "cantidad": 80,
+        "precio": 7.49,
+        "img": "http://localhost:5000/img/ibuprofeno.jpg"
+    },
+    {
+        "nombre": "Amoxicilina",
+        "descripcion": "La amoxicilina es un antibiótico de amplio espectro que se utiliza para tratar una gran variedad de infecciones bacterianas. Pertenece a la clase de antibióticos conocidos como penicilinas y actúa inhibiendo la síntesis de la pared celular bacteriana.",
+        "cantidad": 50,
+        "precio": 12.99,
+        "img": "http://localhost:5000/img/amoxicilina.jpg"
+    },
+    {
+        "nombre": "Loratadina",
+        "descripcion": "La loratadina es un antihistamínico que se utiliza para aliviar los síntomas de alergia como el estornudo, el picor, el lagrimeo y la secreción nasal. También se utiliza para tratar la urticaria y el picor en personas con reacciones cutáneas crónicas.",
+        "cantidad": 60,
+        "precio": 8.99,
+        "img": "http://localhost:5000/img/loratadina.jpg"
+    },
+    {
+        "nombre": "Omeprazol",
+        "descripcion": "El omeprazol es un inhibidor de la bomba de protones que se utiliza para tratar el reflujo gastroesofágico, las úlceras gástricas y duodenales, y el síndrome de Zollinger-Ellison. Actúa reduciendo la cantidad de ácido producido en el estómago.",
+        "cantidad": 40,
+        "precio": 15.49,
+        "img": "http://localhost:5000/img/omeprazol.jpg"
+    },
+    {
+        "nombre": "Metformina",
+        "descripcion": "La metformina es un medicamento oral utilizado para el tratamiento de la diabetes tipo 2. Ayuda a controlar los niveles de azúcar en la sangre al reducir la producción de glucosa en el hígado y mejorar la sensibilidad a la insulina.",
+        "cantidad": 90,
+        "precio": 10.99,
+        "img": "http://localhost:5000/img/metformina.jpg"
+    },
+    {
+        "nombre": "Aspirina",
+        "descripcion": "La aspirina es un medicamento utilizado para reducir el dolor, la fiebre o la inflamación. También se utiliza en dosis bajas para reducir el riesgo de ataque cardíaco y accidente cerebrovascular. Actúa inhibiendo la producción de prostaglandinas.",
+        "cantidad": 120,
+        "precio": 6.99,
+        "img": "http://localhost:5000/img/aspirina.jpg"
+    },
+    {
+        "nombre": "Cetirizina",
+        "descripcion": "La cetirizina es un antihistamínico utilizado para aliviar los síntomas de alergia como el estornudo, el picor, el lagrimeo y la secreción nasal. También se utiliza para tratar la urticaria y el picor en personas con reacciones cutáneas crónicas.",
+        "cantidad": 70,
+        "precio": 9.49,
+        "img": "http://localhost:5000/img/cetirizina.jpg"
+    },
+    {
+        "nombre": "Clonazepam",
+        "descripcion": "El clonazepam es un medicamento utilizado para tratar los trastornos de ansiedad y las convulsiones. Pertenece a la clase de medicamentos conocidos como benzodiazepinas y actúa aumentando la actividad de ciertos neurotransmisores en el cerebro.",
+        "cantidad": 30,
+        "precio": 18.99,
+        "img": "http://localhost:5000/img/clonazepam.jpg"
+    },
+    {
+        "nombre": "Diclofenaco",
+        "descripcion": "El diclofenaco es un medicamento antiinflamatorio no esteroideo (AINE) utilizado para tratar el dolor y la inflamación asociados con diversas afecciones como la artritis, las migrañas y las lesiones musculares. Actúa inhibiendo la producción de prostaglandinas.",
+        "cantidad": 50,
+        "precio": 11.99,
+        "img": "http://localhost:5000/img/diclofenaco.jpg"
+    },
+    {
+        "nombre": "Furosemida",
+        "descripcion": "La furosemida es un diurético utilizado para tratar la retención de líquidos (edema) y la hipertensión arterial. Actúa aumentando la eliminación de agua y sal a través de la orina.",
+        "cantidad": 40,
+        "precio": 13.49,
+        "img": "http://localhost:5000/img/furosemida.jpg"
+    },
+    {
+        "nombre": "Gabapentina",
+        "descripcion": "La gabapentina es un medicamento utilizado para tratar el dolor neuropático y las convulsiones. Actúa modulando la actividad de ciertos neurotransmisores en el sistema nervioso.",
+        "cantidad": 60,
+        "precio": 19.99,
+        "img": "http://localhost:5000/img/gabapentina.jpg"
+    },
+    {
+        "nombre": "Hidroxicloroquina",
+        "descripcion": "La hidroxicloroquina es un medicamento utilizado para tratar la malaria, el lupus eritematoso sistémico y la artritis reumatoide. Actúa interfiriendo con la actividad de ciertas células del sistema inmunológico.",
+        "cantidad": 30,
+        "precio": 22.99,
+        "img": "http://localhost:5000/img/hidroxicloroquina.jpg"
+    },
+    {
+        "nombre": "Insulina",
+        "descripcion": "La insulina es una hormona utilizada para el tratamiento de la diabetes tipo 1 y tipo 2. Ayuda a controlar los niveles de azúcar en la sangre al facilitar la absorción de glucosa en las células.",
+        "cantidad": 20,
+        "precio": 25.99,
+        "img": "http://localhost:5000/img/insulina.jpg"
+    },
+    {
+        "nombre": "Levotiroxina",
+        "descripcion": "La levotiroxina es un medicamento utilizado para tratar el hipotiroidismo. Es una forma sintética de la hormona tiroidea que ayuda a regular el metabolismo y los niveles de energía en el cuerpo.",
+        "cantidad": 100,
+        "precio": 14.99,
+        "img": "http://localhost:5000/img/levotiroxina.jpg"
+    },
+    {
+        "nombre": "Metronidazol",
+        "descripcion": "El metronidazol es un antibiótico y antiprotozoario utilizado para tratar diversas infecciones bacterianas y parasitarias. Actúa inhibiendo la síntesis de ADN en los microorganismos.",
+        "cantidad": 50,
+        "precio": 16.49,
+        "img": "http://localhost:5000/img/metronidazol.jpg"
+    },
+    {
+        "nombre": "Naproxeno",
+        "descripcion": "El naproxeno es un medicamento antiinflamatorio no esteroideo (AINE) utilizado para tratar el dolor y la inflamación asociados con diversas afecciones como la artritis, las migrañas y las lesiones musculares. Actúa inhibiendo la producción de prostaglandinas.",
+        "cantidad": 80,
+        "precio": 12.99,
+        "img": "http://localhost:5000/img/naproxeno.jpg"
+    },
+    {
+        "nombre": "Omeprazol",
+        "descripcion": "El omeprazol es un inhibidor de la bomba de protones que se utiliza para tratar el reflujo gastroesofágico, las úlceras gástricas y duodenales, y el síndrome de Zollinger-Ellison. Actúa reduciendo la cantidad de ácido producido en el estómago.",
+        "cantidad": 40,
+        "precio": 15.49,
+        "img": "http://localhost:5000/img/omeprazol.jpg"
+    },
+    {
+        "nombre": "Prednisona",
+        "descripcion": "La prednisona es un corticosteroide utilizado para tratar diversas afecciones inflamatorias y autoinmunes como la artritis reumatoide, el lupus y las alergias graves. Actúa suprimiendo la respuesta inmunológica y reduciendo la inflamación.",
+        "cantidad": 60,
+        "precio": 17.99,
+        "img": "http://localhost:5000/img/prednisona.jpg"
+    },
+    {
+        "nombre": "Quetiapina",
+        "descripcion": "La quetiapina es un antipsicótico utilizado para tratar trastornos mentales como la esquizofrenia, el trastorno bipolar y la depresión mayor. Actúa modulando la actividad de ciertos neurotransmisores en el cerebro.",
+        "cantidad": 30,
+        "precio": 23.99,
+        "img": "http://localhost:5000/img/quetiapina.jpg"
+    },
+    {
+        "nombre": "Ranitidina",
+        "descripcion": "La ranitidina es un medicamento utilizado para reducir la producción de ácido en el estómago. Se utiliza para tratar el reflujo gastroesofágico, las úlceras gástricas y duodenales, y otras afecciones relacionadas con el exceso de ácido estomacal.",
+        "cantidad": 50,
+        "precio": 14.49,
+        "img": "http://localhost:5000/img/ranitidina.jpg"
+    },
+    {
+        "nombre": "Simvastatina",
+        "descripcion": "La simvastatina es un medicamento utilizado para reducir los niveles de colesterol y triglicéridos en la sangre. Pertenece a la clase de medicamentos conocidos como estatinas y actúa inhibiendo la enzima HMG-CoA reductasa.",
+        "cantidad": 90,
+        "precio": 19.49,
+        "img": "http://localhost:5000/img/simvastatina.jpg"
+    },
+    {
+        "nombre": "Tramadol",
+        "descripcion": "El tramadol es un analgésico utilizado para tratar el dolor moderado a severo. Actúa modulando la actividad de ciertos neurotransmisores en el sistema nervioso central.",
+        "cantidad": 40,
+        "precio": 21.99,
+        "img": "http://localhost:5000/img/tramadol.jpg"
+    },
+    {
+        "nombre": "Ursodiol",
+        "descripcion": "El ursodiol es un medicamento utilizado para tratar y prevenir los cálculos biliares. Actúa reduciendo la cantidad de colesterol producido por el hígado y aumentando la descomposición del colesterol en la bilis.",
+        "cantidad": 30,
+        "precio": 24.99,
+        "img": "http://localhost:5000/img/ursodiol.jpg"
+    },
+    {
+        "nombre": "Valsartán",
+        "descripcion": "El valsartán es un medicamento utilizado para tratar la hipertensión arterial y la insuficiencia cardíaca. Pertenece a la clase de medicamentos conocidos como antagonistas de los receptores de angiotensina II.",
+        "cantidad": 60,
+        "precio": 22.49,
+        "img": "http://localhost:5000/img/valsartan.jpg"
+    },
+    {
+        "nombre": "Warfarina",
+        "descripcion": "La warfarina es un anticoagulante utilizado para prevenir la formación de coágulos sanguíneos. Actúa inhibiendo la síntesis de factores de coagulación dependientes de la vitamina K.",
+        "cantidad": 50,
+        "precio": 20.99,
+        "img": "http://localhost:5000/img/warfarina.jpg"
+    },
+    {
+        "nombre": "Xarelto",
+        "descripcion": "El Xarelto es un anticoagulante utilizado para prevenir y tratar la trombosis venosa profunda y la embolia pulmonar. Actúa inhibiendo el factor Xa en la cascada de coagulación.",
+        "cantidad": 30,
+        "precio": 26.99,
+        "img": "http://localhost:5000/img/xarelto.jpg"
+    },
+    {
+        "nombre": "Yasmin",
+        "descripcion": "El Yasmin es un anticonceptivo oral combinado que contiene drospirenona y etinilestradiol. Se utiliza para prevenir el embarazo y regular el ciclo menstrual.",
+        "cantidad": 20,
+        "precio": 28.99,
+        "img": "http://localhost:5000/img/yasmin.jpg"
+    },
+    {
+        "nombre": "Zolpidem",
+        "descripcion": "El zolpidem es un medicamento utilizado para tratar el insomnio. Actúa modulando la actividad de ciertos neurotransmisores en el cerebro para inducir el sueño.",
+        "cantidad": 40,
+        "precio": 24.49,
+        "img": "http://localhost:5000/img/zolpidem.jpg"
+    }
+]

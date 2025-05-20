@@ -1,10 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import Navbar from './common/Navbar';
 import TablaProductos from './tables/TablaProductos'; // Importar el componente de tabla de productos
 import { ProductContext } from '../context/ProductContext';
 import Footer from './common/Footer';
-import ModalAgregarProducto from './modals/modalAgregarProducto';
-import { TITULOS, BOTONES } from '../lib/constantes';
+import { TITULOS } from '../lib/constantes';
 
 //EXPLICACION DE USESTATE y HOOK de react
 //El useState es un hook de React que permite añadir el estado a un componente funcional.
@@ -12,24 +11,7 @@ import { TITULOS, BOTONES } from '../lib/constantes';
 //Un hook es una función que permite a los desarrolladores de React utilizar el estado y otras características de React sin escribir una clase.
 
 const Dashboard = () => {
-  const { products, setProducts } = useContext(ProductContext); // Usar el contexto
-  const [showAddProductForm, setShowAddProductForm] = useState(false); // Estado para mostrar el formulario
-  const [searchTerm, setSearchTerm] = useState(''); // Estado para el término de búsqueda
-
-  const handleAddProduct = (product) => {
-    const newProduct = {
-      ...product,
-      id: products.length + 1, // Generar un ID único
-      stock: parseInt(product.stock, 10), // Asegurar que el stock sea un número
-      price: parseFloat(product.price), // Asegurar que el precio sea un número con decimales
-    };
-    setProducts([...products, newProduct]); // Agregar el nuevo producto al estado
-    setShowAddProductForm(false); // Cerrar el formulario
-  };
-
-  const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const { productos } = useContext(ProductContext); // Usar el contexto de productos
 
   return (
     <div className="dashboard-container">
@@ -40,46 +22,24 @@ const Dashboard = () => {
           <div className="dashboard-estadisticas">
             <div className="dashboard-estadistica-tarjeta">
               <h3>{TITULOS.PRODUCTOS}</h3>
-              <p>{products.length}</p>
+              <p>{productos.length}</p>
             </div>
             <div className="dashboard-estadistica-tarjeta">
               <h3>{TITULOS.VALOR_INVENTARIO}</h3>
               <p>
-                {products.reduce((total, product) => total + product.price * product.stock, 0).toFixed(2)} €
+                {productos.reduce((total, product) => total + product.precio * product.cantidad, 0).toFixed(2)} €
               </p>
             </div>
             <div className="dashboard-estadistica-tarjeta">
               <h3>{TITULOS.STOCK_AGOTADO}</h3>
-              <p>{products.filter((product) => product.stock < 10).length}</p>
+              <p>{productos.filter((product) => product.cantidad < 10).length}</p>
             </div>
           </div>
         </div>
 
-        <div className="dashboard-controles">
-          <i className="fa-solid fa-magnifying-glass"/>
-          <div className="dashboard-busqueda">
-            <input
-              type="text"
-              placeholder="Buscar productos..."
-              className="login-input"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-          <div className="boton-primario">
-            <button onClick={() => setShowAddProductForm(true)}>{BOTONES.AGREGAR_PRODUCTO}</button>
-          </div>
-        </div>
         <div>
-          <TablaProductos products={filteredProducts} setProducts={setProducts} />
+          <TablaProductos  />
         </div>
-
-        {showAddProductForm && (
-          <ModalAgregarProducto
-            onAddProduct={handleAddProduct}
-            onCancel={() => setShowAddProductForm(false)}
-          />
-        )}
       </main>
       <Footer />
     </div>

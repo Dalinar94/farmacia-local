@@ -1,33 +1,28 @@
-import React, { createContext, useState } from 'react';
+import React, {createContext, useEffect, useState} from 'react';
 
 export const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
-  const [products, setProducts] = useState([
-    { id: 1, name: 'Paracetamol', description: 'El Paracetamol es un medicamento utilizado para aliviar el dolor y reducir la fiebre', stock: 50, price: 100 , img: 'https://media.istockphoto.com/id/1359178154/es/foto/paracetamol-caja-de-pastillas-de-ibuprofeno-caja-papel-comprimidos-en-bl%C3%ADster.jpg?s=612x612&w=0&k=20&c=5zcjASMBvwk_5zIIw0g1IUBnM0qpmvsx69xMy-fr0x4='},
-    { id: 2, name: 'Ibuprofeno', description: 'El Ibuprofeno es un medicamento utilizado para aliviar el dolor, reducir la inflamación y bajar la fiebre.', stock: 0, price: 50,img:'https://media.istockphoto.com/id/1359178057/es/foto/caja-de-p%C3%ADldoras-de-ibuprofeno-caja-papel-comprimidos-en-bl%C3%ADster.jpg?s=612x612&w=0&k=20&c=9Hju42OJ6Q-JfhEDvaereSH8xUlt_N5klWob3x5PJuA=' },
-    { id: 3, name: 'Omoxicilina', description: 'La amoxicilina es un antibiótico de amplio espectro utilizado para tratar diversas infecciones bacterianas.', stock: 60, price: 200, img:'https://media.istockphoto.com/id/1295333389/es/foto/amoxicilina.jpg?s=612x612&w=0&k=20&c=mr9mgFIk-9B7VEEdYMaMMkT03vhdn7FadpMQw-Hsv6U=' },
-    { id: 4, name: 'Gasas', description: 'Las gasas son compresas de tela o material sintético utilizadas para cubrir heridas y ayudar en su curación.', stock: 10, price: 150,img: 'https://media.istockphoto.com/id/1436838760/es/foto/primeros-auxilios-envoltura-protectora-de-lesiones-y-concepto-de-vendaje-de-heridas-vendaje-de.jpg?s=612x612&w=0&k=20&c=Ghsmaph8oN43F50cuW90587nrpv8c3cu55cbP3kNZWo='},
-    { id: 5, name: 'Tijeras', description: 'Las tijeras son herramientas de corte utilizadas para cortar papel, tela y otros materiales.', stock: 20, price: 300,img:'https://media.istockphoto.com/id/157195030/es/foto/material-m%C3%A9dico.jpg?s=612x612&w=0&k=20&c=3jBRrpMu6rcEH8wpfInH7HuEiZY2AIQAkh3L9PXqw94='},
-    { id: 6, name: 'Termómetro', description: 'El termómetro es un dispositivo utilizado para medir la temperatura corporal.', stock: 30, price: 400,img:'https://media.istockphoto.com/id/1211644246/es/foto/term%C3%B3metro-m%C3%A9dico-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=gBmUXZDtgusNRLsk6JKlmCkCl1Y_m9vkJ1sxpswzbS4=' },
-    { id: 7, name: 'Jeringas', description: 'Las jeringas son dispositivos médicos utilizados para inyectar líquidos en el cuerpo o extraer líquidos del cuerpo.', stock: 40, price: 500,img:'https://media.istockphoto.com/id/1297754565/es/foto/jeringa-de-pl%C3%A1stico-vac%C3%ADa-m%C3%A9dica-aislada-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=vJzqcVn02n3vj6UwZIy6WUHTm1DCDrA2-V3l2ldwayc=' },
-    { id: 8, name: 'Guantes', description: 'Los guantes son prendas que cubren las manos y se utilizan para protegerlas de sustancias nocivas.', stock: 70, price: 600,img:'https://media.istockphoto.com/id/1134873108/es/foto/guantes-de-l%C3%A1tex-blanco-y-azul-aislados-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=4se3LctQUq10eMKR1T_o3fRZPjwFhAfrUjam6cCveR4='},
-    { id: 9, name: 'Mascarillas', description: 'Las mascarillas son dispositivos que cubren la boca y la nariz para proteger contra la inhalación de partículas nocivas.', stock: 80, price: 700,img:'https://media.istockphoto.com/id/1206385911/es/foto/m%C3%A1scara-m%C3%A9dica.jpg?s=612x612&w=0&k=20&c=t77-6aDmhMHFBy0tFUT1XgX-tYq738JoGP92FGgimq0=' },
-    { id: 10, name: 'Alcohol', description: 'El alcohol es un desinfectante utilizado para limpiar heridas y superficies.', stock: 90, price: 800,img:'https://media.istockphoto.com/id/1212253684/photo/alcohol-dispenser-in-hospital.jpg?s=612x612&w=0&k=20&c=LglWYLpyDDj7BX6xm6c0BMfZa20vIUyT_V2JTUfanOo=' },
-    { id: 11, name: 'Analgésico', description: 'Medicamento para aliviar el dolor generalizado.', stock: 25, price: 90, img: 'https://media.istockphoto.com/id/140396417/es/foto/blanco-analg%C3%A9sicos-y-su-cuant%C3%ADa.jpg?s=612x612&w=0&k=20&c=HXEke6DXNr34a365q75FMapNM-kDRL7Z07Dd10b6WVM=' },
-    { id: 12, name: 'Electrodos', description: 'Usados en máquinas de electrocardiogramas.', stock: 15, price: 150, img: 'https://media.istockphoto.com/id/505873053/es/foto/decenas-de-tratamiento.jpg?s=612x612&w=0&k=20&c=s5sVjPTm0tTSQZR27aq_kNOWXA34i_iBJntDtU2DrUk=' },
-    { id: 13, name: 'Oxímetro', description: 'Dispositivo para medir la saturación de oxígeno en la sangre.', stock: 12, price: 900, img: 'https://media.istockphoto.com/id/496972049/es/foto/pulso-oximeter.jpg?s=612x612&w=0&k=20&c=TtCiwD7MkUvNf0BNQFIKTY3bbRS-v_LwbYoybotH1QM=' },
-    { id: 14, name: 'Venda elástica', description: 'Ayuda a inmovilizar lesiones o heridas musculares.', stock: 30, price: 120, img: 'https://media.istockphoto.com/id/118943775/es/foto/venda.jpg?s=612x612&w=0&k=20&c=F_3sBHhTwWxvHB_uH_Rh0mYq1lvM8zXS69fe3cLKHco=' },
-    { id: 15, name: 'Esfigmomanómetro', description: 'Herramienta para medir la presión arterial.', stock: 10, price: 1100, img: 'https://media.istockphoto.com/id/1488910001/es/foto/ton%C3%B3metro-negro-y-coraz%C3%B3n-aislado-sobre-blanco-monitor-de-presi%C3%B3n-arterial-de-equipo-m%C3%A9dico.jpg?s=612x612&w=0&k=20&c=ZSgY6B_p_zTw03Ht9Jd5OZDyh5pOT_vS2T3Gxjzx72M=' },
-    { id: 16, name: 'Nebulizador', description: 'Aparato usado para administrar medicinas en forma de vapor.', stock: 5, price: 2000, img: 'https://media.istockphoto.com/id/179040788/es/foto/inhalador.jpg?s=612x612&w=0&k=20&c=1lR3ZS-T8eyj1TKjy9qG9JgHskIIKikvYpxpiDscM-0=' },
-    { id: 17, name: 'Agujas', description: 'Material desechable para uso médico.', stock: 150, price: 50, img: 'https://media.istockphoto.com/id/494561125/es/foto/muchos-tama%C3%B1o-de-sharp-de-aguja.jpg?s=612x612&w=0&k=20&c=E_-Iz3HgUaFx9drDHOPsOm0okmMvSjuEzsDaGN_lol4=' },
-    { id: 18, name: 'Tensiómetro digital', description: 'Dispositivo electrónico para medir la presión.', stock: 8, price: 1300, img: 'https://media.istockphoto.com/id/1385082717/es/foto/monitor-de-presi%C3%B3n-arterial.jpg?s=612x612&w=0&k=20&c=CLZs3rATaT5qoMFHRN6XB4QLKyVEDcxBUQGuTqQbieU=' },
-    { id: 19, name: 'Botiquín de primeros auxilios', description: 'Kit portátil para emergencias.', stock: 20, price: 600, img: 'https://media.istockphoto.com/id/1364911477/es/foto/simple-botiqu%C3%ADn-de-primeros-auxilios-rojo-abierto-con-medicamentos-para-la-categor%C3%ADa-de.jpg?s=612x612&w=0&k=20&c=mQRCqNWTsNopR-aocgsppt5pn9boAYOGw_Etu4wiiZQ=' },
-    { id: 20, name: 'Crema Antiséptica', description: 'Crema para heridas menores y raspaduras.', stock: 70, price: 120, img: 'https://media.istockphoto.com/id/1352523547/es/foto/manos-masculinas-aplicando-crema-humectante-de-un-peque%C3%B1o-tubo-en-la-piel.jpg?s=612x612&w=0&k=20&c=o5bm5GeCI_87n_cPyy3wHGJ_rDEhnhSzuAFxyiu9QNA=' }
+  const [productos, setProductos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  ]);
+  console.log('API_URL:', process.env.REACT_APP_API_URL + '/products');
+
+  useEffect(() => {
+    fetch(process.env.REACT_APP_API_URL +'/products')
+        .then(res => res.json())
+        .then(data => {
+          setProductos(data);
+          setLoading(false);
+        })
+        .catch(err => {
+          console.error('Error al cargar productos:', err);
+          setLoading(false);
+        });
+  }, []);
+
 
   return (
-    <ProductContext.Provider value={{ products, setProducts }}>
+    <ProductContext.Provider value={{ productos, loading }}>
       {children}
     </ProductContext.Provider>
   );

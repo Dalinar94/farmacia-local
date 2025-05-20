@@ -1,9 +1,8 @@
 .products-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 20px 0 0 0;
     font-size: 16px;
-    text-align: left;
 
 }
 .tabla-con-scroll-productos {
@@ -15,13 +14,17 @@
     background-color: #f4f4f4;
     border-bottom: 2px solid #ddd;
 }
-
+.no-wrap{
+    white-space: nowrap;
+}
 .products-table th,
 .products-table td {
-    padding: 12px 15px;
+    padding: 1rem;
     border: 1px solid #ddd;
-    text-align: justify;
+    text-align: center;
+
 }
+
 
 .products-table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
@@ -38,7 +41,12 @@
     font-weight: bold;
 }
 
-.normal-stock {
+.medium-stock {
+    color: orange;
+    font-weight: bold;
+}
+
+.high-stock {
     color: green;
     font-weight: bold;
 }
@@ -59,7 +67,9 @@
     cursor: pointer;
     font-size: 14px; /* Tamaño del texto ajustado */
 }
-
+.getStockClass{
+    font-weight: bold;
+}
 .edit-button {
     background-color: #007bff;
     color: white;
@@ -85,19 +95,8 @@
     text-align: center; /* Centrar contenido */
 }
 
-.low-stock {
-    color: red;
-    font-weight: bold;
-}
-.medium-stock {
-    color: orange;
-    font-weight: bold;
-}
-  
-.high-stock {
-    color: green;
-    font-weight: bold;
-}
+
+
 /* Fondo oscuro para el modal */
 .modal-overlay {
   position: fixed;

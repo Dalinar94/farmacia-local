@@ -107,6 +107,7 @@ export const MENSAJES = {
   INGRESE_REGISTRO: "Ingrese sus datos de registro",
   CERRAR_SESION: "¿Está seguro de que desea cerrar sesión?",
   NO_USUARIO: "No hay datos de usuario disponibles. Por favor, inicia sesión.",
+  ATENCION: "⚠️ Atención: Hay productos con stock agotado! Reponga los productos que esten agotados para tenerlos en stock. ⚠️"
 };
 
 export const FOOTER ={

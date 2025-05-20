@@ -1,68 +1,77 @@
-/* Panel de producto */
-
- .panel-producto {
-    border: 2px solid #ddd;
+.panel-producto {
+    border: 1px solid #e0e0e0;
     border-radius: 12px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-bottom: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
- }
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
-  .panel-producto:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
+.panel-producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 
-  .panel-info{
-      height: 50%;
-  }
-
-  .panel-info h3{
-      padding: 10px;
-  }
-
-  .panel-imagen{
+.panel-imagen {
     width: 100%;
-    height: 50%;
+    height: 200px;
     object-fit: cover;
-  }
-  .panel-producto-descripcion {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: #555;
-    padding: 10px;
-  }
-  
-  .panel-producto-valor {
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--color-secundario);
-    padding: 10px;
-  }
-  .panel-producto p{
+    border-bottom: 1px solid black;
+}
+
+.panel-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.panel-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.panel-producto-descripcion {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1rem;
     text-align: justify;
-  }
+}
 
+.panel-producto-valor {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-secundario, #007BFF); /* Fallback color */
+    margin-top: auto;
+    border-top:  1px solid #eee;
+    padding-top: 1rem;
+}
 
-  /* RESPONSIVE */
-  @media (max-width: 600px) {
+/* Responsive */
+@media (max-width: 600px) {
     .panel-producto {
-      max-width: 100%; 
-      padding: 15px; 
+        padding: 0;
     }
-  
-    .panel-producto-nombre {
-      font-size: 20px; 
+
+    .panel-imagen {
+        height: 180px;
     }
-  
+
+    .panel-info h3 {
+        font-size: 1rem;
+    }
+
     .panel-producto-descripcion {
-      font-size: 14px; 
+        font-size: 0.9rem;
     }
-  
+
     .panel-producto-valor {
-      font-size: 16px;
+        font-size: 1rem;
     }
-  }
+}

@@ -18,7 +18,10 @@ const ProductoSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-
+    img:{
+        type: String,
+        required: true
+    }
 });
 
 module.exports = mongoose.model('products', ProductoSchema, 'products');

@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { ProductContext } from '../../context/ProductContext';
-import { LABELS } from '../../lib/constantes'; // Importa constantes
+import {LABELS, MENSAJES} from '../../lib/constantes'; // Importa constantes
 import Pagination from 'react-bootstrap/Pagination';
 
 const TablaStock = () => {
-  const { products } = useContext(ProductContext);
+  const { productos } = useContext(ProductContext);
+
+  const hayAgotados = productos.some(product => product.cantidad === 0);
 
   // --- Estados para la paginación ---
   const [currentPage, setcurrentPage] = useState(1); // Página activa
@@ -13,9 +15,9 @@ const TablaStock = () => {
   // --- Calcular las filas visibles para la página actual ---
   const indexOfUltimaFila = currentPage * filasPorPagina;
   const indexOfPrimeraFila = indexOfUltimaFila - filasPorPagina;
-  const FilasActuales = products.slice(indexOfPrimeraFila, indexOfUltimaFila); // Filas para la página
+  const FilasActuales = productos.slice(indexOfPrimeraFila, indexOfUltimaFila); // Filas para la página
 
-  const totalPages = Math.ceil(products.length / filasPorPagina); // Número total de páginas
+  const totalPages = Math.ceil(productos.length / filasPorPagina); // Número total de páginas
 
   // --- Generar la paginación dinámica ---
   const handlePageChange = (pageNumber) => {
@@ -50,28 +52,36 @@ const TablaStock = () => {
   };
 
   return (
+
       <div className="tabla">
+        {hayAgotados && (
+            <div className="alerta-stock-agotado">
+              <span className="alerta-texto">{MENSAJES.ATENCION}</span>
+            </div>
+        )}
         <table className="stock-table">
           <thead>
           <tr>
             <th>{LABELS.NOMBRE}</th>
-            <th>{LABELS.DESCRIPCION}</th>
             <th>{LABELS.CANTIDAD}</th>
+            <th>{LABELS.PRECIO}</th>
             <th>{LABELS.ESTADO}</th>
           </tr>
           </thead>
           <tbody>
           {FilasActuales.map((product) => (
               <tr key={product.id}>
-                <td>{product.name}</td>
-                <td>{product.description}</td>
-                <td>{product.stock}</td>
-                <td className={getEstadoClase(product.stock)}>{getEstado(product.stock)}</td>
+                <td>{product.nombre}</td>
+                <td>{product.cantidad}</td>
+                <td >{product.precio}€</td>
+                <td className={getEstadoClase(product.cantidad)}>{getEstado(product.cantidad)}</td>
               </tr>
           ))}
           </tbody>
         </table>
         <Pagination>{paginationItems}</Pagination>
+
+
       </div>
   );
 };

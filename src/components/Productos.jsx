@@ -5,11 +5,10 @@ import PanelProducto from './panels/PanelProducto'; // Importar el componente de
 import { ProductContext } from '../context/ProductContext'; // Importar el contexto
 import { TITULOS } from '../lib/constantes'; // Importar las constantes
 import Pagination from 'react-bootstrap/Pagination';
-import {getFixedT} from "i18next"; // Importar la paginación de Bootstrap
 
 const Productos = () => {
-    const { products } = useContext(ProductContext); // Usar el contexto para acceder a los productos
-    const itemsPerPage = 10; // Número de productos por página
+    const { productos } = useContext(ProductContext); // Usar el contexto para acceder a los productos
+    const itemsPerPage = 8; // Número de productos por página
 
     // Estado para manejar la paginación
     const [currentPage, setCurrentPage] = useState(1);
@@ -17,10 +16,10 @@ const Productos = () => {
     // Calcular los índices de los productos que se deben mostrar en la página actual
     const indexOfLastProduct = currentPage * itemsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - itemsPerPage;
-    const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+    const currentProducts = productos.slice(indexOfFirstProduct, indexOfLastProduct);
 
     // Calcular el número total de páginas
-    const totalPages = Math.ceil(products.length / itemsPerPage);
+    const totalPages = Math.ceil(productos.length / itemsPerPage);
 
     // Manejar el cambio de página
     const handlePageChange = (pageNumber) => {
@@ -52,7 +51,7 @@ const Productos = () => {
                 <div className="productos-paneles">
                     {/* Renderizar los productos de la página actual */}
                     {currentProducts.map((product) => (
-                        <PanelProducto key={product.id} product={product} />
+                        <PanelProducto key={product.id || product.nombre} product={product} />
                     ))}
                 </div>
                 {/* Componente de paginación */}
