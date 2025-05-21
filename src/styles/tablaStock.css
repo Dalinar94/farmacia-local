@@ -55,9 +55,11 @@
 }
 
 .alerta-texto {
-    display: inline-block;
+    display: flex;
     white-space: nowrap;
-    padding-left: 100%;
+    gap: 8rem;
+    padding-left: 8rem;
+    width: fit-content;
     animation: moverTexto 40s linear infinite;
     font-weight: bold;
     color: #a94442;
@@ -69,7 +71,7 @@
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 
@@ -118,7 +120,7 @@
   }
  
   .stock-table, .stock-table thead, .stock-table tbody, .stock-table th, .stock-table td, .stock-table tr {
-     display: block; /* Hace que cada elemento sea un bloque */
+     display: block;
   }
   
  .stock-table thead tr {
@@ -134,6 +136,5 @@
   position: relative;
   text-align: center; 
   }
-  
- 
+
 }

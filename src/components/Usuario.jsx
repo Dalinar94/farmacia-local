@@ -4,7 +4,6 @@ import { UserContext } from '../context/UserContext';
 import NavBar from './common/Navbar';
 import Footer from './common/Footer';
 import { TITULOS, MENSAJES, LABELS, BOTONES } from '../lib/constantes';
-import {Image} from "react-bootstrap";
 
 const Usuario = () => {
   const { user, setUser } = useContext(UserContext); // Obtener y actualizar los datos del usuario desde el contexto

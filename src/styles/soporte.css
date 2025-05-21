@@ -8,7 +8,6 @@
   
   .soporte-content {
     display: flex;
-    flex: 1;
     background-color: var(--color-fondo);
     color: var(--color-texto);
   }
@@ -23,7 +22,7 @@
   
   .soporte-menu h3 {
     font-size: 18px;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
     color: var(--color-texto);
   }
   
@@ -33,7 +32,7 @@
   }
   
   .soporte-menu li {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
   }
   
   .soporte-menu a {

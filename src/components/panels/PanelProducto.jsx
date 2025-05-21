@@ -2,9 +2,6 @@ import React from 'react';
 import { LABELS } from '../../lib/constantes'; // Importar las constantes
 
 const PanelProducto = ({ product }) => {
-
-    console.log(product.img);
-
     return (
         <div className="panel-producto">
             <img className="panel-imagen" alt="No hay imagen"  src={product.img} />

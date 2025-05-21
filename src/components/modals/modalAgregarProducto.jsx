@@ -66,8 +66,8 @@ const ModalAgregarProducto = ({ onAddProduct, onCancel }) => {
               required
             />
           </label>
-          <div className="formulario-botones">
-            <button type="submit" className="boton-enviar">{BOTONES.AGREGAR}</button>
+          <div className="formulario-botones-agregar">
+            <button type="submit" className="boton-agregar">{BOTONES.AGREGAR}</button>
             <button type="button" className="boton-cancelar" onClick={onCancel}>{BOTONES.CANCELAR}</button>
           </div>
         </form>

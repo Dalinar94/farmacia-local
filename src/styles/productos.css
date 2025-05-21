@@ -1,4 +1,3 @@
-/* Contenedor principal */
 .productos-container {
     display: flex;
     flex-direction: column;
@@ -7,12 +6,10 @@
     cursor: pointer;
   }
 
-  /* Contenido principal */
   .productos-content {
-    flex: 1;
     background-color: var(--color-fondo);
     color: var(--color-texto);
-    padding: 1.2rem;
+    padding: 1.5rem;
   }
   .productos-content h1{
     font-size: 31px;
@@ -21,19 +18,10 @@
     text-align: center;
     font-weight: 600;
   }
-  
-  /* Título de la sección */
-  .productos-content h2 {
-    font-size: 24px;
-    color: var(--color-texto);
-    margin-bottom: 30px;
-    text-align: justify;
-  }
-  
-  /* Contenedor de los paneles */
+
   .productos-paneles {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 40px;
     justify-items: center;
   }
@@ -41,6 +29,6 @@
   @media (max-width: 600px) {
     .productos-paneles {
       grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
-      gap: 20px; /* Menos espacio entre los paneles */
+      gap: 20px;
     }
   }

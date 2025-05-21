@@ -56,7 +56,12 @@ const TablaStock = () => {
       <div className="tabla">
         {hayAgotados && (
             <div className="alerta-stock-agotado">
-              <span className="alerta-texto">{MENSAJES.ATENCION}</span>
+              <span className="alerta-texto">
+               <div>{MENSAJES.ATENCION}</div>
+               <div>{MENSAJES.ATENCION}</div>
+               <div>{MENSAJES.ATENCION}</div>
+               <div>{MENSAJES.ATENCION}</div>
+              </span>
             </div>
         )}
         <table className="stock-table">

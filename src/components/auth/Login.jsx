@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
 import { TITULOS,MENSAJES, LABELS,ENLACES, BOTONES,FOOTER} from '../../lib/constantes';
 import bcrypt from 'bcryptjs';
-import footer from "../common/Footer";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -77,7 +76,9 @@ const Login = () => {
                 />
               </div>
             </div>
-            {error && <p className="error-message text-danger small text-center">{error}</p>}
+            <div className="error-message ">
+              {error && <p>{error}</p>}
+            </div>
             <div className="login-links ">
               <label className="text-muted">{LABELS.NO_CUENTA}</label>
               <a href="/register" className="text-decoration-none">

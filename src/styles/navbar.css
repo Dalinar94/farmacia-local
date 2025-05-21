@@ -1,5 +1,3 @@
-@import './colores.css';
-
 .navbar-custom {
     background-image: url('../img/m1.jpg');
     background-size: cover;
@@ -22,7 +20,7 @@
 .navbar-links ul {
     list-style: none;
     display: flex;
-    gap: 70px;
+    gap: 2.5rem;
     padding: 0;
     margin: 0;
 }
@@ -34,8 +32,8 @@
 .navbar-links a {
     text-decoration: none;
     color: var(--color-texto);
-    font-size: 18px;
-    padding: 5px 10px;
+    font-size: 1.2rem;
+    padding: 1rem;
     border-radius: 4px;
 }
 
@@ -49,45 +47,8 @@
     color: var(--color-primario);
 }
 
-.btn-logout {
-    display: flex;
-    justify-content: center;
-    margin-right: 20px;
-    margin-left: auto;
-    gap: 15px;
-    align-items: center;
-    font-size: 15px;
-    font-weight: bold;
-    color: var(--color-texto);
-}
-
-.btn-logout button {
-    background-color: var(--color-fondo);
-    border-radius: 10px;
-    color: var(--color-texto);
-    border: none;
-    padding: 10px 25px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.btn-logout button:hover {
-    background-color: var(--color-fondoMain);
-}
-
-.btn-logout span {
-    color: var(--color-texto);
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.btn-logout span:hover {
-    color: var(--color-fondo);
-}
-
 .logo {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin: 1rem;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -100,12 +61,10 @@
     font-weight: 600;
 }
 .logo img {
-    margin: 10px;
-    width: 52px;
-    height: 52px;
-    border-radius: 10px;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 15px;
 }
-
 
 /* Smartphones (pantallas pequeñas) */
 @media (max-width: 600px) {

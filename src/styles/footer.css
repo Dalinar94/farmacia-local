@@ -1,15 +1,13 @@
 .dashboard-footer {
     display: flex;
-    justify-content: space-between; /* Espaciado entre elementos */
+    justify-content: space-between;
     align-items: center;
     background-color: var(--color-secundario);
-    padding: 20px 40px; /* Espaciado interno */
+    padding: 1rem;
     font-weight: bold;
     color: var(--color-texto);
     margin-top: auto;
-    height: 100px; /* Altura del footer */
-    position: relative; /* Para el posicionamiento del footer */
-    bottom: 0; /* Asegura que esté al final de la página */
+    height: 100%;
     font-family: Arial, sans-serif;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra superior */
 }
@@ -22,7 +20,7 @@
 
 .dashboard-footer .footer-left p,
 .dashboard-footer .footer-right p {
-    margin: 5px 0;
+    margin: 0.5rem;
 }
 
 .dashboard-footer .footer-center {
@@ -30,7 +28,7 @@
 }
 
 .dashboard-footer .footer-center p {
-    margin: 5px 0;
+    margin: 0.5rem;
     font-weight: bold;
 }
 
