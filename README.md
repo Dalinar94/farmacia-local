@@ -42,4 +42,12 @@ Este es un sistema de gestión de stock diseñado para farmacias locales. Permit
    ```bash
    git clone https://github.com/tuusuario/tu-repo.git
    ```
+## 📦 Como crear un proyecto de React.
+   ```bash
+  npm create-react-app "nombre-de-tu-proyecto"
+  ```
+
+
+
+
    
