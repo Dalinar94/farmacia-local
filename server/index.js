@@ -4,7 +4,6 @@ require('dotenv').config();
 const path = require('path');
 const app = express();
 const cors = require('cors');
-const IP = '192.168.99.50';
 
 
 // Conectar a la base de datos
@@ -25,5 +24,6 @@ app.use('/api/usuarios', require('./routes/usuarios'));
 app.get('/api/products',(req,res)=>{});
 
 const PORT = process.env.PORT || 5000;
+const IP = '172.19.80.107';
 
-app.listen(PORT,IP () => console.log(`Server running on port ${IP}`));
+app.listen(PORT,IP,() => console.log(`Server running on port ${IP}`));

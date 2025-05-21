@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../context/UserContext';
-import { TITULOS, LABELS, BOTONES } from '../../lib/constantes'; // Importar las constantes
+import { TITULOS, LABELS } from '../../lib/constantes'; // Importar las constantes
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from 'react-bootstrap/Dropdown';

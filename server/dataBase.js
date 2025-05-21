@@ -6,7 +6,7 @@ const connectDB = async () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-        console.log('MongoDB de Fran conectado...');
+        console.log('Conectado a MongoDB Atlas de Fran');
     } catch (err) {
         console.error(err.message);
         process.exit(1);

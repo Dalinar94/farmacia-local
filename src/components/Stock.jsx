@@ -1,11 +1,11 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import Navbar from './common/Navbar'; // Importar la barra de navegación
 import Footer from './common/Footer'; // Importar el componente de pie de página
 import TablaStock from './tables/TablaStock'; // Importar la tabla de stock
 import { TITULOS } from '../lib/constantes';
 import {ProductContext} from "../context/ProductContext"; // Importar las constantes
 const Stock = () => {
-  const { products, setProducts } = useContext(ProductContext); // Usar el contexto
+  const { products } = useContext(ProductContext); // Usar el contexto
 
   return (
     <div className="stock-container">

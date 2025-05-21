@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {BOTONES, LABELS} from '../../lib/constantes';
+import {LABELS} from '../../lib/constantes';
 import ModalEditarProveedores from "../modals/modalEditarProveedores";
 
 

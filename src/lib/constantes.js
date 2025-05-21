@@ -25,6 +25,7 @@ export const TITULOS = {
   PERFIL_USUARIO: "Perfil de Usuario",
   PANEL_DE_PROVEEDORES: "Panel de Proveedores",
   BUSCAR_PROVEEDOR: "Buscar Proveedor:",
+
 };
 
 // Labels

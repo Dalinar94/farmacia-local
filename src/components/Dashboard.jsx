@@ -3,7 +3,7 @@ import Navbar from './common/Navbar';
 import TablaProductos from './tables/TablaProductos'; // Importar el componente de tabla de productos
 import { ProductContext } from '../context/ProductContext';
 import Footer from './common/Footer';
-import { TITULOS } from '../lib/constantes';
+import { TITULOS,LABELS } from '../lib/constantes';
 
 //EXPLICACION DE USESTATE y HOOK de react
 //El useState es un hook de React que permite añadir el estado a un componente funcional.
@@ -31,8 +31,12 @@ const Dashboard = () => {
               </p>
             </div>
             <div className="dashboard-estadistica-tarjeta">
+              <h3>{LABELS.STOCK_BAJO}</h3>
+              <p>{productos.filter((product) => product.cantidad <= 10 && product.cantidad > 0).length}</p>
+            </div>
+            <div className="dashboard-estadistica-tarjeta">
               <h3>{TITULOS.STOCK_AGOTADO}</h3>
-              <p>{productos.filter((product) => product.cantidad < 10).length}</p>
+              <p>{productos.filter((product) => product.cantidad === 0).length}</p>
             </div>
           </div>
         </div>
