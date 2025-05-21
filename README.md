@@ -9,7 +9,7 @@ Este es un sistema de gestión de stock diseñado para farmacias locales. Permit
   - Inicio de sesión seguro
 
 - **Dashboard**
-  - Vista general del estado del inventario
+  - Vista general del estado del inventario.
   - Acceso rápido a módulos clave
   - Actualización de cantidades en stock en la tabla que se muestra.
 
@@ -24,6 +24,11 @@ Este es un sistema de gestión de stock diseñado para farmacias locales. Permit
     
 - **Soporte**
   - Sección de ayuda o contacto para asistencia técnica
+ 
+- **Usuario**
+  - Visualización del perfil de usuario.
+  - Funcionabilidad de edición del perfil de usuario
+ 
 
 ## 🛠️ Tecnologías Utilizadas
 
