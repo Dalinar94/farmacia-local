@@ -1,9 +1,52 @@
-1. Components mas css
+# 💊 Sistema de Control de Stock para Farmacia Local
 
-npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons <br>
-npm install bcryptjs //Encriptacion de password<br>
-npm install react-bootstrap bootstrap<br>
-npm install react-flip-toolkit<br>
-npm install @mui/material @emotion/react @emotion/styled
+Este es un sistema de gestión de stock diseñado para farmacias locales. Permite llevar un control eficiente de productos, proveedores y niveles de inventario, además de ofrecer soporte básico para los usuarios.
+
+## 🚀 Funcionalidades Principales
+
+- **Autenticación de Usuarios**
+  - Registro de nuevos usuarios
+  - Inicio de sesión seguro
+
+- **Dashboard**
+  - Vista general del estado del inventario.
+  - Acceso rápido a módulos clave
+  - Actualización de cantidades en stock en la tabla que se muestra.
+
+- **Productos**
+  - Visualización de detalles como nombre, descripción, precio unitario.
+
+- **Gestión de Proveedores**
+  - Registro y edición de proveedores
+
+- **Control de Stock**
+  - Alertas por bajo inventario
+    
+- **Soporte**
+  - Sección de ayuda o contacto para asistencia técnica
+ 
+- **Usuario**
+  - Visualización del perfil de usuario.
+  - Funcionabilidad de edición del perfil de usuario
+ 
+## 🛠️ Tecnologías Utilizadas
+
+- Frontend: (React, HTML/CSS)
+- Backend: ( Node.js)
+- Base de datos: (MongoDB)
+
+## 📦 Instalación de mi repositorio.
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tuusuario/tu-repo.git
+   ```
+## 🖥️ Como crear un proyecto de React.
+   ```bash
+   npm create-react-app "nombre-de-tu-proyecto"
+   ```
 
 
+
+
+   
