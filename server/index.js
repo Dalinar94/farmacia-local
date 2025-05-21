@@ -2,9 +2,10 @@ const express = require('express');
 const connectDB = require('./dataBase');
 require('dotenv').config();
 const path = require('path');
-
 const app = express();
 const cors = require('cors');
+const IP = '192.168.99.50';
+
 
 // Conectar a la base de datos
 connectDB();
@@ -25,4 +26,4 @@ app.get('/api/products',(req,res)=>{});
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT,IP () => console.log(`Server running on port ${IP}`));

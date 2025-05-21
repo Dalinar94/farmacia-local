@@ -19,14 +19,16 @@
     font-weight: 600;
   }
 
-  .productos-paneles {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 40px;
-    justify-items: center;
-  }
+.productos-paneles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 1rem;
+  margin: 0 auto;
+}
 
-  @media (max-width: 600px) {
+
+@media (max-width: 600px) {
     .productos-paneles {
       grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
       gap: 20px;
