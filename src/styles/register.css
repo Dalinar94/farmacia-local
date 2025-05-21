@@ -1,8 +1,8 @@
 .register-container {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background-image: url('../img/m1.jpg');
   background-size: cover;
   background-position: center;
@@ -82,6 +82,7 @@
 @media (max-width: 600px) {
   .register-container {
     padding: 20px;
+
   }
 
   .register-form {
