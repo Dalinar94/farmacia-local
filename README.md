@@ -29,7 +29,6 @@ Este es un sistema de gestión de stock diseñado para farmacias locales. Permit
   - Visualización del perfil de usuario.
   - Funcionabilidad de edición del perfil de usuario
  
-
 ## 🛠️ Tecnologías Utilizadas
 
 - Frontend: (React, HTML/CSS)
@@ -42,10 +41,10 @@ Este es un sistema de gestión de stock diseñado para farmacias locales. Permit
    ```bash
    git clone https://github.com/tuusuario/tu-repo.git
    ```
-## 📦 Como crear un proyecto de React.
+## 🖥️ Como crear un proyecto de React.
    ```bash
-  npm create-react-app "nombre-de-tu-proyecto"
-  ```
+   npm create-react-app "nombre-de-tu-proyecto"
+   ```
 
 
 
