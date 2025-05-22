@@ -1,7 +1,3 @@
-
-
-
-   
 ---
 
 ## 🔧 `backend/README.md`

@@ -1,32 +1,28 @@
 import React, { useState } from 'react';
 import {TITULOS, MENSAJES, LABELS, ENLACES, BOTONES, FOOTER} from '../../lib/constantes';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const [nombre, setNombre] = useState('');
-  const [apellido, setApellido] = useState('');
   const [email, setEmail] = useState('');
+  const [telefono, setTelefono] = useState('');
+  const [direccion, setDireccion] = useState('');
   const [password, setPassword] = useState('');
   const [errores, setErrores] = useState({});
+  const navigate = useNavigate();
+
 
   const validarFormulario = () => {
     const nuevosErrores = {};
 
-    // Validar nombre
     if (!nombre.trim()) {
       nuevosErrores.nombre = 'El nombre es obligatorio.';
     }
 
-    // Validar apellido
-    if (!apellido.trim()) {
-      nuevosErrores.apellido = 'El apellido es obligatorio.';
-    }
-
-    // Validar email
     if (!/\S+@\S+\.\S+/.test(email)) {
       nuevosErrores.email = 'Ingrese un email válido.';
     }
 
-    // Validar contraseña
     if (password.length < 6) {
       nuevosErrores.password = 'La contraseña debe tener al menos 6 caracteres.';
     }
@@ -34,21 +30,35 @@ const Register = () => {
     return nuevosErrores;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validar formulario
     const nuevosErrores = validarFormulario();
     if (Object.keys(nuevosErrores).length > 0) {
       setErrores(nuevosErrores);
       return;
     }
 
-    // Si no hay errores, registrar al usuario
-    setErrores({});
-    console.log('Usuario registrado:', { nombre, apellido, email, password });
-    alert('¡Usuario registrado exitosamente!');
+    try {
+      const response = await fetch('http://172.19.80.107:5000/api/usuarios/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, email, password, telefono, direccion })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        alert(data.mensaje || 'Error al registrar');
+      } else {
+        alert('¡Usuario registrado exitosamente!');
+        navigate('/');
+      }
+    } catch (error) {
+      alert('Error al conectar con el servidor');
+    }
   };
+
 
   return (
       <div className="register-container">
@@ -70,16 +80,6 @@ const Register = () => {
                 {errores.nombre && <p className="text-danger small">{errores.nombre}</p>}
               </div>
               <div>
-                <label>{LABELS.APELLIDO}:</label>
-                <input
-                    type="text"
-                    placeholder="Ingrese su apellido..."
-                    value={apellido}
-                    onChange={(e) => setApellido(e.target.value)}
-                />
-                {errores.apellido && <p className="text-danger small">{errores.apellido}</p>}
-              </div>
-              <div>
                 <label>{LABELS.EMAIL}:</label>
                 <input
                     type="email"
@@ -88,6 +88,25 @@ const Register = () => {
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 {errores.email && <p className="text-danger small">{errores.email}</p>}
+              </div>
+              <div>
+                <label>{LABELS.TELEFONO}:</label>
+                <input
+                    type="text"
+                    placeholder="Ingrese su teléfono..."
+                    value={telefono}
+                    onChange={(e) => setTelefono(e.target.value)}
+                />
+              </div>
+
+              <div>
+                <label>{LABELS.DIRECCION}:</label>
+                <input
+                    type="text"
+                    placeholder="Ingrese su dirección..."
+                    value={direccion}
+                    onChange={(e) => setDireccion(e.target.value)}
+                />
               </div>
               <div>
                 <label>{LABELS.CONTRASENA}:</label>

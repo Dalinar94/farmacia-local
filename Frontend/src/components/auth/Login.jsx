@@ -39,10 +39,7 @@ const Login = () => {
       setError('Error al conectar con el servidor');
     }
   };
-
-
   return (
-
       <div className="login-container">
         <div className="login-form ">
           <div className="login-encabezado">

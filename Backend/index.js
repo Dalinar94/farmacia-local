@@ -22,6 +22,7 @@ app.use(express.json());
 app.use('/api/products', require('./routes/productos'));
 app.use('/api/proveedores', require('./routes/proveedores'));
 app.use('/api/usuarios', require('./routes/usuarios'));
+app.use('/api/incidencias', require('./routes/incidencias'));
 
 
 

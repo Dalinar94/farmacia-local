@@ -24,7 +24,7 @@ router.post('/login', async (req, res) => {
 });
 
 
-router.get('/', async (req, res) => {
+/*router.get('/', async (req, res) => {
  try {
     const usuarios = await Usuario.find(); // Esto devuelve todos los usuarios
     res.json(usuarios);
@@ -32,6 +32,36 @@ router.get('/', async (req, res) => {
     res.status(500).json({ mensaje: 'Error al obtener los usuarios' });
  }
 });
+*/
+
+// REGISTRO
+router.post('/register', async (req, res) => {
+  const { nombre, email, password, telefono, direccion } = req.body;
+
+  try {
+    const usuarioExistente = await Usuario.findOne({ email });
+    if (usuarioExistente) {
+      return res.status(400).json({ mensaje: 'El usuario ya existe' });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const nuevoUsuario = new Usuario({
+      nombre,
+      email,
+      telefono,
+      direccion,
+      password: hashedPassword
+    });
+
+    await nuevoUsuario.save();
+    res.status(201).json({ mensaje: 'Usuario registrado exitosamente' });
+  } catch (error) {
+    console.error('Error al registrar usuario:', error);
+    res.status(500).json({ mensaje: 'Error al registrar el usuario' });
+  }
+});
+
 
 
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './common/Navbar'; // Importar la barra de navegación
 import Footer from './common/Footer'; // Importar el componente de pie de página
 import { TITULOS,BOTONES,LABELS,ENLACES,OPTIONS,INFORMACION } from '../lib/constantes';
+import {colors} from "@mui/material";
 
 const Soporte = () => {
   const [formData, setFormData] = useState({
@@ -14,10 +15,27 @@ const Soporte = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Incidencia enviada:\nTipo: ${formData.tipoIncidencia}\nDescripción: ${formData.descripcion}`);
-    setFormData({ tipoIncidencia: '', descripcion: '' }); // Reiniciar el formulario
+
+    try {
+      const response = await fetch('http://172.19.80.107:5000/api/incidencias', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        alert(data.mensaje || 'Error al enviar la incidencia');
+      } else {
+        alert('¡Incidencia enviada correctamente!');
+        setFormData({ tipoIncidencia: '', descripcion: '' });
+      }
+    } catch (error) {
+      alert('Error al conectar con el servidor');
+    }
   };
 
   const handleCancel = () => {
@@ -38,7 +56,7 @@ const Soporte = () => {
               </li>
               <li>
                 <strong>¿Cómo puedo contactar con soporte técnico?</strong>
-                <p>Puedes enviarnos un correo a <a href="mailto:soporte@farmastock.com">soporte@farmastock.com</a>.</p>
+                <p>Puedes enviarnos un correo a <p style={{color:"#007bff"}}>soporte@farmastock.com</p></p>
               </li>
               <li>
                 <strong>¿Cómo puedo ver el inventario actual?</strong>
@@ -49,7 +67,7 @@ const Soporte = () => {
           <section className="soporte-contacto">
             <h3>{TITULOS.CONTACTO}</h3>
             <ul>
-              <li>{LABELS.CORREO}: <a href="mailto:soporte@farmastock.com">soporte@farmastock.com</a></li>
+              <li>{LABELS.CORREO}: <p style={{color:"#007bff"}}>soporte@farmastock.com</p></li>
               <li>{LABELS.TELEFONO}: {INFORMACION.TELEFONO_NUMERO}</li>
               <li>{LABELS.HORARIO}: {INFORMACION.HORARIO_DIAS}</li>
             </ul>
