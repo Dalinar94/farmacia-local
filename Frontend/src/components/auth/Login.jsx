@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
 import { TITULOS,MENSAJES, LABELS,ENLACES, BOTONES,FOOTER} from '../../lib/constantes';
-import bcrypt from 'bcryptjs';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -11,37 +10,36 @@ const Login = () => {
   const { setUser } = useContext(UserContext); // Obtener la función para actualizar el usuario completo
   const navigate = useNavigate();
 
-  // Contraseña encriptada almacenada (simula los datos de la base de datos):
-  const storedPasswordHash = bcrypt.hashSync('1234', 10); // Simula una contraseña "1234" encriptada
 
-
-  const handleSubmit =async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Datos de autenticación provisionales
-    const validarEmail = 'Admin@farmastock.com';
-    const validarPassword = await bcrypt.compare(password,storedPasswordHash);
 
     if (!/\S+@\S+\.\S+/.test(email)) {
       setError('Por favor ingrese un correo electrónico válido.');
       return;
     }
 
+    try {
+      const response = await fetch('http://172.19.80.107:5000/api/usuarios/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
 
-    if (email === validarEmail && validarPassword) {
-      setError('');
-      setUser({
-        nombre: 'Admin',
-        email: validarEmail,
-        password: storedPasswordHash,
-        telefono: '123456789',
-        direccion: 'Calle Ejemplo, 123',
-      }); // Establecer los datos completos del usuario en el contexto
-      navigate('/dashboard'); // Redirigir al dashboard
-    } else {
-      setError('Email o contraseña incorrectos');
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.mensaje || 'Error al iniciar sesión');
+      } else {
+        setUser(data.usuario); // Guardar usuario en contexto
+        setError('');
+        navigate('/dashboard');
+      }
+    } catch (err) {
+      setError('Error al conectar con el servidor');
     }
   };
+
 
   return (
 

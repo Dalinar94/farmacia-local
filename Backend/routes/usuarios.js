@@ -1,26 +1,38 @@
 const express = require('express');
 const router = express.Router();
-const Usuario = require('../models/Usuario.'); // Asegúrate de que este modelo exista
+const Usuario = require('../models/Usuario'); // tu modelo de usuario
+const bcrypt = require('bcryptjs');
 
-// Obtener todos los usuarios
+router.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        const usuario = await Usuario.findOne({ email });
+        if (!usuario) {
+            return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+        }
+
+        const esValido = await bcrypt.compare(password, usuario.password);
+        if (!esValido) {
+            return res.status(401).json({ mensaje: 'Contraseña incorrecta' });
+        }
+
+        res.json({ mensaje: 'Login exitoso', usuario });
+    } catch (error) {
+        res.status(500).json({ mensaje: 'Error en el servidor' });
+    }
+});
+
+
 router.get('/', async (req, res) => {
-    try {
-        const usuarios = await Usuario.find();
-        res.json(usuarios);
-    } catch (error) {
-        res.status(500).json({ message: 'Error al obtener los usuarios' });
-    }
+ try {
+    const usuarios = await Usuario.find(); // Esto devuelve todos los usuarios
+    res.json(usuarios);
+ } catch (error) {
+    res.status(500).json({ mensaje: 'Error al obtener los usuarios' });
+ }
 });
 
-// Crear un nuevo usuario
-router.post('/', async (req, res) => {
-    try {
-        const nuevoUsuario = new Usuario(req.body);
-        await nuevoUsuario.save();
-        res.status(201).json(nuevoUsuario);
-    } catch (error) {
-        res.status(400).json({ message: 'Error al crear el usuario' });
-    }
-});
+
 
 module.exports = router;

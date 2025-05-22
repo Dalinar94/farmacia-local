@@ -20,11 +20,10 @@ app.use(express.json());
 
 // Ruta de ejemplo para productos
 app.use('/api/products', require('./routes/productos'));
-app.use('/api/usuarios', require('./routes/usuarios'));
 app.use('/api/proveedores', require('./routes/proveedores'));
+app.use('/api/usuarios', require('./routes/usuarios'));
 
-app.get('/api/products',(req,res)=>{});
-app.get('/api/proveedores',(req,res)=>{});
+
 
 const PORT = process.env.PORT || 5000;
 const IP = '172.19.80.107';
