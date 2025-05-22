@@ -1,50 +1,8 @@
-# 💊 Sistema de Control de Stock para Farmacia Local
+# 💊 Farmacia Local - Sistema de Control de Stock
 
-Este es un sistema de gestión de stock diseñado para farmacias locales. Permite llevar un control eficiente de productos, proveedores y niveles de inventario, además de ofrecer soporte básico para los usuarios.
+Este proyecto es una aplicación web para la gestión de stock de una farmacia local. Permite llevar un control detallado de productos, proveedores, niveles de stock, y usuarios, todo desde una interfaz moderna y fácil de usar.
 
-## 🚀 Funcionalidades Principales
-
-- **Autenticación de Usuarios**
-  - Registro de nuevos usuarios
-  - Inicio de sesión seguro
-
-- **Dashboard**
-  - Vista general del estado del inventario.
-  - Acceso rápido a módulos clave
-  - Actualización de cantidades en stock en la tabla que se muestra.
-
-- **Productos**
-  - Visualización de detalles como nombre, descripción, precio unitario.
-
-- **Gestión de Proveedores**
-  - Registro y edición de proveedores
-
-- **Control de Stock**
-  - Alertas por bajo inventario
-    
-- **Soporte**
-  - Sección de ayuda o contacto para asistencia técnica
- 
-- **Usuario**
-  - Visualización del perfil de usuario.
-  - Funcionabilidad de edición del perfil de usuario
- 
-## 🛠️ Tecnologías Utilizadas
-
-- Frontend: (React, HTML/CSS)
-- Backend: ( Node.js)
-- Base de datos: (MongoDB)
-
-## 📦 Instalación de mi repositorio.
-
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/tuusuario/tu-repo.git
-   ```
-## 🖥️ Como crear un proyecto de React.
-   ```bash
-   npm create-react-app "nombre-de-tu-proyecto"
-   ```
+## 📁 Estructura del Proyecto
 
 
 
