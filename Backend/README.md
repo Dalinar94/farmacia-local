@@ -1,52 +1,42 @@
-# 💊 Sistema de Control de Stock para Farmacia Local
-
-Este es un sistema de gestión de stock diseñado para farmacias locales. Permite llevar un control eficiente de productos, proveedores y niveles de inventario, además de ofrecer soporte básico para los usuarios.
-
-## 🚀 Funcionalidades Principales
-
-- **Autenticación de Usuarios**
-  - Registro de nuevos usuarios
-  - Inicio de sesión seguro
-
-- **Dashboard**
-  - Vista general del estado del inventario.
-  - Acceso rápido a módulos clave
-  - Actualización de cantidades en stock en la tabla que se muestra.
-
-- **Productos**
-  - Visualización de detalles como nombre, descripción, precio unitario.
-
-- **Gestión de Proveedores**
-  - Registro y edición de proveedores
-
-- **Control de Stock**
-  - Alertas por bajo inventario
-    
-- **Soporte**
-  - Sección de ayuda o contacto para asistencia técnica
- 
-- **Usuario**
-  - Visualización del perfil de usuario.
-  - Funcionabilidad de edición del perfil de usuario
- 
-## 🛠️ Tecnologías Utilizadas
-
-- Frontend: (React, HTML/CSS)
-- Backend: ( Node.js)
-- Base de datos: (MongoDB)
-
-## 📦 Instalación de mi repositorio.
-
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/tuusuario/tu-repo.git
-   ```
-## 🖥️ Como crear un proyecto de React.
-   ```bash
-   npm create-react-app "nombre-de-tu-proyecto"
-   ```
-
 
 
 
    
+---
+
+## 🔧 `backend/README.md`
+
+```markdown
+# 🛠️ Backend - Farmacia Local
+
+Este es el backend del sistema de control de stock para una farmacia local. Está construido con Node.js y Express, y se conecta a una base de datos MongoDB.
+
+## 🌐 Endpoints Principales
+
+- `GET /productos` - Obtener todos los productos
+- `POST /productos` - Crear un nuevo producto
+- `GET /stock` - Verificar productos agotados
+- `GET /proveedores` - Listar proveedores
+- `POST /usuarios/login` - Autenticación de usuarios
+
+## 🧰 Tecnologías
+
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+- Dotenv
+- CORS
+
+## ⚙️ Variables de Entorno
+
+Crea un archivo `.env` en la raíz del backend con las siguientes variables
+
+## ▶️ Cómo Ejecutar
+
+```bash
+cd backend
+npm install
+npm run dev
+
+---
