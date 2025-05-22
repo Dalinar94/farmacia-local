@@ -3,14 +3,14 @@ const connectDB = require('./dataBase');
 require('dotenv').config();
 const path = require('path');
 const app = express();
-const cors = require('cors');
 
+const cors = require('cors');
+app.use(cors());
 
 // Conectar a la base de datos
 connectDB();
 
-//habilitar el cors
-app.use(cors());
+
 
 //archivos de imagen locales
 app.use('/img', express.static(path.join(__dirname,'img')));
@@ -21,7 +21,10 @@ app.use(express.json());
 // Ruta de ejemplo para productos
 app.use('/api/products', require('./routes/productos'));
 app.use('/api/usuarios', require('./routes/usuarios'));
+app.use('/api/proveedores', require('./routes/proveedores'));
+
 app.get('/api/products',(req,res)=>{});
+app.get('/api/proveedores',(req,res)=>{});
 
 const PORT = process.env.PORT || 5000;
 const IP = '172.19.80.107';

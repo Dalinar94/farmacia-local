@@ -8,6 +8,9 @@ import ModalAgregarProveedor from "./modals/modalAgregarProveedor";
 
 const Proveedores = () => {
     const { suppliers,setSuppliers } = useContext(SupplierContext); // Usar el contexto para acceder a los productos
+
+    console.log('Suppliers:', suppliers);
+
     const [showAddProveedorForm, setShowAddProveedorForm] = useState(false); // Estado para mostrar el formulario
     const [searchTerm, setSearchTerm] = useState(''); // Estado para el término de búsqueda
 
@@ -21,7 +24,7 @@ const Proveedores = () => {
     };
     //metodo que filtra proveedor por nombre o descripcion
     const filtroProveedor = suppliers.filter((proveedor) =>
-        proveedor.name.toLowerCase().includes(searchTerm.toLowerCase())
+        proveedor.nombre?.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     return (

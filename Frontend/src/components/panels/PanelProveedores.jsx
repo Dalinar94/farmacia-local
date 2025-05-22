@@ -7,7 +7,6 @@ const PanelProveedores = ({ supplier, setSupplier }) => {
     const [editingSupplier, setEditingSupplier] = useState(null); // Proveedor en el que se esta editando el modal
 
 
-
     const handleConfirmEdit = (updatedProveedor) => {
         setSupplier(
             supplier.map((proveedor) =>
@@ -23,8 +22,8 @@ const PanelProveedores = ({ supplier, setSupplier }) => {
     };
     return (
             <div className="panel-proveedores">
-                    <h3 className="panel-proveedores-nombre">{supplier.name}</h3>
-                    <p className="panel-proveedores-descripcion">{LABELS.DESCRIPCION}: {supplier.description}</p>
+                    <h3 className="panel-proveedores-nombre">{supplier.nombre}</h3>
+                    <p className="panel-proveedores-descripcion">{LABELS.DESCRIPCION}: {supplier.descripcion}</p>
                     <p className="panel-proveedores-telefono">{LABELS.TELEFONO}: {supplier.telefono}</p>
                     <p className="panel-proveedores-email">{LABELS.EMAIL}: {supplier.email}</p>
                     <p className="panel-proveedores-direccion">{LABELS.DIRECCION}: {supplier.direccion}</p>
