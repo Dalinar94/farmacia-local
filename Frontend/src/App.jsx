@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ProductProvider } from './context/ProductContext'; // Importar el proveedor de contexto de productos
 import { UserProvider } from './context/UserContext'; // Importar el proveedor de contexto de usuario
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 //Componentes
 import Login from './components/auth/Login';
 import Dashboard from './components/Dashboard';
@@ -37,8 +39,10 @@ const routes = [
 
 const App = () => {
   return (
+
     <UserProvider>
-    <ProductProvider>
+      <ToastContainer position="top-right" autoClose={3000} />
+      <ProductProvider>
       <SupplierProvider>
       <Router>
         <Routes>

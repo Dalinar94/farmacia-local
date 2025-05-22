@@ -3,27 +3,52 @@ import ModalEditarProductos from '../modals/modalEditarProductos.jsx'; // Import
 import { BOTONES, LABELS } from '../../lib/constantes'; // Importar las constantes
 import {ProductContext} from "../../context/ProductContext";
 import ModalAgregarProducto from "../modals/modalAgregarProducto";
+import { toast } from 'react-toastify';
+
 
 const TablaProductos = () => {
   const [editingProduct, setEditingProduct] = useState(null); // Producto en el que se esta editando el modal
   const { productos, loading, setProductos } = useContext(ProductContext);
   const [searchTerm, setSearchTerm] = useState(''); // Estado para el término de búsqueda
   const [showAddProductForm, setShowAddProductForm] = useState(false); // Estado para mostrar el formulario
+  const [mensajeExito, setMensajeExito] = useState('');
 
   const filteredProducts = productos.filter((product) =>
       product.nombre?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleAddProduct = (product) => {
-    const newProduct = {
-      ...product,
-      id: productos.length + 1, // Generar un ID único
-      stock: parseInt(product.stock, 10), // Asegurar que el stock sea un número
-      price: parseFloat(product.price), // Asegurar que el precio sea un número con decimales
-    };
-    setProductos([...productos, newProduct]); // Agregar el nuevo producto al estado
-    setShowAddProductForm(false); // Cerrar el formulario
+  const handleAddProduct = async (product) => {
+    try {
+      const productWithImage = {
+        ...product,
+        img: product.img || 'default.jpg'
+      };
+
+      const response = await fetch('http://172.19.80.107:5000/api/products/agregar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(productWithImage),
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al agregar el producto');
+      }
+
+      const nuevoProducto = await response.json();
+      setProductos([...productos, nuevoProducto]);
+      setShowAddProductForm(false); // Cierra el modal
+
+      toast.success('Producto agregado correctamente ✅');
+
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
+
+
+
   const handleEdit = (product) => {
     setEditingProduct(product); // Establece el producto que se va a editar
   };
@@ -56,6 +81,7 @@ const TablaProductos = () => {
 
   return (
         <div>
+          {mensajeExito && <div className="mensaje-exito">{mensajeExito}</div>}
           <div className="dashboard-controles">
             <i className="fa-solid fa-magnifying-glass"/>
             <div className="dashboard-busqueda">
@@ -113,8 +139,6 @@ const TablaProductos = () => {
 
           </ul>
         </div>
-
-
           {showAddProductForm && (
               <ModalAgregarProducto
                   onAddProduct={handleAddProduct}
@@ -122,7 +146,8 @@ const TablaProductos = () => {
               />
           )}
 
-        {/* Modal de la edición del campo Acciones, el boton editar */}
+
+          {/* Modal de la edición del campo Acciones, el boton editar */}
         {editingProduct && (
             <ModalEditarProductos
                 product={editingProduct}

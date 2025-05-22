@@ -3,22 +3,27 @@ import {LABELS,BOTONES} from '../../lib/constantes'; // Importar las constantes
 
 const ModalAgregarProducto = ({ onAddProduct, onCancel }) => {
   const [newProduct, setNewProduct] = useState({
-    name: '',
-    description: '',
-    stock: '',
-    price: '',
+    nombre: '',
+    descripcion: '',
+    cantidad: '',
+    precio: '',
+    img: '',
   });
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewProduct({ ...newProduct, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onAddProduct(newProduct); // Llama a la función para agregar el producto
-    setNewProduct({ name: '', description: '', stock: '', price: '' }); // Reinicia el formulario
+    console.log('Enviando producto:', newProduct);
+    await onAddProduct(newProduct); // Espera a que se complete
+    setNewProduct({ nombre: '', descripcion: '', cantidad: '', precio: '', img: '' });
   };
+
+
 
   return (
     <div className="modal-overlay-agregar">
@@ -29,8 +34,8 @@ const ModalAgregarProducto = ({ onAddProduct, onCancel }) => {
             {LABELS.NOMBRE}:
             <input
               type="text"
-              name="name"
-              value={newProduct.name}
+              name="nombre"
+              value={newProduct.nombre}
               onChange={handleInputChange}
               required
             />
@@ -39,8 +44,8 @@ const ModalAgregarProducto = ({ onAddProduct, onCancel }) => {
             {LABELS.DESCRIPCION}:
             <input
               type="text"
-              name="description"
-              value={newProduct.description}
+              name="descripcion"
+              value={newProduct.descripcion}
               onChange={handleInputChange}
               required
             />
@@ -49,8 +54,8 @@ const ModalAgregarProducto = ({ onAddProduct, onCancel }) => {
             {LABELS.CANTIDAD}:
             <input
               type="number"
-              name="stock"
-              value={newProduct.stock}
+              name="cantidad"
+              value={newProduct.cantidad}
               onChange={handleInputChange}
               required
             />
@@ -60,12 +65,23 @@ const ModalAgregarProducto = ({ onAddProduct, onCancel }) => {
             <input
               type="number"
               step="0.01"
-              name="price"
-              value={newProduct.price}
+              name="precio"
+              value={newProduct.precio}
               onChange={handleInputChange}
               required
             />
           </label>
+          <label>
+            Imagen (URL):
+            <input
+                type="text"
+                name="img"
+                value={newProduct.img || ''}
+                onChange={handleInputChange}
+                required
+            />
+          </label>
+
           <div className="formulario-botones-agregar">
             <button type="submit" className="boton-agregar">{BOTONES.AGREGAR}</button>
             <button type="button" className="boton-cancelar" onClick={onCancel}>{BOTONES.CANCELAR}</button>
