@@ -29,22 +29,6 @@ Este es un sistema de gestión de stock diseñado para farmacias locales. Permit
   - Visualización del perfil de usuario.
   - Funcionabilidad de edición del perfil de usuario
  
-## 🛠️ Tecnologías Utilizadas
-
-- Frontend: (React, HTML/CSS)
-- Backend: ( Node.js)
-- Base de datos: (MongoDB)
-
-## 📦 Instalación de mi repositorio.
-
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/tuusuario/tu-repo.git
-   ```
-## 🖥️ Como crear un proyecto de React.
-   ```bash
-   npm create-react-app "nombre-de-tu-proyecto"
-   ```
 
 
 
