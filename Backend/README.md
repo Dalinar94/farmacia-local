@@ -38,5 +38,5 @@ Crea un archivo `.env` en la raíz del backend con las siguientes variables
 cd backend
 npm install
 npm run dev
-
+```
 ---
