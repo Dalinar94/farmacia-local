@@ -28,6 +28,6 @@ app.use('/api/incidencias', require('./routes/incidencias'));
 
 
 const PORT = process.env.PORT || 5000;
-const IP = '172.19.80.107';
+const IP = '10.0.8.76';
 
 app.listen(PORT,IP,() => console.log(`Server running on port ${IP}`));

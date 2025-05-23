@@ -7,13 +7,16 @@ const ModalEditarProductos = ({ product, onConfirm, onCancel }) => {
     e.preventDefault();
     const updatedProduct = {
       ...product,
-      name: e.target.name.value,
-      description: e.target.description.value,
-      stock: parseInt(e.target.stock.value, 10),
-      price: parseFloat(e.target.price.value),
+      nombre: e.target.nombre.value,
+      descripcion: e.target.descripcion.value,
+      cantidad: parseInt(e.target.cantidad.value, 10),
+      precio: parseFloat(e.target.precio.value),
+      img: product.img
     };
-    onConfirm(updatedProduct); // Llama a la función para confirmar los cambios
+
+    onConfirm(updatedProduct);
   };
+
 
   return (
     <div className="modal-overlay-editar">
@@ -22,19 +25,19 @@ const ModalEditarProductos = ({ product, onConfirm, onCancel }) => {
         <form onSubmit={handleSubmit}>
           <label>
             {LABELS.NOMBRE}:
-            <input type="text" name="name" defaultValue={product.name} />
+            <input type="text" name="nombre" defaultValue={product.nombre} />
           </label>
           <label>
             {LABELS.DESCRIPCION}:
-            <input type="text" name="description" defaultValue={product.description} />
+            <input type="text" name="descripcion" defaultValue={product.descripcion} />
           </label>
           <label>
             {LABELS.CANTIDAD}:
-            <input type="number" name="stock" defaultValue={product.stock} />
+            <input type="number" name="cantidad" defaultValue={product.cantidad} />
           </label>
           <label>
             {LABELS.PRECIO}:
-            <input type="number" step="0.01" name="price" defaultValue={product.price} />
+            <input type="number" step="0.01" name="precio" defaultValue={product.precio} />
           </label>
           <div className="modal-buttons">
             <button type="submit" className="action-button edit-button">

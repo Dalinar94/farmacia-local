@@ -20,7 +20,7 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch('http://172.19.80.107:5000/api/usuarios/login', {
+      const response = await fetch('http://10.0.8.76:5000/api/usuarios/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })

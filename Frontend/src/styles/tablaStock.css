@@ -1,26 +1,24 @@
 .stock-table {
-  width: 100%;
-  margin: 20px auto;
-  border-collapse: collapse;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    min-width: 500px; /* Asegura que no se rompa en móviles */
 }
 
 .stock-table th,
 .stock-table td {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  text-align: center;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
 }
 
-
 .stock-table th {
-  background-color: #f4f4f4;
-  font-weight: bold;
-  font-size: 18px;
-
+    background-color: #f4f4f4;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .stock-table th:nth-child(1),
@@ -43,7 +41,41 @@
     width: 30%; /* Estado */
 }
 
-/*BANNER DE ALERTA DE PRODUCTO AGOTADO*/
+/* Alternar colores en las filas */
+.stock-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.stock-table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Efecto hover para las filas */
+.stock-table tbody tr:hover {
+    background-color: #f0f8ff;
+    transition: background-color 0.3s ease;
+}
+
+/* Estados */
+.estado-bajo {
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.estado-medio {
+    color: orange;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.estado-normal {
+    color: green;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* BANNER DE ALERTA DE PRODUCTO AGOTADO */
 .alerta-stock-agotado {
     position: relative;
     overflow: hidden;
@@ -66,6 +98,24 @@
     line-height: 40px;
 }
 
+.scroll-body {
+     max-height: 400px;
+     overflow-y: auto;
+     border: 1px solid #ddd;
+}
+
+.scroll-body table {
+     margin: 0;
+     border-collapse: collapse;
+     width: 100%;
+}
+
+/* Vista en bloques para móviles */
+.mobile-view {
+     display: none;
+}
+
+
 @keyframes moverTexto {
     0% {
         transform: translateX(0%);
@@ -75,66 +125,69 @@
     }
 }
 
-
-/* Alternar colores en las filas */
-.stock-table tbody tr:nth-child(odd) {
-  background-color: #f9f9f9;
+.scroll-body {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
 }
 
-.stock-table tbody tr:nth-child(even) {
-  background-color: #ffffff;
+.scroll-body table {
+    margin: 0;
+    border-collapse: collapse;
+    width: 100%;
 }
 
-/* Efecto hover para las filas */
-.stock-table tbody tr:hover {
-  background-color: #f0f8ff;
-  transition: background-color 0.3s ease; /* Suaviza la transición */
+/* Vista en bloques para móviles */
+.mobile-view {
+    display: none;
 }
 
-.estado-bajo {
-  color: red;
-  font-weight: bold;
-  text-transform: uppercase;
-
-}
-
-.estado-medio {
-  color: orange;
-  font-weight: bold;
-  text-transform: uppercase;
-
-}
-
-.estado-normal {
-  color: green;
-  font-weight: bold;
-  text-transform: uppercase;
-
-}
-
-/*RESPONSIVE*/
 @media (max-width: 600px) {
-  .tabla-con-scroll{
-    max-height: none; 
-    overflow-y: none; 
-  }
- 
-  .stock-table, .stock-table thead, .stock-table tbody, .stock-table th, .stock-table td, .stock-table tr {
-     display: block;
-  }
-  
- .stock-table thead tr {
-   display: none; 
-   }
-  
-  .stock-table tr {/*MARGIN ENTRE TABLA*/
-   margin: 0 0 1rem 0;
-  }
-  
-  .stock-table td {
-  border-bottom: 1px solid #ddd;
-  position: relative;
-  text-align: center; 
-  }
+    .stock-table {
+        display: none;
+    }
 
+    .scroll-body {
+        display: none;
+    }
+
+    .mobile-view {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .producto-bloque {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1rem;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+    }
+
+    .producto-bloque div {
+        margin-bottom: 0.5rem;
+    }
+
+    .producto-bloque .estado-bajo {
+        color: red;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .producto-bloque .estado-medio {
+        color: orange;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .producto-bloque .estado-normal {
+        color: green;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
 }
+
+

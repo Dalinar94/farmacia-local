@@ -79,3 +79,28 @@
 .boton-cancelar:hover {
   background-color: var(--color-peligro-hover);
 }
+
+@media (max-width: 600px) {
+  .modal-content-agregar {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .modal-content-agregar h3 {
+    font-size: 20px;
+  }
+
+  .modal-content-agregar input {
+    font-size: 16px;
+  }
+
+  .formulario-botones-agregar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .formulario-botones-agregar .boton-agregar,
+  .formulario-botones-agregar .boton-cancelar {
+    width: 100%;
+  }
+}

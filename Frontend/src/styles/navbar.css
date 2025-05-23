@@ -143,34 +143,51 @@
       font-weight: 600;
   }
 
-    /* Estilo para los enlaces dentro del Offcanvas */
-    .list-offcanvas-enlaces ul,
-    .list-offcanvas-enlaces li{
-         list-style: none;
-         padding: 1rem;
-         font-size: 1.5rem;
-         text-align: left;
-         margin: 0;
-
+    /* Estilo del encabezado del Offcanvas */
+    .offcanvas-header-estilo {
+        background-image: url('../img/m1.jpg');
+        background-size: cover;
+        background-position: 50% 56%;
+        padding: 1rem;
+        border-bottom: 1px solid #dee2e6;
     }
 
-   /* Encabezado del Offcanvas */
-   .offcanvas-header-estilo {
-         border-bottom: 1px solid #ddd;
-         background-image: url('../img/m1.jpg');
-         background-size: cover;
-         background-position: center;
-   }
-
-     .offcanvas-title-estilo {
-         color: var(--color-texto);
-         text-align: center;
-         font-weight: 600;
-         width: 100%;
-     }
-    .custom{
-        background-color: var(--color-fondoMain);
+    /* Estilo del título */
+    .offcanvas-title-estilo {
+        color: #000000;
+        font-size: 2rem;
+        font-weight: bold;
     }
+
+    /* Estilo del cuerpo del Offcanvas */
+    .offcanvas .custom {
+        background-color: #ffffff; /* Fondo claro */
+        padding: 1.5rem;
+    }
+
+    /* Lista de enlaces */
+    .list-offcanvas-enlaces ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .list-offcanvas-enlaces li {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .list-offcanvas-enlaces a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .list-offcanvas-enlaces a:hover {
+        color: #0056b3;
+    }
+
 }
 
 

@@ -11,12 +11,14 @@ const TablaProductos = () => {
   const { productos, loading, setProductos } = useContext(ProductContext);
   const [searchTerm, setSearchTerm] = useState(''); // Estado para el término de búsqueda
   const [showAddProductForm, setShowAddProductForm] = useState(false); // Estado para mostrar el formulario
-  const [mensajeExito, setMensajeExito] = useState('');
+  const [mensajeExito] = useState('');
 
   const filteredProducts = productos.filter((product) =>
       product.nombre?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+
+  //añadir producto
   const handleAddProduct = async (product) => {
     try {
       const productWithImage = {
@@ -24,7 +26,7 @@ const TablaProductos = () => {
         img: product.img || 'default.jpg'
       };
 
-      const response = await fetch('http://172.19.80.107:5000/api/products/agregar', {
+      const response = await fetch('http://10.0.8.76:5000/api/products/agregar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,7 +39,10 @@ const TablaProductos = () => {
       }
 
       const nuevoProducto = await response.json();
-      setProductos([...productos, nuevoProducto]);
+
+      const productoFormateado = { ...nuevoProducto, id: nuevoProducto._id };
+
+      setProductos(prev => [...prev, productoFormateado]);
       setShowAddProductForm(false); // Cierra el modal
 
       toast.success('Producto agregado correctamente ✅');
@@ -48,23 +53,60 @@ const TablaProductos = () => {
   };
 
 
-
   const handleEdit = (product) => {
     setEditingProduct(product); // Establece el producto que se va a editar
   };
 
-  const handleDelete = (productId) => {
-    setProductos(productos.filter((product) => product.id !== productId)); // Elimina el producto
+  const handleDelete = async (productId) => {
+    try {
+      const response = await fetch(`http://10.0.8.76:5000/api/products/${productId}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al eliminar el producto');
+      }
+
+      setProductos(productos.filter((product) => product.id !== productId));
+      toast.success('Producto eliminado correctamente ✅');
+    } catch (error) {
+      console.error('Error:', error);
+      toast.error('No se pudo eliminar el producto ❌');
+    }
   };
 
-  const handleConfirmEdit = (updatedProduct) => {
-    setProductos(
-        productos.map((product) =>
-            product.id === updatedProduct.id ? updatedProduct : product
-        )
-    );
-    setEditingProduct(null); // Cierra el modal de edición
+
+  const handleConfirmEdit = async (updatedProduct) => {
+    try {
+      const response = await fetch(`http://10.0.8.76:5000/api/products/${updatedProduct.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedProduct),
+      });
+      console.log('Código de respuesta:', response.status);
+
+      if (!response.ok) {
+        throw new Error('Error al actualizar el producto');
+      }
+
+      const productoActualizado = await response.json();
+
+      setProductos(
+          productos.map((product) =>
+              product.id === productoActualizado._id ? { ...productoActualizado, id: productoActualizado._id } : product
+          )
+      );
+
+      toast.success('Producto actualizado correctamente ✅');
+      setEditingProduct(null);
+    } catch (error) {
+      console.error('Error:', error);
+      toast.error('No se pudo actualizar el producto ❌');
+    }
   };
+
 
   const handleCancelEdit = () => {
     setEditingProduct(null); // Cierra el modal de edición sin guardar cambios
@@ -83,7 +125,8 @@ const TablaProductos = () => {
         <div>
           {mensajeExito && <div className="mensaje-exito">{mensajeExito}</div>}
           <div className="dashboard-controles">
-            <i className="fa-solid fa-magnifying-glass"/>
+            <i className="fa-solid fa-magnifying-glass icono-buscador" />
+            <span className="texto-buscador">Buscador:</span>
             <div className="dashboard-busqueda">
               <input
                   type="text"

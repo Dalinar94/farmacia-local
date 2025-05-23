@@ -5,6 +5,7 @@ import PanelProveedores from './panels/PanelProveedores'; // Importar el compone
 import { SupplierContext } from "../context/ProveedoresContext"; // Importar las constantes
 import {BOTONES, TITULOS} from '../lib/constantes';
 import ModalAgregarProveedor from "./modals/modalAgregarProveedor";
+import {toast} from "react-toastify";
 
 const Proveedores = () => {
     const { suppliers,setSuppliers } = useContext(SupplierContext); // Usar el contexto para acceder a los productos
@@ -14,14 +15,38 @@ const Proveedores = () => {
     const [showAddProveedorForm, setShowAddProveedorForm] = useState(false); // Estado para mostrar el formulario
     const [searchTerm, setSearchTerm] = useState(''); // Estado para el término de búsqueda
 
-    const handleAddProveedor = (proveedor) => {
-        const newProveedor = {
-           ...proveedor,
-            id: suppliers.length + 1, // Generar un ID único
-        };
-        setSuppliers([...suppliers, newProveedor]); // Agregar el nuevo producto al estado
-        setShowAddProveedorForm(false); // Cerrar el formulario
+    const handleAddProveedor = async (proveedor) => {
+        try {
+            const proveedorWithImage = {
+                ...proveedor,
+                img: proveedor.img || 'default.jpg'
+            };
+
+            const response = await fetch('http://172.19.80.107:5000/api/proveedores/agregar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(proveedorWithImage),
+            });
+
+            if (!response.ok) {
+                throw new Error('Error al agregar el proveedor');
+            }
+
+            const nuevoProveedor = await response.json();
+            setSuppliers([...suppliers, nuevoProveedor]);
+            setShowAddProveedorForm(false); // Cierra el modal
+
+            toast.success('Proveedor agregado correctamente ✅');
+
+        } catch (error) {
+            console.error('Error:', error);
+        }
     };
+
+
+
     //metodo que filtra proveedor por nombre o descripcion
     const filtroProveedor = suppliers.filter((proveedor) =>
         proveedor.nombre?.toLowerCase().includes(searchTerm.toLowerCase())

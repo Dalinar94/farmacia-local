@@ -19,10 +19,10 @@ const ModalAgregarProducto = ({ onAddProduct, onCancel }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Enviando producto:', newProduct);
-    await onAddProduct(newProduct); // Espera a que se complete
+    await onAddProduct(newProduct); // AGREGA EL PRODUCTO
     setNewProduct({ nombre: '', descripcion: '', cantidad: '', precio: '', img: '' });
+    onCancel(); // Cierra el modal después de agregar
   };
-
 
 
   return (

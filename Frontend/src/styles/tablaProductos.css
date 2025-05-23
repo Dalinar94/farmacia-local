@@ -5,21 +5,12 @@
     font-size: 16px;
 
 }
-.mensaje-exito {
-    background-color: #d4edda;
-    color: #155724;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    text-align: center;
-}
-
 
 .tabla-con-scroll-productos {
     max-height: 520px; /* Ajusta la altura según tus necesidades */
     overflow-y: scroll;
-
 }
+
 .products-table thead tr {
     background-color: #f4f4f4;
     border-bottom: 2px solid #ddd;
@@ -143,21 +134,38 @@
   font-size: 16px;
 }
 
-/* --- Responsive Design --- */
+
+
+.texto-buscador {
+     display: none;
+     font-weight: bold;
+     font-size: 16px;
+     margin-right: 0.5rem;
+}
+
 
 /* Smartphones (pantallas pequeñas) */
 @media (max-width: 600px) {
+    .icono-buscador {
+         display: none !important;
+    }
+
+     .texto-buscador {
+         display: inline;
+     }
+
     .products-table {
         font-size: 14px;
     }
     .tabla-con-scroll-productos {
         max-height: none; /* Ajusta la altura según tus necesidades */
-        overflow-y: none;
     }
-
+    .tabla-con-scroll-productos ul{
+        padding: 0;
+    }
     .products-table th,
     .products-table td {
-        padding: 8px 10px;
+        padding: 1rem;
     }
 
     .products-table thead {
@@ -185,10 +193,8 @@
     }
 
     .action-buttons {
-        flex-direction: flex;
         align-items: center; /* Centrar verticalmente */
         gap: 15px; /* Espaciado entre botones */
-        padding: auto; /* Espaciado superior e inferior */
     }
 
     .modal-content {
@@ -198,6 +204,36 @@
         width: auto; /* Ancho automático para la columna de acciones */
         text-align: center; /* Centrar contenido */
     }
+
+        .dashboard-controles {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .dashboard-controles i {
+            align-self: center;
+            font-size: 25px;
+        }
+
+        .dashboard-busqueda input {
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .boton-primario button {
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .mensaje-exito {
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+
 }
 
     /* Tablets (pantallas medianos) */

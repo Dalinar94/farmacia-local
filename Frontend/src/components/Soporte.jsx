@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Navbar from './common/Navbar'; // Importar la barra de navegación
 import Footer from './common/Footer'; // Importar el componente de pie de página
 import { TITULOS,BOTONES,LABELS,ENLACES,OPTIONS,INFORMACION } from '../lib/constantes';
-import {colors} from "@mui/material";
 
 const Soporte = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +18,7 @@ const Soporte = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://172.19.80.107:5000/api/incidencias', {
+      const response = await fetch('http://10.0.8.76:5000/api/incidencias', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

@@ -42,9 +42,7 @@
     border-radius: 5px;
     font-size: 14px;
   }
-  
 
-  
   /* Animación de entrada */
   @keyframes fadeIn {
     from {
@@ -56,3 +54,28 @@
       transform: scale(1);
     }
   }
+
+@media (max-width: 600px) {
+    .modal-content-editar {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .modal-content-editar h3 {
+        font-size: 20px;
+    }
+
+    .modal-content-editar input {
+        font-size: 16px;
+    }
+
+    .modal-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .modal-buttons .action-button {
+        width: 100%;
+    }
+}

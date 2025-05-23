@@ -11,7 +11,8 @@ export const ProductProvider = ({ children }) => {
     fetch(process.env.REACT_APP_API_URL +'/products')
         .then(res => res.json())
         .then(data => {
-          setProductos(data);
+          const productosConId =data.map(p=>({...p, id: p._id}));
+          setProductos(productosConId);
           setLoading(false);
         })
         .catch(err => {
@@ -22,7 +23,7 @@ export const ProductProvider = ({ children }) => {
 
 
   return (
-    <ProductContext.Provider value={{ productos, loading }}>
+    <ProductContext.Provider value={{ productos,setProductos, loading }}>
       {children}
     </ProductContext.Provider>
   );
