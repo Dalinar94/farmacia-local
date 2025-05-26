@@ -18,7 +18,7 @@ const Soporte = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://10.0.8.76:5000/api/incidencias', {
+        const response = await fetch((`${process.env.REACT_APP_API_URL}/incidencias`), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

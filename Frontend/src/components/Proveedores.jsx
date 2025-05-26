@@ -22,7 +22,7 @@ const Proveedores = () => {
                 img: proveedor.img || 'default.jpg'
             };
 
-            const response = await fetch('http://172.19.80.107:5000/api/proveedores/agregar', {
+                const response = await fetch((`${process.env.REACT_APP_API_URL}/proveedores/agregar`), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
