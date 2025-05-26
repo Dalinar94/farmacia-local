@@ -1,38 +1,29 @@
----
+# 🏥 FarmaStock - Backend
 
-## 🔧 `backend/README.md`
+Este es el backend del sistema **FarmaStock**, una aplicación diseñada para la gestión de inventarios en farmacias. Proporciona una API RESTful que permite manejar productos, proveedores, stock y alertas de forma eficiente.
 
-```markdown
-# 🛠️ Backend - Farmacia Local
+## 🚀 Tecnologías utilizadas
 
-Este es el backend del sistema de control de stock para una farmacia local. Está construido con Node.js y Express, y se conecta a una base de datos MongoDB.
+- **Node.js**
+- **Express.js**
+- **MongoDB** (con MongoDB Compass para la gestión visual)
+- **Mongoose**
+- **Dotenv**
+- **Nodemon**
 
-## 🌐 Endpoints Principales
+## 📁 Estructura del proyecto
 
-- `GET /productos` - Obtener todos los productos
-- `POST /productos` - Crear un nuevo producto
-- `GET /stock` - Verificar productos agotados
-- `GET /proveedores` - Listar proveedores
-- `POST /usuarios/login` - Autenticación de usuarios
+## 🔄 Flujo de ejecución
 
-## 🧰 Tecnologías
+1. `routes/` → recibe la solicitud HTTP y la dirige al controlador correspondiente.
+2. `controllers/` → procesa la solicitud y llama a los servicios necesarios.
+3. `services/` → ejecuta la lógica de negocio y valida los datos.
+4. `repositories/` → realiza las operaciones con la base de datos.
+5. `models/` → define la estructura de los datos almacenados.
 
-- Node.js
-- Express
-- MongoDB
-- Mongoose
-- Dotenv
-- CORS
+## 📦 Instalación
 
-## ⚙️ Variables de Entorno
-
-Crea un archivo `.env` en la raíz del backend con las siguientes variables
-
-## ▶️ Cómo Ejecutar
-
-```bash
-cd backend
-npm install
-npm run dev
-
----
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/farmastock-backend.git
+   cd farmastock-backend
