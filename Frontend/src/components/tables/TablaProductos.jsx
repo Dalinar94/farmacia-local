@@ -26,7 +26,7 @@ const TablaProductos = () => {
         img: product.img || 'default.jpg'
       };
 
-      const response = await fetch('http://10.0.8.76:5000/api/products/agregar', {
+      const response = await fetch('http://10.0.8.100:5000/api/products/agregar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ const TablaProductos = () => {
 
   const handleDelete = async (productId) => {
     try {
-      const response = await fetch(`http://10.0.8.76:5000/api/products/${productId}`, {
+      const response = await fetch(`http://10.0.8.100:5000/api/products/${productId}`, {
         method: 'DELETE',
       });
 
@@ -78,7 +78,7 @@ const TablaProductos = () => {
 
   const handleConfirmEdit = async (updatedProduct) => {
     try {
-      const response = await fetch(`http://10.0.8.76:5000/api/products/${updatedProduct.id}`, {
+      const response = await fetch(`http://10.0.8.100:5000/api/products/${updatedProduct.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

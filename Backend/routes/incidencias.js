@@ -1,27 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Incidencia = require('../models/Incidencia');
+const incidenciasController = require('../controllers/incidenciasController');
 
-router.post('/', async (req, res) => {
-  const { tipoIncidencia, descripcion } = req.body;
-  const enviarCorreo = require('../utils/mailer');
-
-  try {
-    const nuevaIncidencia = new Incidencia({ tipoIncidencia, descripcion });
-    await nuevaIncidencia.save();
-    res.status(201).json({ mensaje: 'Incidencia registrada correctamente' });
-
-    
-    await enviarCorreo({
-        to: 'soporte.farmastock@gmail.com',
-        subject: 'Nueva incidencia registrada',
-        text: `Tipo: ${tipoIncidencia}\nDescripción: ${descripcion}`
-    });
-
-  } catch (error) {
-    console.error('Error al registrar incidencia:', error);
-    res.status(500).json({ mensaje: 'Error al registrar la incidencia' });
-  }
-});
+router.post('/', incidenciasController.registrarIncidencia);
 
 module.exports = router;
+// Este archivo define las rutas relacionadas con las incidencias. Utiliza el controlador incidenciasController para manejar las solicitudes POST para registrar nuevas incidencias.
