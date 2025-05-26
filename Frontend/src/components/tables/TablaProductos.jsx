@@ -16,8 +16,6 @@ const TablaProductos = () => {
   const filteredProducts = productos.filter((product) =>
       product.nombre?.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-
   //añadir producto
   const handleAddProduct = async (product) => {
     try {
