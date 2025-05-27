@@ -55,7 +55,8 @@ const Soporte = () => {
               </li>
               <li>
                 <strong>¿Cómo puedo contactar con soporte técnico?</strong>
-                <p>Puedes enviarnos un correo a <p style={{color:"#007bff"}}>soporte@farmastock.com</p></p>
+                <p>Puedes enviarnos un correo a:</p>
+                <p style={{ color: "#007bff" }}>soporte@farmastock.com</p>
               </li>
               <li>
                 <strong>¿Cómo puedo ver el inventario actual?</strong>
@@ -66,7 +67,7 @@ const Soporte = () => {
           <section className="soporte-contacto">
             <h3>{TITULOS.CONTACTO}</h3>
             <ul>
-              <li>{LABELS.CORREO}: <p style={{color:"#007bff"}}>soporte@farmastock.com</p></li>
+              <li>{LABELS.CORREO}: <span style={{color:"#007bff"}}>soporte@farmastock.com</span></li>
               <li>{LABELS.TELEFONO}: {INFORMACION.TELEFONO_NUMERO}</li>
               <li>{LABELS.HORARIO}: {INFORMACION.HORARIO_DIAS}</li>
             </ul>
