@@ -33,80 +33,17 @@ const App = () => {
                                 {/* Rutas públicas */}
                                 <Route path="/" element={<Login />} />
                                 <Route path="/register" element={<Register />} />
+                                <Route path="/politicas" element={<Politicas />}/>
+                                <Route path="/terminos" element={<Terminos />}/>
+                                <Route path="/cookies" element={<Cookies />}/>
+                                <Route path="/usuario" element={<Usuario />}/>
 
                                 {/* Rutas protegidas */}
-                                <Route
-                                    path="/dashboard"
-                                    element={
-                                        <ProtectedRoute>
-                                            <Dashboard />
-                                        </ProtectedRoute>
-                                    }
-                                />
-                                <Route
-                                    path="/productos"
-                                    element={
-                                        <ProtectedRoute>
-                                            <Productos />
-                                        </ProtectedRoute>
-                                    }
-                                />
-                                <Route
-                                    path="/stock"
-                                    element={
-                                        <ProtectedRoute>
-                                            <Stock />
-                                        </ProtectedRoute>
-                                    }
-                                />
-                                <Route
-                                    path="/proveedores"
-                                    element={
-                                        <ProtectedRoute>
-                                            <Proveedores />
-                                        </ProtectedRoute>
-                                    }
-                                />
-                                <Route
-                                    path="/soporte"
-                                    element={
-                                        <ProtectedRoute>
-                                            <Soporte />
-                                        </ProtectedRoute>
-                                    }
-                                />
-                                <Route
-                                    path="/usuario"
-                                    element={
-                                        <ProtectedRoute>
-                                            <Usuario />
-                                        </ProtectedRoute>
-                                    }
-                                />
-                                <Route
-                                    path="/politicas"
-                                    element={
-                                        <ProtectedRoute>
-                                            <Politicas />
-                                        </ProtectedRoute>
-                                    }
-                                />
-                                <Route
-                                    path="/terminos"
-                                    element={
-                                        <ProtectedRoute>
-                                            <Terminos />
-                                        </ProtectedRoute>
-                                    }
-                                />
-                                <Route
-                                    path="/cookies"
-                                    element={
-                                        <ProtectedRoute>
-                                            <Cookies />
-                                        </ProtectedRoute>
-                                    }
-                                />
+                                <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}/>
+                                <Route path="/productos" element={<ProtectedRoute><Productos /></ProtectedRoute>}/>
+                                <Route path="/stock" element={<ProtectedRoute><Stock /></ProtectedRoute>}/>
+                                <Route path="/proveedores" element={<ProtectedRoute><Proveedores /></ProtectedRoute>}/>
+                                <Route path="/soporte" element={<ProtectedRoute><Soporte /></ProtectedRoute>}/>
                             </Routes>
                         </Router>
                     </SupplierProvider>

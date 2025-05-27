@@ -6,8 +6,10 @@ import { useAuth } from '../context/AuthContext';
 
 const ProtectedRoute = ({ children }) => {
     const { isAuthenticated } = useAuth();
+    console.log("Autenticado: "+ isAuthenticated)
 
     if (!isAuthenticated) {
+        console.log("ME VOY!!!!")
         return <Navigate to="/" replace />;
     }
 

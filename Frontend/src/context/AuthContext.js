@@ -9,6 +9,8 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const token = localStorage.getItem('token');
+        console.log("TOKEN COMPROBAR: "+token);
+        console.log("TOKEN BOOLEAN: "+ !!token);
         setIsAuthenticated(!!token);
     }, []);
 
@@ -18,8 +20,8 @@ export const AuthProvider = ({ children }) => {
     };
 
     const logout = () => {
-        localStorage.removeItem('token');
-        setIsAuthenticated(false);
+        //localStorage.removeItem('token');
+        //setIsAuthenticated(false);
     };
 
     return (

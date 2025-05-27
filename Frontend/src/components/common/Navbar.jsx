@@ -23,9 +23,9 @@ const Navbar = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-    const handleLogout = () => {
-      navigate('/');
-    }
+  const handleLogout = () => {
+    navigate('/');
+  }
 
   return (
     <nav className="navbar-custom">
