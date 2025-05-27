@@ -1,4 +1,5 @@
 // context/AuthContext.js
+/*PROTECCION Y SEGURIDAD DE ACCESO A MIS DIFERENTES PAGINAS DE LA APLICACION DE FARMASTOCK*/
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
