@@ -1,61 +1,119 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ProductProvider } from './context/ProductContext'; // Importar el proveedor de contexto de productos
-import { UserProvider } from './context/UserContext'; // Importar el proveedor de contexto de usuario
+import { ProductProvider } from './context/ProductContext';
+import { UserProvider } from './context/UserContext';
+import { SupplierProvider } from './context/ProveedoresContext';
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-//Componentes
+
+// Componentes
 import Login from './components/auth/Login';
-import Dashboard from './components/Dashboard';
 import Register from './components/auth/Register';
+import Dashboard from './components/Dashboard';
 import Productos from './components/Productos';
 import Stock from './components/Stock';
 import Soporte from './components/Soporte';
 import Usuario from './components/Usuario';
 import Proveedores from './components/Proveedores';
-//Componentes legales
-import Cookies from './components/legal/Cookies'; 
+import Cookies from './components/legal/Cookies';
 import Politicas from './components/legal/Politicas';
 import Terminos from './components/legal/Terminos';
-import {SupplierProvider} from "./context/ProveedoresContext";
-
-
-// Importar los componentes de las páginas legales
-const routes = [
-  { path: '/', element: <Login /> },
-  { path: '/dashboard', element: <Dashboard /> },
-  { path: '/register', element: <Register /> },
-  { path: '/productos', element: <Productos /> },
-  { path: '/stock', element: <Stock /> },
-  {path: '/proveedores', element: <Proveedores/>},
-  { path: '/soporte', element: <Soporte /> },
-  { path: '/politicas', element: <Politicas /> },
-  { path: '/terminos', element: <Terminos /> },
-  { path: '/cookies', element: <Cookies /> },
-  { path: '/usuario', element: <Usuario /> },
-
-
-];
 
 const App = () => {
-  return (
+    return (
+        <AuthProvider>
+            <UserProvider>
+                <ProductProvider>
+                    <SupplierProvider>
+                        <ToastContainer position="top-right" autoClose={3000} />
+                        <Router>
+                            <Routes>
+                                {/* Rutas públicas */}
+                                <Route path="/" element={<Login />} />
+                                <Route path="/register" element={<Register />} />
 
-    <UserProvider>
-      <ToastContainer position="top-right" autoClose={3000} />
-      <ProductProvider>
-      <SupplierProvider>
-      <Router>
-        <Routes>
-          {routes.map((route, index) => ( //mapear las rutas
-            <Route key={index} path={route.path} element={route.element} />
-          ))}
-        </Routes>
-      </Router>
-      </SupplierProvider>
-    </ProductProvider>
-  </UserProvider>
-
-  );
+                                {/* Rutas protegidas */}
+                                <Route
+                                    path="/dashboard"
+                                    element={
+                                        <ProtectedRoute>
+                                            <Dashboard />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path="/productos"
+                                    element={
+                                        <ProtectedRoute>
+                                            <Productos />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path="/stock"
+                                    element={
+                                        <ProtectedRoute>
+                                            <Stock />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path="/proveedores"
+                                    element={
+                                        <ProtectedRoute>
+                                            <Proveedores />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path="/soporte"
+                                    element={
+                                        <ProtectedRoute>
+                                            <Soporte />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path="/usuario"
+                                    element={
+                                        <ProtectedRoute>
+                                            <Usuario />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path="/politicas"
+                                    element={
+                                        <ProtectedRoute>
+                                            <Politicas />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path="/terminos"
+                                    element={
+                                        <ProtectedRoute>
+                                            <Terminos />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path="/cookies"
+                                    element={
+                                        <ProtectedRoute>
+                                            <Cookies />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                            </Routes>
+                        </Router>
+                    </SupplierProvider>
+                </ProductProvider>
+            </UserProvider>
+        </AuthProvider>
+    );
 };
 
 export default App;

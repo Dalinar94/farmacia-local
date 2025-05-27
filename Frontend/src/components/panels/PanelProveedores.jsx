@@ -25,7 +25,7 @@ const PanelProveedores = ({ supplier, setSupplier }) => {
                     <h3 className="panel-proveedores-nombre">{supplier.nombre}</h3>
                     <p className="panel-proveedores-descripcion"><strong>{LABELS.DESCRIPCION}</strong>: {supplier.descripcion}</p>
                     <p className="panel-proveedores-telefono"><strong>{LABELS.TELEFONO}</strong>: {supplier.telefono}</p>
-                <p className="panel-proveedores-email"><strong>{LABELS.EMAIL}</strong>: {supplier.email}</p>
+                    <p className="panel-proveedores-email"><strong>{LABELS.EMAIL}</strong>: {supplier.email}</p>
                     <p className="panel-proveedores-direccion"><strong>{LABELS.DIRECCION}</strong>: {supplier.direccion}</p>
 
                 {/* Modal de la edición del campo de Acciones, el boton editar */}
