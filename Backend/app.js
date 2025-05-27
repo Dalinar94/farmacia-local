@@ -20,7 +20,7 @@ app.use('/api', routes);
 
 // Servidor
 const PORT = process.env.PORT || 5000;
-const IP = '10.0.8.122';
+const IP = '172.19.80.102';
 
 app.listen(PORT, IP, () => {
   console.log(`Servidor corriendo en http://${IP}:${PORT}`);
