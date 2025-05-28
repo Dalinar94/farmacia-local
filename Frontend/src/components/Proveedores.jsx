@@ -72,7 +72,7 @@ const Proveedores = () => {
             <main className="proveedores-content">
                 <h1>{TITULOS.PANEL_DE_PROVEEDORES}</h1>
                 <div className="dashboard-controles">
-                    <i className="fa-solid fa-magnifying-glass"/>
+                    <i className="fa-solid fa-magnifying-glass hide-on-mobile"/>
                     <div className="dashboard-busqueda">
                         <input
                             type="text"
