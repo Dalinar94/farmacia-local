@@ -65,6 +65,7 @@
     border: 1px solid #ccc;
     font-size: 16px;
     margin: 0 1rem 0 0;
+    width: 25rem;
 }
 .boton-primario button{
     background-color: var(--color-primario);
