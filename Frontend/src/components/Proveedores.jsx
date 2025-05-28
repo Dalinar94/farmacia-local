@@ -8,7 +8,7 @@ import ModalAgregarProveedor from "./modals/modalAgregarProveedor";
 import {toast} from "react-toastify";
 
 const Proveedores = () => {
-    const { suppliers,setSuppliers } = useContext(SupplierContext); // Usar el contexto para acceder a los productos
+    const { suppliers,setProveedores  } = useContext(SupplierContext); // Usar el contexto para acceder a los productos
 
     console.log('Suppliers:', suppliers);
 
@@ -17,17 +17,12 @@ const Proveedores = () => {
 
     const handleAddProveedor = async (proveedor) => {
         try {
-            const proveedorWithImage = {
-                ...proveedor,
-                img: proveedor.img || 'default.jpg'
-            };
-
                 const response = await fetch((`${process.env.REACT_APP_API_URL}/proveedores/agregar`), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(proveedorWithImage),
+                body: JSON.stringify(proveedor),
             });
 
             if (!response.ok) {
@@ -35,7 +30,7 @@ const Proveedores = () => {
             }
 
             const nuevoProveedor = await response.json();
-            setSuppliers([...suppliers, nuevoProveedor]);
+            setProveedores(prev => [...prev, nuevoProveedor]);
             setShowAddProveedorForm(false); // Cierra el modal
 
             toast.success('Proveedor agregado correctamente ✅');
@@ -45,6 +40,23 @@ const Proveedores = () => {
         }
     };
 
+    const handleDeleteProveedor = async (id) => {
+        try {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/proveedores/${id}`, {
+                method: 'DELETE',
+            });
+
+            if (!response.ok) {
+                throw new Error('Error al eliminar el proveedor');
+            }
+
+            setProveedores(prev => prev.filter(p => p._id !== id));
+            toast.success('Proveedor eliminado correctamente ✅');
+        } catch (error) {
+            console.error('Error al eliminar proveedor:', error);
+            toast.error('Error al eliminar el proveedor ❌');
+        }
+    };
 
 
     //metodo que filtra proveedor por nombre o descripcion
@@ -76,7 +88,11 @@ const Proveedores = () => {
                 <div className="proveedores-paneles">
                     {
                         filtroProveedor.map((supplier) => (
-                            <PanelProveedores key={supplier.id} supplier={supplier} />
+                            <PanelProveedores
+                                key={supplier._id}
+                                supplier={supplier}
+                                onDelete={handleDeleteProveedor}
+                            />
                         ))}
                 </div>
 

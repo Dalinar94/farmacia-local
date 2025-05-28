@@ -3,8 +3,8 @@ import {LABELS,BOTONES} from '../../lib/constantes';
 
 const ModalAgregarProveedor = ({ onAddProveedor, onCancel }) => {
     const [newProveedor, setNewProveedor] = useState({
-        name: '',
-        description: '',
+        nombre: '',
+        descripcion: '',
         telefono: '',
         email: '',
         direccion: ''
@@ -12,12 +12,13 @@ const ModalAgregarProveedor = ({ onAddProveedor, onCancel }) => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setNewProveedor({ ...newProveedor, [name]: value });// los ... es para concatenar proveedores
+        setNewProveedor({ ...newProveedor, [name]: value });
     };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        onAddProveedor(newProveedor); // Llama a la función para agregar el producto
-        setNewProveedor({ name: '', description: '', telefono: '', email: '', direccion:'' }); // Reinicia el formulario
+        onAddProveedor(newProveedor); // Llama a la función para agregar el proveedor
+        setNewProveedor({ nombre: '', descripcion: '', telefono: '', email: '', direccion: '' });
     };
 
     return (
@@ -29,8 +30,8 @@ const ModalAgregarProveedor = ({ onAddProveedor, onCancel }) => {
                         {LABELS.NOMBRE}:
                         <input
                             type="text"
-                            name="name"
-                            value={newProveedor.name}
+                            name="nombre"
+                            value={newProveedor.nombre}
                             onChange={handleInputChange}
                             required
                         />
@@ -39,8 +40,8 @@ const ModalAgregarProveedor = ({ onAddProveedor, onCancel }) => {
                         {LABELS.DESCRIPCION}:
                         <input
                             type="text"
-                            name="description"
-                            value={newProveedor.description}
+                            name="descripcion"
+                            value={newProveedor.descripcion}
                             onChange={handleInputChange}
                             required
                         />
@@ -84,4 +85,5 @@ const ModalAgregarProveedor = ({ onAddProveedor, onCancel }) => {
         </div>
     );
 };
+
 export default ModalAgregarProveedor;

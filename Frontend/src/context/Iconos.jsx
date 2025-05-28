@@ -27,5 +27,4 @@ const FooterRedesSociales = () => {
   );
 };
 
-
 export default FooterRedesSociales;

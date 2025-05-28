@@ -3,16 +3,15 @@
     max-width: 420px;
     border: 2px solid #ddd;
     border-radius: 12px;
-    padding: 24px;
+    padding: 1rem;
     background-color: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    margin: 0 auto;
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    min-height: 300px; /* Ajusta según el contenido más largo */
+    min-height: 300px;
 }
 
 .panel-proveedores:hover {
@@ -20,10 +19,28 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.acciones {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.acciones {
+    margin-top: 10px;
+}
+
+.action-button {
+    padding: 0.5rem 1rem;
+    width: auto;
+}
+
+
+
 .panel-proveedores-nombre {
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 18px;
+    margin-bottom: 0.5rem;
     color: var(--color-primario);
     border-bottom: 2px solid var(--color-primario);
     padding-bottom: 10px;
