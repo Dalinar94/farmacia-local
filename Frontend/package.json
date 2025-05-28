@@ -2,6 +2,7 @@
   "name": "farmacia-stock",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dalinar94.github.io/farmacia-local",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
