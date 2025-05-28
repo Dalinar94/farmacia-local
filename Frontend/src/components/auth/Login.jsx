@@ -28,7 +28,7 @@ const Login = () => {
       });
 
       const data = await response.json();
-    console.log("Token:" +data.token)
+      console.log("Token:" +data.token)
       if (!response.ok) {
         setError(data.mensaje || 'Error al iniciar sesión');
       } else {
@@ -36,6 +36,8 @@ const Login = () => {
         login(data.token);     // Guardar token y actualizar autenticación
         setError('');
         navigate('/dashboard');
+        console.log("Usuario recibido:", data.usuario);
+
       }
     } catch (err) {
       setError('Error al conectar con el servidor');

@@ -21,7 +21,8 @@ const token = jwt.sign({ id: usuario._id, rol:usuario.rol }, JWT_SECRET, { expir
       nombre: usuario.nombre,
       email: usuario.email,
       telefono: usuario.telefono,
-      direccion: usuario.direccion
+      direccion: usuario.direccion,
+      rol: usuario.role
    }
  };
 };
@@ -41,7 +42,8 @@ const token = jwt.sign({ id: usuario._id, rol:rol }, JWT_SECRET, { expiresIn: '1
       nombre: usuario.nombre,
       email: usuario.email,
       telefono: usuario.telefono,
-      direccion: usuario.direccion
+      direccion: usuario.direccion,
+      rol:usuario.role
    }
  };
 };

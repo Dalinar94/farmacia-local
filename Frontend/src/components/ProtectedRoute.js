@@ -5,11 +5,13 @@ import { Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 const ProtectedRoute = ({ children }) => {
-    const { isAuthenticated } = useAuth();
+    const { isAuthenticated, loading } = useAuth();
     console.log("Autenticado: "+ isAuthenticated)
 
+    if(loading){
+        return <div>Cargando...</div>
+    }
     if (!isAuthenticated) {
-        console.log("ME VOY!!!!")
         return <Navigate to="/" replace />;
     }
 

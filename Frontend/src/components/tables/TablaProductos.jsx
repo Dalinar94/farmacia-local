@@ -4,6 +4,7 @@ import { BOTONES, LABELS } from '../../lib/constantes'; // Importar las constant
 import {ProductContext} from "../../context/ProductContext";
 import ModalAgregarProducto from "../modals/modalAgregarProducto";
 import { toast } from 'react-toastify';
+import { UserContext } from '../../context/UserContext';
 
 
 const TablaProductos = () => {
@@ -12,6 +13,7 @@ const TablaProductos = () => {
   const [searchTerm, setSearchTerm] = useState(''); // Estado para el término de búsqueda
   const [showAddProductForm, setShowAddProductForm] = useState(false); // Estado para mostrar el formulario
   const [mensajeExito] = useState('');
+  const { user } = useContext(UserContext);
 
   const filteredProducts = productos.filter((product) =>
       product.nombre?.toLowerCase().includes(searchTerm.toLowerCase())
@@ -134,9 +136,11 @@ const TablaProductos = () => {
                   onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
+            {user?.rol === 'admin' && (
             <div className="boton-primario">
               <button onClick={() => setShowAddProductForm(true)}>{BOTONES.AGREGAR_PRODUCTO}</button>
             </div>
+            )}
           </div>
         <div className="tabla-con-scroll-productos">
           <ul>
@@ -147,7 +151,9 @@ const TablaProductos = () => {
                     <th>{LABELS.DESCRIPCION}</th>
                     <th>{LABELS.CANTIDAD}</th>
                     <th>{LABELS.PRECIO}</th>
+                    {user?.rol === 'admin' && (
                     <th>{LABELS.ACCIONES}</th>
+                    )}
                   </tr>
                   </thead>
                   <tbody>
@@ -157,6 +163,7 @@ const TablaProductos = () => {
                         <td style={{textAlign:'left'}}>{producto.descripcion.split('.')[0] + '.'}</td>
                         <td className={getStockClass(producto.cantidad)}>{producto.cantidad}</td>
                         <td className="centrado no-wrap">{producto.precio.toFixed(2).replace('.',',')} €</td>
+                        {user?.rol === 'admin' && (
                         <td>
                           <div className="action-buttons">
                             <button
@@ -173,6 +180,7 @@ const TablaProductos = () => {
                             </button>
                           </div>
                         </td>
+                            )}
                       </tr>
                   ))}
                   </tbody>

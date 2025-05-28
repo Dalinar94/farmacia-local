@@ -6,9 +6,11 @@ import { SupplierContext } from "../context/ProveedoresContext"; // Importar las
 import {BOTONES, TITULOS} from '../lib/constantes';
 import ModalAgregarProveedor from "./modals/modalAgregarProveedor";
 import {toast} from "react-toastify";
+import { UserContext } from '../context/UserContext';
 
 const Proveedores = () => {
     const { suppliers,setProveedores  } = useContext(SupplierContext); // Usar el contexto para acceder a los productos
+    const { user } = useContext(UserContext);
 
     console.log('Suppliers:', suppliers);
 
@@ -80,9 +82,12 @@ const Proveedores = () => {
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
                     </div>
+                    {user?.rol === 'admin' && (
                     <div className="boton-primario">
                         <button onClick={() => setShowAddProveedorForm(true)}>{BOTONES.AGREGAR_PROVEEDOR}</button>
                     </div>
+                    )}
+
                 </div>
 
                 <div className="proveedores-paneles">

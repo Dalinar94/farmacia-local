@@ -6,12 +6,12 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [loading, setLoading] = useState(true); // Nuevo estado
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        console.log("TOKEN COMPROBAR: "+token);
-        console.log("TOKEN BOOLEAN: "+ !!token);
         setIsAuthenticated(!!token);
+        setLoading(false);
     }, []);
 
     const login = (token) => {
@@ -20,12 +20,12 @@ export const AuthProvider = ({ children }) => {
     };
 
     const logout = () => {
-        //localStorage.removeItem('token');
-        //setIsAuthenticated(false);
+        localStorage.removeItem('token');
+        setIsAuthenticated(false);
     };
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+        <AuthContext.Provider value={{ isAuthenticated, login, logout, loading }}>
             {children}
         </AuthContext.Provider>
     );

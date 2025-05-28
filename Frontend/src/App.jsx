@@ -36,7 +36,6 @@ const App = () => {
                                 <Route path="/politicas" element={<Politicas />}/>
                                 <Route path="/terminos" element={<Terminos />}/>
                                 <Route path="/cookies" element={<Cookies />}/>
-                                <Route path="/usuario" element={<Usuario />}/>
 
                                 {/* Rutas protegidas */}
                                 <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}/>
@@ -44,6 +43,8 @@ const App = () => {
                                 <Route path="/stock" element={<ProtectedRoute><Stock /></ProtectedRoute>}/>
                                 <Route path="/proveedores" element={<ProtectedRoute><Proveedores /></ProtectedRoute>}/>
                                 <Route path="/soporte" element={<ProtectedRoute><Soporte /></ProtectedRoute>}/>
+                                <Route path="/usuario" element={<ProtectedRoute><Usuario /></ProtectedRoute>} />
+
                             </Routes>
                         </Router>
                     </SupplierProvider>
