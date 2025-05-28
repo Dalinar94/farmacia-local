@@ -21,8 +21,6 @@ const Usuario = () => {
         </div>
     );
   }
-
-
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -35,6 +33,9 @@ const Usuario = () => {
   };
 
   const handleSave = async () => {
+
+    console.log('Guardando usuario...', editedUser);
+
     // Validar la nueva contraseña solo si está siendo editada
     if (password !== '') {
       if (password.length < 6) {
@@ -49,7 +50,6 @@ const Usuario = () => {
       // Actualizar el usuario con la nueva contraseña encriptada
       setEditedUser({ ...editedUser, password: hashedPassword });
     }
-
     // Guardar los demás datos del usuario
     setUser(editedUser);
     setIsEditing(false);
@@ -154,6 +154,10 @@ const Usuario = () => {
                 )}
                 {error && <p className="text-danger small">{error}</p>}
               </td>
+            </tr>
+            <tr>
+              <td>Rol:</td>
+              <td>{user.rol}</td>
             </tr>
             </tbody>
           </table>

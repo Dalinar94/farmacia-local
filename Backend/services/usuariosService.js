@@ -65,3 +65,15 @@ exports.register = async ({ nombre, email, password, telefono, direccion }) => {
 
   return usuariosRepository.create(nuevoUsuario);
 };
+exports.actualizarUsuario = async (id, datos) => {
+  const { nombre, email, telefono, direccion, password } = datos;
+
+  const datosActualizados = { nombre, email, telefono, direccion };
+
+  if (password) {
+    const salt = await bcrypt.genSalt(10);
+    datosActualizados.password = await bcrypt.hash(password, salt);
+  }
+
+  return usuariosRepository.updateById(id, datosActualizados);
+};

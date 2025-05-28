@@ -91,9 +91,7 @@
   .usuario-datos td {
     font-size: 14px; 
   }
-
-  .usuario-acciones button {
-    width: 50%; 
-    margin: 5px 0; 
+  .profile-icon{
+    width: 30%;
   }
 }
