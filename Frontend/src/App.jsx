@@ -28,7 +28,7 @@ const App = () => {
                 <ProductProvider>
                     <SupplierProvider>
                         <ToastContainer position="top-right" autoClose={3000} />
-                        <Router>
+                        <Router basename="/farmacia-local" >
                             <Routes>
                                 {/* Rutas públicas */}
                                 <Route path="/" element={<Login />} />
