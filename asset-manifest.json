@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/farmacia-local/static/css/main.9546af9c.css",
+    "main.css": "/farmacia-local/static/css/main.a1095d7e.css",
     "main.js": "/farmacia-local/static/js/main.940235d7.js",
     "static/js/453.0fbeea2e.chunk.js": "/farmacia-local/static/js/453.0fbeea2e.chunk.js",
     "static/media/m1.jpg": "/farmacia-local/static/media/m1.e047460a50c61d1aa343.jpg",
@@ -13,12 +13,12 @@
     "static/media/fa-v4compatibility.ttf": "/farmacia-local/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/farmacia-local/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/farmacia-local/index.html",
-    "main.9546af9c.css.map": "/farmacia-local/static/css/main.9546af9c.css.map",
+    "main.a1095d7e.css.map": "/farmacia-local/static/css/main.a1095d7e.css.map",
     "main.940235d7.js.map": "/farmacia-local/static/js/main.940235d7.js.map",
     "453.0fbeea2e.chunk.js.map": "/farmacia-local/static/js/453.0fbeea2e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9546af9c.css",
+    "static/css/main.a1095d7e.css",
     "static/js/main.940235d7.js"
   ]
 }
