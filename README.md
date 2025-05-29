@@ -1,27 +1,29 @@
-# 💊 Farmacia Local - Sistema de Control de Stock
+# 🏥 FarmaStock - Backend
 
-Este proyecto es una aplicación web para la gestión de stock de una farmacia local. Permite llevar un control detallado de productos, proveedores, niveles de stock, y usuarios, todo desde una interfaz moderna y fácil de usar.
+Este es el backend del sistema **FarmaStock**, una aplicación diseñada para la gestión de inventarios en farmacias. Proporciona una API RESTful que permite manejar productos, proveedores, stock y alertas de forma eficiente.
 
-## 📁 Estructura del Proyecto
- - **FRONTEND (CLIENTE)
- - **BACKEND (SERVIDOR-BASE DE DATOS)
+## 🚀 Tecnologías utilizadas
 
-## 🚀 Tecnologías Utilizadas
+- **Node.js**
+- **Express.js**
+- **MongoDB** (con MongoDB Compass para la gestión visual)
+- **Mongoose**
+- **Dotenv**
+- **Nodemon**
 
-- **Frontend:** React, React Router, Axios, etc.
-- **Backend:** Node.js, Express, MongoDB, Mongoose
-- **Base de Datos:** MongoDB Atlas o local
+## 📁 Estructura del proyecto
 
-## 📦 Instalación de mi repositorio Y Instalación de un proyecto de React.
+## 🔄 Flujo de ejecución
+
+1. `routes/` → recibe la solicitud HTTP y la dirige al controlador correspondiente.
+2. `controllers/` → procesa la solicitud y llama a los servicios necesarios.
+3. `services/` → ejecuta la lógica de negocio y valida los datos.
+4. `repositories/` → realiza las operaciones con la base de datos.
+5. `models/` → define la estructura de los datos almacenados.
+
+## 📦 Instalación
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tuusuario/tu-repo.git
-   ```
-## 🖥️ Como crear un proyecto de React.
-   ```bash
-   npm create-react-app "nombre-de-tu-proyecto"
-   ```
-
-
-   
+   git clone https://github.com/tu-usuario/farmastock-backend.git
+   cd farmastock-backend
