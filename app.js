@@ -20,10 +20,10 @@ app.use('/api', routes);
 
 // Servidor
 const PORT = process.env.PORT || 5000;
-const IP = '10.0.8.160';
+//const IP = '10.0.8.160';
 
-app.listen(PORT, IP, () => {
-  console.log(`Servidor corriendo en http://${IP}:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
 
 // Este archivo es el punto de entrada de la aplicación, configura el servidor Express, conecta a la base de datos y define las rutas principales.
