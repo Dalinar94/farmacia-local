@@ -120,7 +120,7 @@ export const FOOTER ={
   TERMINOS: "Términos y condiciones",
   COOKIES: "Política de Cookies",
   SIGUENOS: "Síguenos",
-  EMAIL:"frandavowork@gmail.com",
+  EMAIL:"soporte.farmastock@gmail.com",
   // Redes sociales
   FACEBOOK: { name: "Facebook", icon: "fab fa-facebook-f" },
   TWITTER: { name: "Twitter", icon: "fab fa-x-twitter" },

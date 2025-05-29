@@ -83,9 +83,13 @@ const Navbar = () => {
         </div>
 
 
-
-            <div className="logo">
-        <a href={"/Dashboard"}><img src="/img/logo.png" alt="Logo" /></a>
+      <div className="logo">
+            <Link
+                to="/Dashboard"
+                className={location.pathname === '/Dashboard' ? 'active-link' : ''}
+            >
+                <img src={`${process.env.PUBLIC_URL}/img/logo.png`} alt="Logo" />
+            </Link>
         <h2>{TITULOS.NOMBRE_EMPRESA}</h2>
       </div>
 
@@ -145,7 +149,9 @@ const Navbar = () => {
 
       <div className="dropdown-custom">
           <DropdownButton  id="dropdown-basic-button" title={"Hola, " + user.nombre}>
-            <Dropdown.Item href="/Usuario">{user.nombre}</Dropdown.Item>
+            <Dropdown.Item>
+                <Link to="/Usuario" className={location.pathname === '/Usuario' ? 'active-link' : ''}>{user.nombre}</Link>
+            </Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
           </DropdownButton>

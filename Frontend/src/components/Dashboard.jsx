@@ -4,6 +4,7 @@ import TablaProductos from './tables/TablaProductos'; // Importar el componente 
 import { ProductContext } from '../context/ProductContext';
 import Footer from './common/Footer';
 import { TITULOS,LABELS } from '../lib/constantes';
+import {UserContext} from "../context/UserContext";
 
 //EXPLICACION DE USESTATE y HOOK de react
 //El useState es un hook de React que permite añadir el estado a un componente funcional.
@@ -12,6 +13,7 @@ import { TITULOS,LABELS } from '../lib/constantes';
 
 const Dashboard = () => {
   const { productos } = useContext(ProductContext); // Usar el contexto de productos
+  const { user } = useContext(UserContext);
 
   return (
     <div className="dashboard-container">
@@ -24,12 +26,14 @@ const Dashboard = () => {
               <h3>{TITULOS.PRODUCTOS}</h3>
               <p>{productos.length}</p>
             </div>
+            {user?.rol === 'admin' && (
             <div className="dashboard-estadistica-tarjeta">
               <h3>{TITULOS.VALOR_INVENTARIO}</h3>
               <p>
                 {productos.reduce((total, product) => total + product.precio * product.cantidad, 0).toFixed(2)} €
               </p>
             </div>
+            )}
             <div className="dashboard-estadistica-tarjeta">
               <h3>{LABELS.STOCK_BAJO}</h3>
               <p>{productos.filter((product) => product.cantidad <= 10 && product.cantidad > 0).length}</p>

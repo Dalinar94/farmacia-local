@@ -44,7 +44,6 @@ const App = () => {
                                 <Route path="/proveedores" element={<ProtectedRoute><Proveedores /></ProtectedRoute>}/>
                                 <Route path="/soporte" element={<ProtectedRoute><Soporte /></ProtectedRoute>}/>
                                 <Route path="/usuario" element={<ProtectedRoute><Usuario /></ProtectedRoute>} />
-
                             </Routes>
                         </Router>
                     </SupplierProvider>

@@ -70,7 +70,7 @@ const Usuario = () => {
         <h1>{TITULOS.PERFIL_USUARIO}</h1>
 
         <div className="profile-container">
-          <img className="profile-icon" src="/img/logo.png" alt="Logo" />
+          <img className="profile-icon" src={`${process.env.PUBLIC_URL}/img/logo.png`} alt="Logo" />
           <input type="file" id="image-upload" accept="image/*" style={{ display: 'none' }} />
           <button className="boton-profile" onClick={() => document.getElementById('image-upload').click()}>Cambiar Imagen</button>
         </div>

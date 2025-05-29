@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
 import { useAuth } from '../../context/AuthContext'; // Importar el contexto de autenticación
 import { TITULOS, MENSAJES, LABELS, ENLACES, BOTONES, FOOTER } from '../../lib/constantes';
+import { Link,useLocation } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -11,6 +12,7 @@ const Login = () => {
   const { setUser } = useContext(UserContext);
   const { login } = useAuth(); // Usar la función login del contexto
   const navigate = useNavigate();
+  const location = useLocation(); // Hook para obtener la ubicación actual
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -81,9 +83,9 @@ const Login = () => {
             </div>
             <div className="login-links">
               <label className="text-muted">{LABELS.NO_CUENTA}</label>
-              <a href="/register" className="text-decoration-none">
+              <Link to="/register" className={`text-decoration-none ${location.pathname === '/register' ? 'active-link' : ''}`}>
                 {ENLACES.REGISTRATE}
-              </a>
+              </Link>
             </div>
             <div className="btn-login">
               <button type="submit" className="btn btn-primary btn-lg">
@@ -99,7 +101,7 @@ const Login = () => {
           </form>
         </div>
         <div className="logo-login">
-          <img src="/img/logo.png" alt="Logo" />
+          <img src={`${process.env.PUBLIC_URL}/img/logo.png`} alt="Logo" />
         </div>
       </div>
   );

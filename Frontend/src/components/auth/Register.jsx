@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {TITULOS, MENSAJES, LABELS, ENLACES, BOTONES, FOOTER} from '../../lib/constantes';
 import { useNavigate } from 'react-router-dom';
+import { Link,useLocation } from 'react-router-dom';
 
 const Register = () => {
   const [nombre, setNombre] = useState('');
@@ -10,6 +11,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [errores, setErrores] = useState({});
   const navigate = useNavigate();
+  const location = useLocation(); // Hook para obtener la ubicación actual
 
 
   const validarFormulario = () => {
@@ -121,9 +123,9 @@ const Register = () => {
             </div>
             <div className="register-links">
               <label>{LABELS.YA_CUENTA}</label>
-              <a href="/" className="text-decoration-none">
+              <Link to="/Login" className={`text-decoration-none ${location.pathname === '/' ? 'active-link' : ''}`}>
                 {ENLACES.ACCEDE}
-              </a>
+              </Link>
             </div>
 
             <div className="btn-registro">
@@ -139,7 +141,7 @@ const Register = () => {
         </div>
 
         <div className="logo-login">
-          <img src="/img/logo.png" alt="Logo" />
+          <img src={`${process.env.PUBLIC_URL}/img/logo.png`} alt="Logo" />
         </div>
       </div>
   );
