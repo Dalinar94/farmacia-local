@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {Routes, Route, HashRouter, Navigate, BrowserRouter} from 'react-router-dom';
 import { ProductProvider } from './context/ProductContext';
 import { UserProvider } from './context/UserContext';
 import { SupplierProvider } from './context/ProveedoresContext';
@@ -20,6 +20,7 @@ import Proveedores from './components/Proveedores';
 import Cookies from './components/legal/Cookies';
 import Politicas from './components/legal/Politicas';
 import Terminos from './components/legal/Terminos';
+import MainRouterLogin from "./components/MainRouterLogin";
 
 const App = () => {
     return (
@@ -28,15 +29,14 @@ const App = () => {
                 <ProductProvider>
                     <SupplierProvider>
                         <ToastContainer position="top-right" autoClose={3000} />
-                        <Router basename="/farmacia-local" >
+                        <HashRouter>
                             <Routes>
-                                {/* Rutas públicas */}
-                                <Route path="/" element={<Login />} />
+                                <Route path="/" element={<MainRouterLogin/>} />
                                 <Route path="/register" element={<Register />} />
                                 <Route path="/politicas" element={<Politicas />}/>
                                 <Route path="/terminos" element={<Terminos />}/>
                                 <Route path="/cookies" element={<Cookies />}/>
-
+                                <Route path="/login" element={<Login />}/>
                                 {/* Rutas protegidas */}
                                 <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}/>
                                 <Route path="/productos" element={<ProtectedRoute><Productos /></ProtectedRoute>}/>
@@ -44,8 +44,9 @@ const App = () => {
                                 <Route path="/proveedores" element={<ProtectedRoute><Proveedores /></ProtectedRoute>}/>
                                 <Route path="/soporte" element={<ProtectedRoute><Soporte /></ProtectedRoute>}/>
                                 <Route path="/usuario" element={<ProtectedRoute><Usuario /></ProtectedRoute>} />
+                                <Route element={<h1>Esa pagina no existe</h1>}></Route> {/* TODO Manejar rutas no definidas*/}
                             </Routes>
-                        </Router>
+                        </HashRouter>
                     </SupplierProvider>
                 </ProductProvider>
             </UserProvider>

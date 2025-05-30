@@ -11,6 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import {deepPurple} from '@mui/material/colors';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { useAuth } from '../../context/AuthContext';
 
 
 const Navbar = () => {
@@ -18,14 +19,16 @@ const Navbar = () => {
   const location = useLocation(); // Hook para obtener la ubicación actual
   const { user } = useContext(UserContext); // Obtener el usuario desde el contexto
   const [isActive] = useState(false); // Estado para el icono de hamburguesa
-
+  const { logout } = useAuth();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const handleLogout = () => {
-    navigate('/');
-  }
+      logout();
+      navigate('/', { replace: true });
+  };
+
 
   return (
     <nav className="navbar-custom">

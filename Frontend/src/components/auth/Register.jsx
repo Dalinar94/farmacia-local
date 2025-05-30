@@ -123,7 +123,7 @@ const Register = () => {
             </div>
             <div className="register-links">
               <label>{LABELS.YA_CUENTA}</label>
-              <Link to="/Login" className={`text-decoration-none ${location.pathname === '/' ? 'active-link' : ''}`}>
+              <Link to="/" className={`text-decoration-none ${location.pathname === '/' ? 'active-link' : ''}`}>
                 {ENLACES.ACCEDE}
               </Link>
             </div>

@@ -13,6 +13,8 @@ const Login = () => {
   const { login } = useAuth(); // Usar la función login del contexto
   const navigate = useNavigate();
   const location = useLocation(); // Hook para obtener la ubicación actual
+  const from = location.state?.from?.pathname || '/dashboard';
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,7 +39,7 @@ const Login = () => {
         setUser(data.usuario); // Guardar usuario en contexto
         login(data.token);     // Guardar token y actualizar autenticación
         setError('');
-        navigate('/dashboard');
+        navigate(from, { replace: true });
         console.log("Usuario recibido:", data.usuario);
 
       }
