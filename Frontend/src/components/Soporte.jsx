@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './common/Navbar'; // Importar la barra de navegación
 import Footer from './common/Footer'; // Importar el componente de pie de página
 import { TITULOS,BOTONES,LABELS,ENLACES,OPTIONS,INFORMACION } from '../lib/constantes';
+import { Link } from 'react-router-dom';
 
 const Soporte = () => {
   const [formData, setFormData] = useState({
@@ -75,8 +76,8 @@ const Soporte = () => {
           <section className="soporte-enlaces">
             <h3>{TITULOS.ENLACES_UTILES}</h3>
             <ul>
-              <li><a href="/dashboard">{ENLACES.IR_PANEL}</a></li>
-              <li><a href="/productos">{ENLACES.GESTION_PRODUCTOS}</a></li>
+              <li><Link to="/Dashboard">{ENLACES.IR_PANEL}</Link></li>
+              <li><Link to="/Productos">{ENLACES.GESTION_PRODUCTOS}</Link></li>
             </ul>
           </section>
         </aside>
