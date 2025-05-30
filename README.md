@@ -22,6 +22,10 @@ Este proyecto es una aplicación web para la gestión de stock de una farmacia l
    ```bash
    npm create-react-app "nombre-de-tu-proyecto"
    ```
+## GitHub Pages.
 
+Usuario de prueba con rol de perfil bajo para poder acceder y ver la app:
 
+Email: prueba@example.com
+password: 123456
    
