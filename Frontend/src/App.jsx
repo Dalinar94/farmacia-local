@@ -1,5 +1,5 @@
 import React from 'react';
-import {Routes, Route, HashRouter, Navigate, BrowserRouter} from 'react-router-dom';
+import {Routes, Route, HashRouter} from 'react-router-dom';
 import { ProductProvider } from './context/ProductContext';
 import { UserProvider } from './context/UserContext';
 import { SupplierProvider } from './context/ProveedoresContext';

@@ -41,6 +41,11 @@
     color: var(--color-primario);
     font-weight: 600;
 }
+
+.dashboard-estadistica-tarjeta .active-link{
+    text-decoration: none;
+}
+
 .dashboard-header h1{
     font-size: 31px;
     color: var(--color-texto);
@@ -80,75 +85,82 @@
     background-color: var(--color-primario-hover);
 }
 
-/*RESPONSIVE DESIGN*/
+/* Smartphones */
 @media (max-width: 600px) {
-    .dashboard-estadisticas{
+    .dashboard-container {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
     }
-    .dashboard-estadistica-tarjeta{
-        width: 100%;
-        margin: 10px 0;
-    }
-    .dashboard-header h1{
+
+    .dashboard-header h1 {
         font-size: 24px;
         text-align: center;
     }
-    .dashboard-subtitulo{
+
+    .dashboard-estadisticas {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .dashboard-estadistica-tarjeta {
+        width: 90%;
+        text-align: center;
+    }
+
+    .dashboard-subtitulo {
         font-size: 16px;
         text-align: center;
     }
-    .dashboard-busqueda input{
-        width: 80%;
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-    .dashboard-busqueda{
+
+    .dashboard-busqueda,
+    .dashboard-busqueda input {
         width: 100%;
         justify-content: center;
     }
-    .dashboard-busqueda button{
-        width: 100%;
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .dashboard-header h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .dashboard-estadisticas {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .dashboard-estadistica-tarjeta {
+        flex: 1 1 40%;
+        max-width: 40%;
+        min-width: 200px;
+        text-align: center;
+    }
+
+
+    .dashboard-subtitulo {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .dashboard-busqueda,
+    .dashboard-busqueda input {
+        width: 80%;
+        justify-content: center;
     }
     .dashboard-controles{
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 }
 
-@media (min-width: 601px) and (max-width: 1024px) {
-    .dashboard-container{
-        flex-direction: column;
-        background-color: var(--color-fondoMain);
-        height: 100%;
-        display: flex;
-    }
-   
-    .dashboard-estadisticas{
-        align-items: center;
-        gap: 10px;
-        flex-direction: flex;
-
-    }
-    .dashboard-estadistica-tarjeta{
-        width: calc(28% - 20px);
-    }
-    .dashboard-header h1{
-        font-size: 28px;
-    }
-    .dashboard-subtitulo{
-        font-size: 18px;
-        text-align: center;
-    }
-    .dashboard-busqueda input{
-        width: 80%;
-    }
-    .dashboard-busqueda{
-        width: 80%;
-        justify-content: center;
-    }
-    
-}
 
 

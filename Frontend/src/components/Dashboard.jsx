@@ -5,6 +5,7 @@ import { ProductContext } from '../context/ProductContext';
 import Footer from './common/Footer';
 import { TITULOS,LABELS } from '../lib/constantes';
 import {UserContext} from "../context/UserContext";
+import { Link, useLocation } from 'react-router-dom';
 
 //EXPLICACION DE USESTATE y HOOK de react
 //El useState es un hook de React que permite añadir el estado a un componente funcional.
@@ -14,6 +15,7 @@ import {UserContext} from "../context/UserContext";
 const Dashboard = () => {
   const { productos } = useContext(ProductContext); // Usar el contexto de productos
   const { user } = useContext(UserContext);
+  const location = useLocation(); // Hook para obtener la ubicación actual
 
   return (
     <div className="dashboard-container">
@@ -23,7 +25,9 @@ const Dashboard = () => {
           <h1>{TITULOS.DASHBOARD_TITULO}</h1>
           <div className="dashboard-estadisticas">
             <div className="dashboard-estadistica-tarjeta">
+              <Link to="/Productos" className={location.pathname === '/Dashboard' ? 'active-link' : ''}>
               <h3>{TITULOS.PRODUCTOS}</h3>
+              </Link>
               <p>{productos.length}</p>
             </div>
             {user?.rol === 'admin' && (

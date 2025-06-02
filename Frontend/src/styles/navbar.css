@@ -67,7 +67,7 @@
 }
 
 /* Smartphones (pantallas pequeñas) */
-@media (max-width: 600px) {
+@media (max-width: 600px){
   .navbar {
       flex-direction: column;
       height: auto;
@@ -224,6 +224,8 @@
         width: 4rem;
         height: 4rem;
     }
+
+
 }
 
 

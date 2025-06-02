@@ -144,7 +144,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className="d-none d-sm-flex">
+      <div className="d-none d-md-none d-xl-flex ">
       <Stack direction="row" spacing={1} >
           <Avatar sx={{ bgcolor: deepPurple[500] }}>{user.nombre.charAt(0)+user.nombre.charAt(1).toUpperCase()}</Avatar>
       </Stack>
