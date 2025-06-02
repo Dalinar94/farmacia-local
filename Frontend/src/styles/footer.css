@@ -43,12 +43,49 @@
     text-decoration: underline;
     color: var(--color-texto);
 }
-
-/* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .dashboard-footer {
         flex-direction: column;
+        align-items: center;
         text-align: center;
-        font-size: 13px;
     }
+
+    .footer-left,
+    .footer-right,
+    .footer-center {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .footer-left p,
+    .footer-right p,
+    .footer-center p {
+        margin: 0.25rem 0;
+    }
+
+    .footer-link {
+        font-size: 0.95rem;
+    }
+}
+
+
+/* Estilos para tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+     .dashboard-footer {
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: center;
+         text-align: center;
+     }
+
+     .footer-left,
+     .footer-right,
+     .footer-center {
+         width: 45%;
+         margin: 1rem;
+     }
+
+     .footer-link {
+         font-size: 1rem;
+     }
 }
