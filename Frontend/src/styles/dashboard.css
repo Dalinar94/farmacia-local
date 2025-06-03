@@ -160,6 +160,9 @@
         align-items: center;
         gap: 1rem;
     }
+    .dashboard-controles i{
+        display:  none;
+    }
 }
 
 

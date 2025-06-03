@@ -154,4 +154,7 @@
   .btn-login button {
     font-size: 16px;
   }
+  .logo-login img{
+    display: none;
+  }
 }

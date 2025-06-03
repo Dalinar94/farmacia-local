@@ -32,18 +32,17 @@ const Navbar = () => {
 
   return (
     <nav className="navbar-custom">
+        {/* Ícono de hamburguesa solo en móviles */}
+        <div className="d-block d-sm-none p-2">
+            <FontAwesomeIcon
+                icon={faBars}
+                size="2x"
+                onClick={handleShow}
+                style={{ cursor: 'pointer' }}
+            />
+        </div>
 
-            {/* Ícono de hamburguesa solo en móviles */}
-            <div className="d-block d-sm-none p-2">
-                <FontAwesomeIcon
-                    icon={faBars}
-                    size="2x"
-                    onClick={handleShow}
-                    style={{ cursor: 'pointer' }}
-                />
-            </div>
-
-            {/* Offcanvas solo para móviles */}
+        {/* Offcanvas solo para móviles */}
         <div className="d-none d-sm-flex" >
             <Offcanvas show={show} onHide={handleClose} backdrop="static">
                 <div className="offcanvas-header-estilo">
@@ -85,13 +84,12 @@ const Navbar = () => {
             </Offcanvas>
         </div>
 
-
       <div className="logo">
             <Link
                 to="/Dashboard"
                 className={location.pathname === '/Dashboard' ? 'active-link' : ''}
             >
-                <img src={`${process.env.PUBLIC_URL}/img/logo.png`} alt="Logo" />
+            <img src={`${process.env.PUBLIC_URL}/img/logo.png`} alt="Logo" />
             </Link>
         <h2>{TITULOS.NOMBRE_EMPRESA}</h2>
       </div>

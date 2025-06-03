@@ -95,3 +95,35 @@
     width: 30%;
   }
 }
+@media (max-width: 901px) {
+  .usuario-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    padding: 1rem;
+  }
+  .usuario-datos table {
+    width: 90%;
+  }
+  .usuario-datos td {
+    font-size: 1em;
+  }
+  .profile-icon{
+    width: 25%;
+  }
+}
+@media (max-width: 1024px) {
+  .usuario-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    padding: 1rem;
+  }
+  .usuario-datos table {
+    width: 90%;
+  }
+  .usuario-datos td {
+    font-size: 14px;
+  }
+  .profile-icon{
+    width: 20%;
+  }
+}
