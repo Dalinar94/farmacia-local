@@ -58,6 +58,12 @@ const TablaProductos = () => {
   };
 
   const handleDelete = async (productId) => {
+    const confirmDelete = window.confirm('¿Estás seguro de que deseas eliminar este producto?');
+
+    if (!confirmDelete) {
+      return; // El usuario canceló la eliminación
+    }
+
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/products/${productId}`, {
         method: 'DELETE',
@@ -74,6 +80,9 @@ const TablaProductos = () => {
       toast.error('No se pudo eliminar el producto ❌');
     }
   };
+
+
+
 
 
   const handleConfirmEdit = async (updatedProduct) => {
